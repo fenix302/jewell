@@ -192,7 +192,7 @@
 						}
 						path = $("#image").attr("src");
 
-						existFolder = path.split("/")[2];
+						existFolder = path.split("/")[1];
 						$("#image").attr("src", path.replace(existFolder, imageFolder));
 					</script>
                  </div>

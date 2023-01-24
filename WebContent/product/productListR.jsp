@@ -121,7 +121,7 @@
 							}
 							path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
 
-							existFolder = path.split("/")[2];
+							existFolder = path.split("/")[1];
 							$("img[name='image']").eq('${dsProductIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 						</script>
 						<div class="row" style="background-color: white; margin-left: 0.01%; width: 93%; height:130px; border:1px solid lightgray;">
