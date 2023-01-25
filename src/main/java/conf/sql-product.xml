@@ -41,7 +41,7 @@
 			  SELECT PRODUCT_IMAGE, PRODUCT_CATEGORY_CD
 			  FROM TB_PRODUCT
 			  WHERE 1=1
-			  AND PRODUCT_CATEGORY_CD = 'O'
+			  AND PRODUCT_CATEGORY_CD = 'N'
 			  ORDER BY PRODUCT_REG_DATE DESC
 			) T
 			WHERE ROWNUM = 1
@@ -74,25 +74,14 @@
 			  SELECT PRODUCT_IMAGE, PRODUCT_CATEGORY_CD
 			  FROM TB_PRODUCT
 			  WHERE 1=1
-			  AND PRODUCT_CATEGORY_CD = 'D'
-			  ORDER BY PRODUCT_REG_DATE DESC
-			) T
-			WHERE ROWNUM = 1
-						UNION ALL
-			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
-			FROM
-			(
-			  SELECT PRODUCT_IMAGE, PRODUCT_CATEGORY_CD
-			  FROM TB_PRODUCT
-			  WHERE 1=1
-			  AND PRODUCT_CATEGORY_CD = 'S'
+			  AND PRODUCT_CATEGORY_CD = 'E'
 			  ORDER BY PRODUCT_REG_DATE DESC
 			) T
 			WHERE ROWNUM = 1
 			]]>
 	</select>
 
-	<select id="retrieveProductListForBinder" resultType="map">
+	<select id="retrieveProductListForBracelet" resultType="map">
 		<![CDATA[
 			/*	retrieveProductListForBinder	*/
 			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
@@ -105,22 +94,6 @@
 			  ORDER BY PRODUCT_REG_DATE DESC
 			) T
 			WHERE ROWNUM <= 3
-			]]>
-	</select>
-
-	<select id="retrieveProductListForDesign" resultType="map">
-		<![CDATA[
-			/*	retrieveProductListForDesign	*/
-			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
-			FROM
-			(
-			  SELECT PRODUCT_IMAGE, PRODUCT_CATEGORY_CD
-			  FROM TB_PRODUCT
-			  WHERE 1=1
-			  AND PRODUCT_CATEGORY_CD = 'D'
-			  ORDER BY PRODUCT_REG_DATE DESC
-			) T
-			WHERE ROWNUM <= 4
 			]]>
 	</select>
 
