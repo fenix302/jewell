@@ -124,25 +124,25 @@
 			]]>
 	</select>
 
-	<select id="retrieveProductListForOffice" resultType="map">
+	<select id="retrieveProductListForNeck" resultType="map">
 		<![CDATA[
-			/*	retrieveProductListForOffice	*/
+			/*	retrieveProductListForNeck	*/
 			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
 			FROM
 			(
 			  SELECT PRODUCT_IMAGE, PRODUCT_CATEGORY_CD
 			  FROM TB_PRODUCT
 			  WHERE 1=1
-			  AND PRODUCT_CATEGORY_CD = 'O'
+			  AND PRODUCT_CATEGORY_CD = 'N'
 			  ORDER BY PRODUCT_REG_DATE DESC
 			) T
 			WHERE ROWNUM <= 6
 			]]>
 	</select>
 
-	<select id="retrieveProductListForPen" resultType="map">
+	<select id="retrieveProductListForRing" resultType="map">
 		<![CDATA[
-			/*	retrieveProductListForPen	*/
+			/*	retrieveProductListForRing	*/
 			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
 			FROM
 			(
@@ -156,16 +156,16 @@
 			]]>
 	</select>
 
-	<select id="retrieveProductListForStorage" resultType="map">
+	<select id="retrieveProductListForEar" resultType="map">
 		<![CDATA[
-			/*	retrieveProductListForStorage	*/
+			/*	retrieveProductListForEar	*/
 			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
 			FROM
 			(
 			  SELECT PRODUCT_IMAGE, PRODUCT_CATEGORY_CD
 			  FROM TB_PRODUCT
 			  WHERE 1=1
-			  AND PRODUCT_CATEGORY_CD = 'S'
+			  AND PRODUCT_CATEGORY_CD = 'E'
 			  ORDER BY PRODUCT_REG_DATE DESC
 			) T
 			WHERE ROWNUM <= 6

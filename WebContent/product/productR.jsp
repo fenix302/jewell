@@ -179,16 +179,14 @@
                 	<script type="text/javascript">
 					 	var productCategoryCd = '${dsProduct.PRODUCT_CATEGORY_CD}';
 
-						if(productCategoryCd == 'O'){
-							imageFolder = "officeImg";
+						if(productCategoryCd == 'N'){
+							imageFolder = "neckImg";
 						}else if(productCategoryCd == 'R'){
 							imageFolder = "ringImg";
-						}else if(productCategoryCd == 'S'){
-							imageFolder = "storageImg";
-						}else if(productCategoryCd == 'D'){
-							imageFolder = "designImg";
+						}else if(productCategoryCd == 'E'){
+							imageFolder = "earImg";
 						}else if(productCategoryCd == 'B'){
-							imageFolder = "binderImg";
+							imageFolder = "braceletImg";
 						}
 						path = $("#image").attr("src");
 

@@ -16,11 +16,10 @@
 
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
 
-<c:set var="officeUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[0].PRODUCT_CATEGORY_CD}</c:set>
-<c:set var="penUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[1].PRODUCT_CATEGORY_CD}</c:set>
-<c:set var="binderUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[2].PRODUCT_CATEGORY_CD}</c:set>
-<c:set var="designUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[3].PRODUCT_CATEGORY_CD}</c:set>
-<c:set var="storageUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[4].PRODUCT_CATEGORY_CD}</c:set>
+<c:set var="neckUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[0].PRODUCT_CATEGORY_CD}</c:set>
+<c:set var="ringUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[1].PRODUCT_CATEGORY_CD}</c:set>
+<c:set var="braceletUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[2].PRODUCT_CATEGORY_CD}</c:set>
+<c:set var="storageUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[3].PRODUCT_CATEGORY_CD}</c:set>
 
 <c:set var="productManageUrl">${context}/work/product/retrieveProductListForManage.do</c:set>
 <c:set var="statisticsForProductUrl">${context}/work/sell/retrieveStatisticsForProduct.do</c:set>
@@ -43,16 +42,13 @@
 
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')"><img src="${context}/officeImg/${dsProductList[0].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
+					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl}')"><img src="${context}/neckImg/${dsProductList[0].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
 					    </div>
 						<div class="item">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${penUrl}')"><img src="${context}/ringImg/${dsProductList[1].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
+					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl}')"><img src="${context}/ringImg/${dsProductList[1].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
 					    </div>
 					    <div class="item">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${binderUrl}')"><img src="${context}/binderImg/${dsProductList[2].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
-					    </div>
-					    <div class="item">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${designUrl}')"><img src="${context}/designImg/${dsProductList[3].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
+					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')"><img src="${context}/braceletImg/${dsProductList[2].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
 					    </div>
 					    <div class="item">
 					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${storageUrl}')"><img src="${context}/storageImg/${dsProductList[4].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
@@ -69,13 +65,13 @@
 				</div>
 			<div class="container">
 				<div class="page-header">
-					<h1>화일/바인더</h1>
+					<h1>팔찌</h1>
 				</div>
 				<div class="jumbotron">
 					<div class="row">
-						<c:forEach items="${dsBinderList}" var="dsBinderList">
+						<c:forEach items="${dsBraceletList}" var="dsBraceletList">
 							<div class="col-md-4">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${binderUrl}')"><img src="${context}/binderImg/${dsBinderList.PRODUCT_IMAGE}" class="img-thumbnail"></a>
+								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')"><img src="${context}/braceletImg/${dsBraceletList.PRODUCT_IMAGE}" class="img-thumbnail"></a>
 							</div>
 						</c:forEach>
 					</div>
@@ -83,28 +79,14 @@
 			</div>
 			<div class="container">
 				<div class="page-header">
-					<h1>디자인문구</h1>
+					<h1>목걸이</h1>
 				</div>
 				<div class="jumbotron">
 					<div class="row">
-						<c:forEach items="${dsDesignList}" var="dsDesignList">
-							<div class="col-md-3">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${designUrl}')"><img src="${context}/designImg/${dsDesignList.PRODUCT_IMAGE}" class="img-circle" width="100%" height="100%"></a>
-							</div>
-						</c:forEach>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="page-header">
-					<h1>사무용품</h1>
-				</div>
-				<div class="jumbotron">
-					<div class="row">
-						<c:forEach items="${dsOfficeList}" var="dsOfficeList" varStatus="officeIdx">
+						<c:forEach items="${dsNeckList}" var="dsNeckList" varStatus="neckIdx">
 							<div class="col-md-4">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')"><img src="${context}/officeImg/${dsOfficeList.PRODUCT_IMAGE}" class="img-thumbnail" width="100%" height="100%"></a>
-								<c:if test="${officeIdx.index == 2}">
+								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl}')"><img src="${context}/neckImg/${dsNeckList.PRODUCT_IMAGE}" class="img-thumbnail" width="100%" height="100%"></a>
+								<c:if test="${neckIdx.index == 2}">
 									&nbsp;
 								</c:if>
 							</div>
@@ -117,10 +99,10 @@
 					<h1>반지</h1>
 				</div>
 					<div class="row">
-						<c:forEach items="${dsPenList}" var="dsPenList" varStatus="penIdx">
+						<c:forEach items="${dsRingList}" var="dsRingList" varStatus="ringIdx">
 							<div class="col-md-3">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${penUrl}')"><img src="${context}/ringImg/${dsPenList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
-								<c:if test="${penIdx.index == 3}">
+								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl}')"><img src="${context}/ringImg/${dsRingList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
+								<c:if test="${ringIdx.index == 3}">
 									&nbsp;
 								</c:if>
 							</div>
@@ -129,13 +111,13 @@
 			</div>
 			<div class="container">
 				<div class="page-header">
-					<h1>정리/수납용품</h1>
+					<h1>귀걸이</h1>
 				</div>
 				<div class="jumbotron">
 					<div class="row">
-						<c:forEach items="${dsStorageList}" var="dsStorageList">
+						<c:forEach items="${dsEarList}" var="dsEarList">
 							<div class="col-md-2">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${storageUrl}')"><img src="${context}/storageImg/${dsStorageList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
+								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')"><img src="${context}/earImg/${dsEarList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
 							</div>
 						</c:forEach>
 					</div>

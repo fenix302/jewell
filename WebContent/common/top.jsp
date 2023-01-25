@@ -26,11 +26,10 @@ a{
 <c:set var="homeUrl">${context}/work/product/goMain.do</c:set>
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
 
-<c:set var="officeUrl">${context}/work/product/retrieveProductList.do?category=O</c:set>
-<c:set var="penUrl">${context}/work/product/retrieveProductList.do?category=R</c:set>
-<c:set var="binderUrl">${context}/work/product/retrieveProductList.do?category=B</c:set>
-<c:set var="designUrl">${context}/work/product/retrieveProductList.do?category=D</c:set>
-<c:set var="storageUrl">${context}/work/product/retrieveProductList.do?category=S</c:set>
+<c:set var="neckUrl">${context}/work/product/retrieveProductList.do?category=N</c:set>
+<c:set var="ringUrl">${context}/work/product/retrieveProductList.do?category=R</c:set>
+<c:set var="braceletUrl">${context}/work/product/retrieveProductList.do?category=B</c:set>
+<c:set var="earUrl">${context}/work/product/retrieveProductList.do?category=E</c:set>
 <body>
 	<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 		<div class="container" style="background-color: black;">
@@ -80,11 +79,10 @@ a{
 		<c:if test="${sessionScope.grade != 'A'}">
 		  	<p style="font-size: 70px;"><a href="${context}/work/product/goMain.do" style="color: black;"><b>HS STATIONERY</b></a></p>
 		  <ul class="list-inline">
-		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${penUrl}')" style="color: black; font-size: 25px;">반지&nbsp;&nbsp;|</a></li>
-		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')" style="color: black; font-size: 25px;">사무용품&nbsp;&nbsp;|</a></li>
-		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${storageUrl}')" style="color: black; font-size: 25px;">정리/수납용품&nbsp;&nbsp;|</a></li>
-		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${binderUrl}')" style="color: black; font-size: 25px;">화일/바인더&nbsp;&nbsp;|</a></li>
-		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${designUrl}')" style="color: black; font-size: 25px;">디자인문구&nbsp;&nbsp;</a></li>
+		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl}')" style="color: black; font-size: 25px;">반지&nbsp;&nbsp;|</a></li>
+		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl}')" style="color: black; font-size: 25px;">목걸이&nbsp;&nbsp;|</a></li>
+		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')" style="color: black; font-size: 25px;">귀걸이&nbsp;&nbsp;|</a></li>
+		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')" style="color: black; font-size: 25px;">팔찌&nbsp;&nbsp;|</a></li>
 		  </ul>
 	  	</c:if>
 	  	<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
