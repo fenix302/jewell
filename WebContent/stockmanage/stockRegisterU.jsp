@@ -76,16 +76,14 @@
 	function fn_setProductCategoryCd(){
 		productCategoryCd = '${dsProduct.PRODUCT_CATEGORY_CD}';
 
-		if(productCategoryCd == 'O'){
-			imageFolder = "officeImg";
-		}else if(productCategoryCd == 'P'){
-			imageFolder = "penImg";
-		}else if(productCategoryCd == 'S'){
-			imageFolder = "storageImg";
-		}else if(productCategoryCd == 'D'){
-			imageFolder = "designImg";
+		if(productCategoryCd == 'N'){
+			imageFolder = "neckImg";
+		}else if(productCategoryCd == 'R'){
+			imageFolder = "ringImg";
+		}else if(productCategoryCd == 'E'){
+			imageFolder = "earImg";
 		}else if(productCategoryCd == 'B'){
-			imageFolder = "binderImg";
+			imageFolder = "braceletImg";
 		}
 
 		$("#imageFolder").val(imageFolder);

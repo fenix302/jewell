@@ -175,20 +175,18 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-6" align="center">
-                	<img id="image" src="${context}/penImg/${dsProduct.PRODUCT_IMAGE}" class="img-rounded img-responsive">
+                	<img id="image" src="${context}/ringImg/${dsProduct.PRODUCT_IMAGE}" class="img-rounded img-responsive">
                 	<script type="text/javascript">
 					 	var productCategoryCd = '${dsProduct.PRODUCT_CATEGORY_CD}';
 
-						if(productCategoryCd == 'O'){
-							imageFolder = "officeImg";
-						}else if(productCategoryCd == 'P'){
-							imageFolder = "penImg";
-						}else if(productCategoryCd == 'S'){
-							imageFolder = "storageImg";
-						}else if(productCategoryCd == 'D'){
-							imageFolder = "designImg";
+						if(productCategoryCd == 'N'){
+							imageFolder = "neckImg";
+						}else if(productCategoryCd == 'R'){
+							imageFolder = "ringImg";
+						}else if(productCategoryCd == 'E'){
+							imageFolder = "earImg";
 						}else if(productCategoryCd == 'B'){
-							imageFolder = "binderImg";
+							imageFolder = "braceletImg";
 						}
 						path = $("#image").attr("src");
 

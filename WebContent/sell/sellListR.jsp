@@ -121,24 +121,22 @@
 			                         <tr>
 			                         	<td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_CODE}</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-										<img name="image" width="110px" height="110px" src="${context}/binderImg/${dsSellList.PRODUCT_IMAGE}" class="img-thumbnail">
+										<img name="image" width="110px" height="110px" src="${context}/braceletImg/${dsSellList.PRODUCT_IMAGE}" class="img-thumbnail">
 											<script type="text/javascript">
 											 	var productCategoryCd = '${dsSellList.PRODUCT_CATEGORY_CD}';
 
-											 	if(productCategoryCd == 'O'){
-													imageFolder = "officeImg";
-												}else if(productCategoryCd == 'P'){
-													imageFolder = "penImg";
-												}else if(productCategoryCd == 'S'){
-													imageFolder = "storageImg";
-												}else if(productCategoryCd == 'D'){
-													imageFolder = "designImg";
+											 	if(productCategoryCd == 'N'){
+													imageFolder = "neckImg";
+												}else if(productCategoryCd == 'R'){
+													imageFolder = "ringImg";
+												}else if(productCategoryCd == 'E'){
+													imageFolder = "earImg";
 												}else if(productCategoryCd == 'B'){
-													imageFolder = "binderImg";
+													imageFolder = "braceletImg";
 												}
 												path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
 
-												existFolder = path.split("/")[2];
+												existFolder = path.split("/")[1];
 												$("img[name='image']").eq('${sellIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 											</script>
 			                            </td>

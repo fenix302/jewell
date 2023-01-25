@@ -81,20 +81,18 @@
 											<script type="text/javascript">
 											 	var productCategoryCd = '${dsBuyList.PRODUCT_CATEGORY_CD}';
 
-											 	if(productCategoryCd == 'O'){
-													imageFolder = "officeImg";
-												}else if(productCategoryCd == 'P'){
-													imageFolder = "penImg";
-												}else if(productCategoryCd == 'S'){
-													imageFolder = "storageImg";
-												}else if(productCategoryCd == 'D'){
-													imageFolder = "designImg";
+											 	if(productCategoryCd == 'N'){
+													imageFolder = "neckImg";
+												}else if(productCategoryCd == 'R'){
+													imageFolder = "ringImg";
+												}else if(productCategoryCd == 'E'){
+													imageFolder = "earImg";
 												}else if(productCategoryCd == 'B'){
-													imageFolder = "binderImg";
+													imageFolder = "braceletImg";
 												}
 												path = $("img[name='image']").eq('${buyIdx.index}').attr("src");
 
-												existFolder = path.split("/")[2];
+												existFolder = path.split("/")[1];
 												$("img[name='image']").eq('${buyIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 											</script>
 			                            </td>

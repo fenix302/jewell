@@ -21,24 +21,20 @@ public class ProductDAO {
 		return sqlSession.selectList("product.retrieveProductListForMain");
 	}
 
-	public List<Map<String, String>> retrieveProductListForBinder(){
-		return sqlSession.selectList("product.retrieveProductListForBinder");
+	public List<Map<String, String>> retrieveProductListForBracelet(){
+		return sqlSession.selectList("product.retrieveProductListForBracelet");
 	}
 
-	public List<Map<String, String>> retrieveProductListForDesign(){
-		return sqlSession.selectList("product.retrieveProductListForDesign");
+	public List<Map<String, String>> retrieveProductListForNeck(){
+		return sqlSession.selectList("product.retrieveProductListForNeck");
 	}
 
-	public List<Map<String, String>> retrieveProductListForOffice(){
-		return sqlSession.selectList("product.retrieveProductListForOffice");
+	public List<Map<String, String>> retrieveProductListForRing(){
+		return sqlSession.selectList("product.retrieveProductListForRing");
 	}
 
-	public List<Map<String, String>> retrieveProductListForPen(){
-		return sqlSession.selectList("product.retrieveProductListForPen");
-	}
-
-	public List<Map<String, String>> retrieveProductListForStorage(){
-		return sqlSession.selectList("product.retrieveProductListForStorage");
+	public List<Map<String, String>> retrieveProductListForEar(){
+		return sqlSession.selectList("product.retrieveProductListForEar");
 	}
 
 	public Map<String, String> retrieveProduct(Map<String, String> productParam){
