@@ -27,7 +27,7 @@ a{
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
 
 <c:set var="officeUrl">${context}/work/product/retrieveProductList.do?category=O</c:set>
-<c:set var="penUrl">${context}/work/product/retrieveProductList.do?category=P</c:set>
+<c:set var="penUrl">${context}/work/product/retrieveProductList.do?category=R</c:set>
 <c:set var="binderUrl">${context}/work/product/retrieveProductList.do?category=B</c:set>
 <c:set var="designUrl">${context}/work/product/retrieveProductList.do?category=D</c:set>
 <c:set var="storageUrl">${context}/work/product/retrieveProductList.do?category=S</c:set>
@@ -80,7 +80,7 @@ a{
 		<c:if test="${sessionScope.grade != 'A'}">
 		  	<p style="font-size: 70px;"><a href="${context}/work/product/goMain.do" style="color: black;"><b>HS STATIONERY</b></a></p>
 		  <ul class="list-inline">
-		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${penUrl}')" style="color: black; font-size: 25px;">필기류&nbsp;&nbsp;|</a></li>
+		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${penUrl}')" style="color: black; font-size: 25px;">반지&nbsp;&nbsp;|</a></li>
 		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')" style="color: black; font-size: 25px;">사무용품&nbsp;&nbsp;|</a></li>
 		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${storageUrl}')" style="color: black; font-size: 25px;">정리/수납용품&nbsp;&nbsp;|</a></li>
 		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${binderUrl}')" style="color: black; font-size: 25px;">화일/바인더&nbsp;&nbsp;|</a></li>

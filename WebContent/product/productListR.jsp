@@ -110,8 +110,8 @@
 
 							if(productCategoryCd == 'O'){
 								imageFolder = "officeImg";
-							}else if(productCategoryCd == 'P'){
-								imageFolder = "penImg";
+							}else if(productCategoryCd == 'R'){
+								imageFolder = "ringImg";
 							}else if(productCategoryCd == 'S'){
 								imageFolder = "storageImg";
 							}else if(productCategoryCd == 'D'){

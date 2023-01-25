@@ -24,7 +24,7 @@
 
 <c:set var="productManageUrl">${context}/work/product/retrieveProductListForManage.do</c:set>
 <c:set var="statisticsForProductUrl">${context}/work/sell/retrieveStatisticsForProduct.do</c:set>
-<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P</c:set>
+<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=R</c:set>
 
 <script type="text/javascript"></script>
 <body>
@@ -46,7 +46,7 @@
 					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')"><img src="${context}/officeImg/${dsProductList[0].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
 					    </div>
 						<div class="item">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${penUrl}')"><img src="${context}/penImg/${dsProductList[1].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
+					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${penUrl}')"><img src="${context}/ringImg/${dsProductList[1].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
 					    </div>
 					    <div class="item">
 					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${binderUrl}')"><img src="${context}/binderImg/${dsProductList[2].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
@@ -114,12 +114,12 @@
 			</div>
 			<div class="container">
 				<div class="page-header">
-					<h1>필기류</h1>
+					<h1>반지</h1>
 				</div>
 					<div class="row">
 						<c:forEach items="${dsPenList}" var="dsPenList" varStatus="penIdx">
 							<div class="col-md-3">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${penUrl}')"><img src="${context}/penImg/${dsPenList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
+								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${penUrl}')"><img src="${context}/ringImg/${dsPenList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
 								<c:if test="${penIdx.index == 3}">
 									&nbsp;
 								</c:if>
