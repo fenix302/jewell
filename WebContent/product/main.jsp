@@ -37,7 +37,6 @@
 				        <li data-target="#myCarousel" data-slide-to="1"></li>
 				        <li data-target="#myCarousel" data-slide-to="2"></li>
 				        <li data-target="#myCarousel" data-slide-to="3"></li>
-				        <li data-target="#myCarousel" data-slide-to="4"></li>
 				    </ol>
 
 					<div class="carousel-inner" role="listbox">
@@ -51,7 +50,7 @@
 					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')"><img src="${context}/braceletImg/${dsProductList[2].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
 					    </div>
 					    <div class="item">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${storageUrl}')"><img src="${context}/storageImg/${dsProductList[4].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
+					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')"><img src="${context}/earImg/${dsProductList[3].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
 					    </div>
 					        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
 					            <span class="glyphicon glyphicon-chevron-left"></span>
