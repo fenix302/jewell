@@ -73,8 +73,8 @@
 	<jsp:include page="../common/top.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
-			<h1><font color="black"><strong>LOGIN</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
-			<p>HS STATIONERY에 오신것을 진심으로 환영합니다.</p>
+			<h1><font color="black"><strong>로그인</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
+			<p>JEWELL에 오신것을 환영합니다.</p>
 		</div>
 	</div>
     <div class="container">
@@ -82,20 +82,20 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default"  style="margin-bottom: 57%;">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title">로그인</h3>
                     </div>
                     <div class="panel-body">
                         <form action="${context}/work/user/login.do" method="post" role="form" id="loginFrm">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="ID" id="id" name="id" type="text" autofocus>
+                                    <input class="form-control" placeholder="아이디" id="id" name="id" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" id="pw" name="pw" type="password">
+                                    <input class="form-control" placeholder="비밀번호" id="pw" name="pw" type="password">
                                 </div>
                                 <div class="form-group">
-                                	<span style="float: left;"><a href="${context}/user/idFind.jsp">ID찾기</a>|<a href="pwFind.jsp">PW찾기</a></span>
-                                	<span style="float: right;"><a href="${context}/work/user/createUser.do">회원가입</a></span><br>
+                                	<span><a href="${context}/user/idFind.jsp">아이디 찾기  </a> | <a href="pwFind.jsp">  비밀번호 찾기  </a></span> 
+                                	<span> | <a href="${context}/work/user/createUser.do">  회원가입  </a></span><br>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button type="button" class="btn btn-lg btn-success btn-block" onclick="ajaxLoginCheck();">Login</button>

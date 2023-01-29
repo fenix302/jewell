@@ -82,7 +82,7 @@ a{
 		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl}')" style="color: black; font-size: 25px;">반지&nbsp;&nbsp;|</a></li>
 		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl}')" style="color: black; font-size: 25px;">목걸이&nbsp;&nbsp;|</a></li>
 		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')" style="color: black; font-size: 25px;">귀걸이&nbsp;&nbsp;|</a></li>
-		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')" style="color: black; font-size: 25px;">팔찌&nbsp;&nbsp;|</a></li>
+		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')" style="color: black; font-size: 25px;">팔찌&nbsp;&nbsp;</a></li>
 		  </ul>
 	  	</c:if>
 	  	<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">

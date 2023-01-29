@@ -137,7 +137,7 @@
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>회원가입</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
-			<p>HS STATIONERY 회원가입을 진심으로 환영합니다.</p>
+			<p>JEWELL 회원가입을 축하합니다</p>
 		</div>
 	</div>
 	<div class="container">
@@ -181,17 +181,17 @@
 
 			<div class="form-group">
 				<label for="phoneCd" class="control-label col-md-2"><b>연락처</b></label>
-				<div class="col-md-2">
+				<div class="col-md-2" style="margin-bottom: 15px;">
 		        	<select class="form-control" id="phoneCd" name="phoneCd" required="required">
 						<c:forEach items="${dsCode1}" var="code1">
 							<option value="${code1.commCd}">${code1.commCdNm}</option>
 						</c:forEach>
 		     		</select>
 	     		</div>
-				<div class="col-md-2">
+				<div class="col-md-2" style="margin-bottom: 15px;">
 					<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2" style="margin-bottom: 15px;">
 					<input class="form-control" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<input type="hidden" id="phoneNum" name="phoneNum">
@@ -199,7 +199,7 @@
 
 			<div class="form-group">
 				<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
-				<div class="col-md-3">
+				<div class="col-md-3" style="margin-bottom: 15px;">
 					<input class="form-control" type="text" id="postNum1" placeholder="우편번호" disabled="disabled">
 				</div>
 				<span class="col-md-1">
@@ -210,10 +210,10 @@
 
 			<div class="form-group">
 				<label for="postnum2" class="control-label col-md-2"></label>
-				<div class="col-md-3">
+				<div class="col-md-3" style="margin-bottom: 15px;">
 					<input class="form-control" type="text" id="postNum2" placeholder="도로명주소" disabled="disabled"/>
 	     		</div>
-				<div class="col-md-3">
+				<div class="col-md-3" style="margin-bottom: 15px;">
 					<input class="form-control" type="text" id="postNum3" placeholder="지번주소" disabled="disabled"/>
 				</div>
 			</div>
