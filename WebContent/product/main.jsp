@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="main.jsp">
-<title>HS STATIONERY</title>
+<title>JEWELL</title>
 <link href="${context}/css/bootstrap.min.css" rel="stylesheet">
 <link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 <script src="${context}/js/jquery-1.9.1.js"></script>
