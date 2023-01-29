@@ -25,9 +25,9 @@
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript">
 
-	var dong;
 	var imageFolder;
 
 	$(document).ready(function(){
@@ -42,76 +42,45 @@
 	        changeYear: true,
 	        yearRange: "1980:2015"
 	    });
-
-		$("#dong").keydown(function (key){
-			if(key.keyCode == 13){
-				fn_postCheck();
-			}
-
-		});
 	});
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-	function fn_setData(self){
-		var postAllData = self.children().text();
+                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var roadAddr = data.roadAddress; // 도로명 주소 변수
+                var extraRoadAddr = ''; // 참고 항목 변수
 
-		var postSplit = postAllData.split(" ");
+                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraRoadAddr += data.bname;
+                }
+                // 건물명이 있고, 공동주택일 경우 추가한다.
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                if(extraRoadAddr !== ''){
+                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                }
 
-		var zipcode = postSplit[0].split("-");
-		var postNum1 = zipcode[0];
-		var postNum2 = zipcode[1];
-		var sido = postSplit[1];
-		var gugun = postSplit[2];
-		var dong = postSplit[3];
-		var subDong = postSplit[4];
-
-		if(subDong == null) subDong = "";
-
-		var detailAddress = sido + " " + gugun + " " + dong + " " + subDong;
-
-		$("#postNum1").val(postNum1);
-		$("#postNum2").val(postNum2);
-
-		$("#address1").val(detailAddress);
-
-		$("#searchPost").modal('hide');
-	}
-
-	function fn_postCheck(){
-		dong = $("#dong").val();
-
-		if(dong == ""){
-			alert("동을 입력하세요.");
-			return;
-		}
-		$("#postBody").children().remove();
-
-		var aheadHtml = "<tr><td style='text-align: center;'><a onclick=javascript:fn_setData($(this))><b>";
-		var backHtml = "</b></a></td></tr>";
-		var appendHtml = "";
-		var param = {};
-
-
-		param["dong"] = dong;
-
-		$.ajax({
-   			url:"${context}/work/applicant/retrievePostByDong.do",
-			contentType:"application/json",
-			dataType:"json",
-			data:param,
-   			success:function(result){
-   				for(var i = 0; i < result.length; i++){
-   					appendHtml
-   					   += aheadHtml
-   					   + result[i].zipcode + " "
-					   + result[i].sido    + " "
-				       + result[i].gugun   + " "
-					   + result[i].dong    + " "
-					   + backHtml;
-   				}
-   					$("#postBody").append(appendHtml);
-   			}
-   		});
-	}
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('postNum1').value = data.zonecode;
+                document.getElementById("postNum2").value = roadAddr;
+                document.getElementById("postNum3").value = data.jibunAddress;
+                
+                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+                if(roadAddr !== ''){
+                    document.getElementById("address1").value = extraRoadAddr;
+                } else {
+                    document.getElementById("address1").value = '';
+                }
+            }
+    	}).open();
+    }	
 
 	function fn_save(){
 		if(!fn_validation()) return;
@@ -123,8 +92,8 @@
 
 
 		$("#phoneNum").val($("#phone1").val() + "-" + $("#phone2").val());
- 		$("#postNum").val($("#postNum1").val() + "-" + $("#postNum2").val());
- 		$("#address").val($("#address1").val() + "/" + $("#address2").val());
+ 		$("#postNum").val($("#postNum1").val());
+ 		$("#address").val($("#postNum2").val() + "/" + $("#postNum3").val() + "/" + $("#address1").val());
 
  		$("#joinFrm").submit();
 	}
@@ -230,29 +199,28 @@
 
 			<div class="form-group">
 				<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
-				<div class="col-md-2">
-					<input class="form-control" type="text" id="postNum1" disabled="disabled" required="required"/>
-	     		</div>
-				<div class="col-md-2">
-					<input class="form-control" type="text" id="postNum2" disabled="disabled" required="required"/>
+				<div class="col-md-3">
+					<input class="form-control" type="text" id="postNum1" placeholder="우편번호" disabled="disabled">
 				</div>
 				<span class="col-md-1">
-					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#searchPost"><b>주소검색</b></button>
+					<input type="button" class="btn btn-info" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
 				</span>
 				<input type="hidden" id="postNum" name="postNum">
 			</div>
 
 			<div class="form-group">
-				<label for="address1" class="control-label col-md-2"><b>상세주소</b></label>
-				<div class="col-md-6">
-					<input class="form-control" type="text" id="address1" disabled="disabled" required="required"/>
+				<label for="postnum2" class="control-label col-md-2"></label>
+				<div class="col-md-3">
+					<input class="form-control" type="text" id="postNum2" placeholder="도로명주소" disabled="disabled"/>
+	     		</div>
+				<div class="col-md-3">
+					<input class="form-control" type="text" id="postNum3" placeholder="지번주소" disabled="disabled"/>
 				</div>
 			</div>
-
 			<div class="form-group">
-				<label for="address2" class="control-label col-md-2"></label>
+				<label for="postnum3" class="control-label col-md-2"><b>상세주소</b></label>
 				<div class="col-md-6">
-					<input class="form-control" type="text" id="address2"/>
+					<input class="form-control" type="text" id="address1" placeholder="상세주소"/>
 				</div>
 				<input type="hidden" id="address" name="address">
 			</div>
@@ -261,7 +229,7 @@
 				<label class="control-label col-md-2"><b>사진</b></label>
 				<img id="pic" style="margin-left: 15px;" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
 				<div class="col-md-6">
-					<input type="hidden" id="userImage" name="userImage" required="required">
+					<input type="hidden" id="userImage" name="userImage">
 				</div>
 			</div>
 
@@ -287,49 +255,6 @@
 		</div>
 	</form>
 	</div>
-		<div class="container">
-		<!-- Modal -->
-		<div class="modal fade" id="searchPost" role="dialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">주소검색</h4>
-					</div>
-						<div class="modal-body" style="height: 50px;">
-							<div class="col-md-6">
-								<input class="form-control" type="text" id="dong" name="dong" placeholder="동을 입력하세요.ex)역삼1동"/>
-							</div>
-							<div class="col-md-1">
-								<button id="postCheck" type="button" class="btn btn-primary" onclick = "fn_postCheck()">확인</button>
-							</div>
-						</div>
-
-					<div class="modal-footer">
-						<div class="col-md-12">
-			            <div class="table-responsive">
-			                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-			                    <thead>
-			                        <tr>
-			                        	<th style="text-align: center; vertical-align: middle; ">주소</th>
-			                        </tr>
-			                    </thead>
-			                    <tbody id="postBody">
-			                    </tbody>
-			                </table>
-			            </div>
-			            <!-- /.table-responsive -->
-			        </div>
-			        <!-- /.panel-body -->
-			        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-			    </div>
-			    <!-- /.panel -->
-			</div>
-		</div>
-			    <!-- /.panel -->
-			</div>
-
-					</div>
 
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
