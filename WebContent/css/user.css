@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/* 회원가입 부분 */
+.user-main{
+	text-align: center !important;
+}
+
+
+
+.user-post-btn{
+    background-color: silver;
+    border: 1px solid black;
+    font-weight: bold !important;
+}
+
+.user-back-btn{
+	background-color: silver;
+}
+
+.user-submit-btn{
+	background-color: skyblue;
+}
+
+.user-kakao-btn{
+	list-style: none;	
+}
+
+/* 로그인 부분 */
+.user-find{
+	text-align: center;
+}
+
+.user-login-btn{
+	background-color: skyblue;	
+}

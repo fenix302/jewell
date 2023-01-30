@@ -10,12 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
 
-    <title>HS ELECTRIC LOGIN</title>
+    <title>JEWELL 로그인</title>
 
     <link href="${context}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${context}/css/user.css" rel="stylesheet">
+    
 
     <!-- jQuery -->
     <script src="${context}/js/jquery.js"></script>
@@ -28,6 +30,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="${context}/js/sb-admin-2.js"></script>
+    
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#pw").keydown(function (key){
@@ -72,9 +77,8 @@
 <body>
 	<jsp:include page="../common/top.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
-		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
-			<h1><font color="black"><strong>로그인</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
-			<p>JEWELL에 오신것을 환영합니다.</p>
+		<div class="user-main">
+			<h2><font color="black"><strong>로그인</strong></font></h2>
 		</div>
 	</div>
     <div class="container">
@@ -93,12 +97,20 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="비밀번호" id="pw" name="pw" type="password">
                                 </div>
-                                <div class="form-group">
-                                	<span><a href="${context}/user/idFind.jsp">아이디 찾기  </a> | <a href="pwFind.jsp">  비밀번호 찾기  </a></span> 
-                                	<span> | <a href="${context}/work/user/createUser.do">  회원가입  </a></span><br>
+                                <div class="form-group user-find">
+                                	<span><a href="${context}/user/idFind.jsp">아이디 찾기</a> | <a href="pwFind.jsp">비밀번호 찾기</a></span> 
+                                	<span> | <a href="${context}/work/user/createUser.do">회원가입</a></span><br>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type="button" class="btn btn-lg btn-success btn-block" onclick="ajaxLoginCheck();">Login</button>
+                                <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();">Login</button>
+                                <ul class="btn btn-lg btn-block user-kakao-btn">
+									<li onclick="kakaoLogin();">
+								      <a href="javascript:void(0)">
+								          <img alt="카카오로그인" src="/userImg/kakao_login.png">
+								      </a>
+									</li>
+								</ul>
+                                
                             </fieldset>
                         </form>
                     </div>
@@ -107,6 +119,29 @@
         </div>
     </div>
 	<jsp:include page="../common/foot.jsp"></jsp:include>
-
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+Kakao.init('66ca82d13bdbacc72649b8f16cf511ed'); //발급받은 키 중 javascript키를 사용해준다.
+console.log(Kakao.isInitialized()); // sdk초기화여부판단
+//카카오로그인
+function kakaoLogin() {
+    Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function (response) {
+        	  console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+</script>
 </body>
 </html>

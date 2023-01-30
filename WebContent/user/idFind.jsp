@@ -14,6 +14,8 @@
 <link href="../css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 <link href="../css/plugins/social-buttons.css" rel="stylesheet">
 <link href="../font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="${context}/css/user.css" rel="stylesheet">
+
 
 <script src="../js/jquery-1.9.1.js"></script>
 <script src="../js/bootstrap.min.js"></script>
@@ -52,9 +54,9 @@
 </head>
 <body>
 	<jsp:include page="../common/top.jsp"></jsp:include>
-	<div class="container">
-		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
-			<h1><font color="black"><strong>ID찾기</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
+	<div id="jumbotron" class="container">
+		<div class="user-main">
+			<h1><font color="black"><strong>아이디 찾기</strong></font></h1>
 		</div>
 	</div>
 	<div class="container">

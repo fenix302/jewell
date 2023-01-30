@@ -16,6 +16,8 @@
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
 		<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
+    <link href="${context}/css/user.css" rel="stylesheet">
+    
 
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/jquery.form.js"></script>
@@ -147,9 +149,9 @@
 </head>
 <body>
 <jsp:include page="../common/top.jsp"></jsp:include>
-	<div class="container">
-		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
-			<h1><font color="black"><strong>정보수정</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
+	<div id="jumbotron" class="container">
+		<div class="user-main">
+			<h1><font color="black"><strong>정보 수정</strong></font></h1>
 		</div>
 	</div>
 	<div class="container">
