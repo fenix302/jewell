@@ -34,7 +34,7 @@ a{
 	<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 		<div class="container" style="background-color: black;">
 			<ul class="nav navbar-nav">
-				<li><a href="${homeUrl}"><font color="white"><strong>HS STATIONERY</strong></font></a></li>
+				<li><a href="${homeUrl}"><font color="white"><strong>JEWELL</strong></font></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li>
@@ -77,7 +77,7 @@ a{
 	</nav>
 		<div class="container" style="background-color: white; margin-bottom: 2%;">
 		<c:if test="${sessionScope.grade != 'A'}">
-		  	<p style="font-size: 70px;"><a href="${context}/work/product/goMain.do" style="color: black;"><b>HS STATIONERY</b></a></p>
+		  	<p style="font-size: 70px;"><a href="${context}/work/product/goMain.do" style="color: black;"><b>JEWEWLL</b></a></p>
 		  <ul class="list-inline">
 		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl}')" style="color: black; font-size: 25px;">반지&nbsp;&nbsp;|</a></li>
 		    <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl}')" style="color: black; font-size: 25px;">목걸이&nbsp;&nbsp;|</a></li>
