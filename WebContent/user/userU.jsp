@@ -217,7 +217,7 @@
 					<input class="form-control" type="text" id="postNum1" placeholder="우편번호" disabled="disabled">
 				</div>
 				<span class="col-md-1">
-					<input type="button" class="btn btn-info" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+					<input type="button" class="btn user-post-btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
 				</span>
 				<input type="hidden" id="postNum" name="postNum">
 			</div>
@@ -260,10 +260,10 @@
 		<br><br><br>
 		<div class="form-group">
 			<div class="col-md-offset-6 col-md-1">
-				<button type="button" class="btn btn-success" onclick="fn_back()">뒤로가기</button>
+				<button type="button" class="btn user-back-btn" onclick="fn_back()">뒤로가기</button>
 			</div>
 			<div class="col-md-1">
-				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
+				<button class="btn user-submit-btn" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
 			</div>
 		</div>
 	</form>
