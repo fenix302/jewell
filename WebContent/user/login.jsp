@@ -98,7 +98,7 @@
                                     <input class="form-control" placeholder="비밀번호" id="pw" name="pw" type="password">
                                 </div>
                                 <div class="form-group user-find">
-                                	<span><a href="${context}/user/idFind.jsp">아이디 찾기</a> | <a href="pwFind.jsp">비밀번호 찾기</a></span> 
+                                	<span><a href="${context}/user/idFind.jsp" class="mr-3">아이디 찾기</a> | <a href="pwFind.jsp">비밀번호 찾기</a></span> 
                                 	<span> | <a href="${context}/work/user/createUser.do">회원가입</a></span><br>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
