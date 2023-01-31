@@ -18,8 +18,8 @@
  />
 </head>
 <body>
-
-    <div class="container">
+<jsp:include page="../common/top.jsp"></jsp:include>
+    <div class="container-lg">
         <h3>FAQ 자주하는 질문</h3>
         <div class="faq_search_box">
             <select class="form-select" aria-label="Default select example">
