@@ -18,7 +18,7 @@
  />
 </head>
 <body>
-	<jsp:include page="../common/top.jsp"></jsp:include>
+
     <div class="container">
         <h3>FAQ 자주하는 질문</h3>
         <div class="faq_search_box">
