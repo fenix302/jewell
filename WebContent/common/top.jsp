@@ -48,9 +48,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/company/introduce.jsp">회사소개</a></li>
-                                <li><a class="dropdown-item" href="/company/location.jsp">오시는 길</a></li>
-                                <li><a class="dropdown-item" href="#">FAQ</a></li>
+                                <li><a class="dropdown-item" href="#">회사소개</a></li>
+                                <li><a class="dropdown-item" href="#">오시는 길</a></li>
+                                <li><a class="dropdown-item" href="${context}/faq/faq.jsp">FAQ</a></li>
                             </ul>
                         </li>
     
