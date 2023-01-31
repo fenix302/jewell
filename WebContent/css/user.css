@@ -4,6 +4,8 @@
 .user-main{
 	text-align: center !important;
 	margin-top: 40px;
+	border-bottom: 1px solid grey;
+	padding-bottom: 20px;
 }
 
 
@@ -29,6 +31,10 @@
 /* 로그인 부분 */
 .user-find{
 	text-align: center;
+}
+
+.user-find a{
+	text-decoration: none !important;
 }
 
 .user-login-btn{
