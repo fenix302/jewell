@@ -20,6 +20,9 @@
 
     <!-- Custom Fonts -->
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link href="${context}/css/buy.css" rel="stylesheet">
+    
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/bootstrap.min.js"></script>
 
@@ -122,10 +125,10 @@
 						</h2>
 					</div>
 					<br><br><br><br>
-					<div class="col-md-2 col-md-offset-4">
+					<div class="col-md-1 col-md-offset-4">
 						<button type="button" class="btn btn-info btn-lg"  style="float:right;" onclick="fn_buyList()"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;구매내역 보러가기</button>
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-5">
 						<button type="button" class="btn btn-warning btn-lg"  style="float:right;" onclick="fn_review('${productCode}')"><span class="glyphicon glyphicon-pencil"></span>&nbsp;상품평   쓰러가기</button>
 					</div>
 					<br><br><br><br><br>

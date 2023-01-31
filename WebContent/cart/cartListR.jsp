@@ -9,7 +9,7 @@
 	<meta name="description" content="cartListR.jsp">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>문구점</title>
+	<title>장바구니</title>
 
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
@@ -20,6 +20,9 @@
 
     <!-- Custom Fonts -->
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link href="${context}/css/buy.css" rel="stylesheet">
+    
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/bootstrap.min.js"></script>
 
@@ -57,7 +60,7 @@
 <body>
 <jsp:include page="/common/top.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
-		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
+		<div class="buy-main">
 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1>
 			<p>${sessionScope.id}님의 장바구니입니다.</p>
 		</div>
@@ -91,20 +94,18 @@
 											<script type="text/javascript">
 											 	var productCategoryCd = '${dsCartList.PRODUCT_CATEGORY_CD}';
 
-											 	if(productCategoryCd == 'O'){
-													imageFolder = "officeImg";
-												}else if(productCategoryCd == 'P'){
-													imageFolder = "penImg";
-												}else if(productCategoryCd == 'S'){
-													imageFolder = "storageImg";
-												}else if(productCategoryCd == 'D'){
-													imageFolder = "designImg";
+											 	if(productCategoryCd == 'N'){
+													imageFolder = "neckImg";
+												}else if(productCategoryCd == 'R'){
+													imageFolder = "ringImg";
+												}else if(productCategoryCd == 'E'){
+													imageFolder = "earImg";
 												}else if(productCategoryCd == 'B'){
-													imageFolder = "binderImg";
+													imageFolder = "braceletImg";
 												}
 												path = $("img[name='image']").eq('${cartIdx.index}').attr("src");
 
-												existFolder = path.split("/")[2];
+												existFolder = path.split("/")[1];
 												$("img[name='image']").eq('${cartIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 											</script>
 			                            </td>

@@ -9,7 +9,7 @@
 	<meta name="description" content="sellBuyListR.jsp">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>문구점</title>
+	<title>구매내역</title>
 
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
@@ -20,6 +20,9 @@
 
     <!-- Custom Fonts -->
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link href="${context}/css/buy.css" rel="stylesheet">
+    
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/bootstrap.min.js"></script>
 
@@ -49,7 +52,7 @@
 <body>
 <jsp:include page="/common/top.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
-		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
+		<div class="buy-main">
 			<h1><font color="black"><strong>구매내역</strong>&nbsp;<i class="fa fa-credit-card fa-1x"></i></font></h1>
 			<p>${sessionScope.id}님의 구매내역입니다.</p>
 		</div>
