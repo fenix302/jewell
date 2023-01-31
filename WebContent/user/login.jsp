@@ -12,7 +12,7 @@
 
     <title>JEWELL 로그인</title>
 
-    <link href="${context}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${context}/css/bootstrap.css" rel="stylesheet">
     <link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -23,7 +23,7 @@
     <script src="${context}/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="${context}/js/bootstrap.min.js"></script>
+    <script src="${context}/js/bootstrap.bundle.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
@@ -83,7 +83,7 @@
 	</div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 offset-md-4">
                 <div class="login-panel panel panel-default"  style="margin-bottom: 57%;">
                     <div class="panel-heading">
                         <h3 class="panel-title">로그인</h3>
@@ -91,25 +91,29 @@
                     <div class="panel-body">
                         <form action="${context}/work/user/login.do" method="post" role="form" id="loginFrm">
                             <fieldset>
-                                <div class="form-group">
+                                <div class="form-group mb-4">
                                     <input class="form-control" placeholder="아이디" id="id" name="id" type="text" autofocus>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mb-4">
                                     <input class="form-control" placeholder="비밀번호" id="pw" name="pw" type="password">
                                 </div>
                                 <div class="form-group user-find">
-                                	<span><a href="${context}/user/idFind.jsp">아이디 찾기</a> | <a href="pwFind.jsp">비밀번호 찾기</a></span> 
+                                	<span><a href="${context}/user/idFind.jsp" class="mr-3">아이디 찾기</a> | <a href="pwFind.jsp">비밀번호 찾기</a></span> 
                                 	<span> | <a href="${context}/work/user/createUser.do">회원가입</a></span><br>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();">Login</button>
-                                <ul class="btn btn-lg btn-block user-kakao-btn">
-									<li onclick="kakaoLogin();">
-								      <a href="javascript:void(0)">
-								          <img alt="카카오로그인" src="/userImg/kakao_login.png">
-								      </a>
-									</li>
-								</ul>
+                                <div class="d-grid gap-2 mt-4">
+	                                <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();">Login</button>
+	                                <ul class="btn btn-lg btn-block user-kakao-btn">
+										<li onclick="kakaoLogin();">
+									      <a href="javascript:void(0)">
+									          <img alt="카카오로그인" src="/userImg/kakao_login.png" style="width: 100%;">
+									      </a>
+										</li>
+									</ul>
+								</div>
+                                
+                                
                                 
                             </fieldset>
                         </form>
