@@ -5,3 +5,18 @@
 	text-align: center !important;
 }
 
+.buy-buy-btn{
+	font-weight: bold !important;
+	background-color: skyblue;
+}
+
+.buy-remove-btn{
+	font-weight: bold !important;
+	background-color: silver;
+	
+}
+
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: none !important;
+    border-top: 1px solid #ddd !important;
+}
