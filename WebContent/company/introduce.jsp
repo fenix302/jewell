@@ -26,7 +26,7 @@
 	<script src="${context}/js/jquery.tubular.1.0.js"></script>
 	<script type="text/javascript">
 		$("document").ready(function() {
-			$('#body').tubular({videoId: 'rdpAs4ER7PA'});
+			$('#body').tubular({videoId: 'V8K6g5cHXLs'});
 		});
 	</script>
 <jsp:include page="/common/foot.jsp"></jsp:include>
