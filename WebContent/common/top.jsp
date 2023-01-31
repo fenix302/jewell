@@ -9,9 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> JEWELL </title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/top.css">
-    <script src="/js/jquery-1.9.1.js"></script>
+    <link href="${context}/css/bootstrap.css" rel="stylesheet">
+    <link href="${context}/css/top.css" rel="stylesheet">
+    
+    <script src="${context}/js/jquery-1.9.1.js"></script>
     <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
     rel="stylesheet"
@@ -25,7 +26,7 @@
             <nav class="navbar navbar-expand-lg navbar-light container justify-content-between" id="navbar-example2">
         <!-- 로고 -->
                 <a class="navbar-brand" href="#">
-                    <img src="../css/images/logo.png" alt="JEWELL">
+                    <img src="${context}/css/images/logo.png" alt="JEWELL">
                 </a>
         <!-- 네비게이션 바 -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
