@@ -80,7 +80,7 @@
    
 
    
-    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="${context}/js/bootstrap.bundle.js"></script>
 
   
 </body>
