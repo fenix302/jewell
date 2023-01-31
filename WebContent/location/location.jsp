@@ -22,18 +22,44 @@
 </head>
 <body>
 <jsp:include page="/common/top.jsp"></jsp:include>
-	<h3>서울 구로구 경인로 557 신한은행 4층</h3>
+	<h3><strong>서울 구로구 경인로 557 신한은행 4층</strong></h3>
 	
 	<div class="container">
 		<div id="map" style="width:100%;height:350px; margin-bottom: 50px"></div>
 	</div>
-	<div class="container text-center">
+	<div class="container text-center mg-b100">
 	  <div class="row">
-	    <div class="col">
+	    <div class="col-md-6">
+	      <img id="locationimg" alt="도보이미지" src="/locationImg/walking_location.svg">
+	    </div>
+	    <div class="col-md-6 text-left">
+			<strong>도보로 오시려면</strong> <br>
+			<br><br>
+			지번 : 구로동 606-4<br>
+			우편번호 : 08216
+	    </div>
+	  </div>
+	</div>
+	<div class="container text-center mg-b100">
+	  <div class="row">
+	    <div class="col-md-6">
 	      <img id="locationimg" alt="버스이미지" src="/locationImg/bus_location.svg">
 	    </div>
-	    <div class="col">
+	    <div class="col-md-6 text-left">
 			<strong>버스로 오시려면</strong> <br>
+			<br><br>
+			지번 : 구로동 606-4<br>
+			우편번호 : 08216
+	    </div>
+	  </div>
+	</div>
+	<div class="container text-center mg-b100">
+	  <div class="row">
+	    <div class="col-md-6">
+	      <img id="locationimg" alt="지하철이미지" src="/locationImg/subway_location.svg">
+	    </div>
+	    <div class="col-md-6 text-left">
+			<strong>지하철로 오시려면</strong> <br>
 			<br><br>
 			지번 : 구로동 606-4<br>
 			우편번호 : 08216
