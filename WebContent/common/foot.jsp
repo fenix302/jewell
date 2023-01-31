@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link href="${context}/css/footer.css" rel="stylesheet">
     <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"  rel="stylesheet" />
 
@@ -29,9 +29,9 @@
             </div>
             <div class="seceond">
                 <div class="sns_logo">
-                    <div class="sns"><a href="#"><img src="../css/images/044-instagram.svg" alt=""></a></div>
-                    <div class="sns"><a href="#"><img src="../css/images/095-twitter.svg" alt=""></a></div>
-                    <div class="sns"><a href="#"><img src="../css/images/023-facebook.svg" alt=""></a></div>
+                    <div class="sns"><a href="#"><img src="${context}/css/images/044-instagram.svg" alt=""></a></div>
+                    <div class="sns"><a href="#"><img src="${context}/css/images/095-twitter.svg" alt=""></a></div>
+                    <div class="sns"><a href="#"><img src="${context}/css/images/023-facebook.svg" alt=""></a></div>
                 </div>
             </div>
             <div class="third">
