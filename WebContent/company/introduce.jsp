@@ -22,7 +22,7 @@
 </head>
 <body>
 <jsp:include page="/common/top.jsp"></jsp:include>
-	<div id="body" style="width: auto; height: 800px"></div>
+	<div id="body"></div>
 	<script src="${context}/js/jquery.tubular.1.0.js"></script>
 	<script type="text/javascript">
 		$("document").ready(function() {
