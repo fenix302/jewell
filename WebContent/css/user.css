@@ -3,6 +3,7 @@
 /* 회원가입 부분 */
 .user-main{
 	text-align: center !important;
+	margin-top: 40px;
 }
 
 
@@ -31,7 +32,7 @@
 }
 
 .user-login-btn{
-	background-color: skyblue;	
+	background-color: skyblue !important;	
 }
 
 .user-kakao-btn{
