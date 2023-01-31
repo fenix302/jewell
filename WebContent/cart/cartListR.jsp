@@ -59,7 +59,7 @@
 </head>
 <body>
 <jsp:include page="/common/top.jsp"></jsp:include>
-	<div id="jumbotron" class="container">
+	<div class="container">
 		<div class="buy-main">
 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1>
 			<p>${sessionScope.id}님의 장바구니입니다.</p>
@@ -114,8 +114,8 @@
 			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.CART_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.CART_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-			                            	<button type="button" class="btn btn-primary" onclick="fn_buy('${dsCartList.CART_CODE}', '${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_PRICE}', '${dsCartList.CART_COUNT}')">구매</button>
-			                            	<button type="button" class="btn btn-danger" onclick="fn_delete('${dsCartList.CART_CODE}', '${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_COUNT}')">삭제</button>
+			                            	<button type="button" class="btn buy-buy-btn" onclick="fn_buy('${dsCartList.CART_CODE}', '${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_PRICE}', '${dsCartList.CART_COUNT}')">구매</button>
+			                            	<button type="button" class="btn buy-remove-btn" onclick="fn_delete('${dsCartList.CART_CODE}', '${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_COUNT}')">삭제</button>
 			                            </td>
 			                         </tr>
 			                        </c:forEach>
