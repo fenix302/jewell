@@ -19,15 +19,27 @@
  />
 
 </head>
+
+<c:set var="homeUrl">${context}/work/product/goMain.do</c:set>
+<c:set var="loginUrl">${context}/user/login.jsp</c:set>
+
+<c:set var="neckUrl">${context}/work/product/retrieveProductList.do?category=N</c:set>
+<c:set var="ringUrl">${context}/work/product/retrieveProductList.do?category=R</c:set>
+<c:set var="braceletUrl">${context}/work/product/retrieveProductList.do?category=B</c:set>
+<c:set var="earUrl">${context}/work/product/retrieveProductList.do?category=E</c:set>
+
+
+
+
 <body>
     <div id="top">
 
         <div class="mybox sticky-top">
             <nav class="navbar navbar-expand-lg navbar-light container justify-content-between" id="navbar-example2">
         <!-- 로고 -->
-                <a class="navbar-brand" href="#">
-                    <img src="${context}/css/images/logo.png" alt="JEWELL">
-                </a>
+	        	<ul class="navbar-brand">
+					<li><a href="${homeUrl}"><img src="${context}/css/images/logo.png" alt="JEWELL"></a></li>
+				</ul>
         <!-- 네비게이션 바 -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -43,11 +55,6 @@
                             </ul>
                         </li>
     
-                        <li class="nav-item myitem">
-                            <a class="nav-link" href="#">Announce</a>
-                        </li>
-    
-    
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu">
@@ -58,6 +65,7 @@
                             </ul>
                         </li>
     
+                       
     
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Community</a>
@@ -67,9 +75,59 @@
                                 <li><a class="dropdown-item" href="#">후기</a></li>
                             </ul>
                         </li>
-    
+                        
+                         <li class="nav-item dropdown" style="margin-right: 70px;">
+                            <c:if test="${sessionScope.id == null}">
+								<p style="display: none;"></p>
+							</c:if>
+                            <c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
+								<a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cart</a>
+							</c:if>
+							<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
+								<a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+							</c:if>
+							<ul class="dropdown-menu">
+								<li>
+									<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
+		                                <a class="dropdown-item" href="${context}/work/cart/retrieveCartList.do">장바구니</a>
+									</c:if>
+									<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
+		                                <a class="dropdown-item" href="${context}/work/product/retrieveProductListForManage.do">재고관리</a>
+									</c:if>
+								</li>
+								<li>
+									<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
+		                                <a class="dropdown-item" href="${context}/work/sell/retrieveBuyList.do">구매내역</a>
+									</c:if>
+									<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
+		                                <a class="dropdown-item" href="${context}/work/sell/retrieveStatisticsForProduct.do">매출통계</a>
+									</c:if>
+								</li>
+								<li>
+									<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
+		                                <a class="dropdown-item" href="${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P">재고현황</a>
+									</c:if>
+								</li>
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="nav-item">
+	    					<c:if test="${sessionScope.id == null}">
+								<a href="${context}/work/user/createUser.do" class="nav-link">회원가입</a>
+							</c:if>
+							<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
+								<a href="${context}/work/user/updateUser.do" class="nav-link">정보수정</a>
+							</c:if>
+                        </li>
+
                         <li class="nav-item myitem">
-                            <a class="nav-link" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Login</a>
+	    					<c:if test="${sessionScope.id == null}">
+								<a href="${loginUrl}" class="nav-link">LOGIN</a>
+							</c:if>
+							<c:if test="${sessionScope.id != null}">
+								<a href="${context}/work/user/logout.do" class="nav-link">LOGOUT</a>
+							</c:if>
                         </li>
                     </ul>
                 </div>
