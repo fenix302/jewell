@@ -53,7 +53,7 @@
 	    </div>
 	  </div>
 	</div>
-	<div class="container text-center">
+	<div class="container text-center mg-b100">
 	  <div class="row">
 	    <div class="col-md-6">
 	      <img id="locationimg" alt="지하철이미지" src="/locationImg/subway_location.svg">
