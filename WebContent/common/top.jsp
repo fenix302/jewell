@@ -11,7 +11,6 @@
     <title> JEWELL </title>
     <link href="${context}/css/bootstrap.css" rel="stylesheet">
     <link href="${context}/css/top.css" rel="stylesheet">
-    
     <script src="${context}/js/jquery-1.9.1.js"></script>
     <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
@@ -49,8 +48,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">회사소개</a></li>
-                                <li><a class="dropdown-item" href="#">오시는 길</a></li>
+                                <li><a class="dropdown-item" href="/company/introduce.jsp">회사소개</a></li>
+                                <li><a class="dropdown-item" href="/company/location.jsp">오시는 길</a></li>
                                 <li><a class="dropdown-item" href="#">FAQ</a></li>
                             </ul>
                         </li>

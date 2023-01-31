@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none !important;
+}
+
+a{
+    text-decoration: none !important;
+    color: black;
+}
+.container-lg{
+    max-width: 100% !important;
+    position: relative;
+	padding-top: 75px;
+}
+
+.container-lg > h3{
+    text-align: center;
+}
+
+.faq_search_box{
+    position: relative;
+    margin-left: 20px;
+    max-width: 98%;
+    margin-top: 40px;
+    border: 3px solid #ddd;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    height: auto;
+    text-align: center;
+}
+
+.form-select{
+    border: 1px solid #726e6e;
+    max-width: 120px;
+    margin-left: 50px;
+    font-size: 11px;
+    height: 38px;
+}
+
+.form-select:focus {
+    box-shadow: 0 0 0 0;
+    border: 1px solid rgb(29, 27, 27);
+}
+
+.container-fluid{
+    position: sticky;
+    margin-top: -38px;
+    max-width: 1650px;
+    float: right;
+}
+
+.form-control{
+    border: 1px solid #726e6e;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0;
+    border: 1px solid rgb(29, 27, 27);
+}
+
+.search_img{
+    border: 1px solid #726e6e;
+    padding-top: 5px;
+    border-radius: 5px;
+    width: 50px;
+}
+
+.faq_menu{
+    margin-top: 30px;
+    clear: both;
+}
+.faq_menu a{
+    display: inline-block;
+    font-size: 13px;
+    padding: 0 15px;
+    margin: 3px 0;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid #726e6e;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 28px;
+    color: #444;
+}
+
+.faq-box{
+    padding-right: 50px !important;
+    max-width: 100% !important;
+    margin-top: 35px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.faq-box_question:hover{
+    font-weight: bold;
+}
+
+.faq-box_question {
+    border-top: 1px solid rgba(68, 68, 68, 0.247);
+    cursor:pointer;
+    line-height: 30px;
+    padding-top: 15px;
+  }
+  
+  .faq-box_question::after {
+    content:"▼";
+    float:right;
+  }
+  
+  .faq-box > ul > li {
+    padding:10px;
+  }
+  
+  .faq-box > ul > li.hover > .faq-box_question::after {
+    content:"▲";
+  }
+  
+  .faq-box_answer {
+    display:none;
+    background-color:#ddd;
+    padding:10px;
+    margin-top: 10px;
+  }
+
+.page-link{
+    color: rgba(0, 0, 0, 0.623) !important;
+  }
+
+.page-link:hover{
+    color: black !important;
+  }
+  
+.page-link:focus {
+    box-shadow: 0 0 0 0 !important;
+    border: 1px solid rgb(29, 27, 27) !important;
+    color: black !important;
+}
