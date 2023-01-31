@@ -112,7 +112,7 @@
                         </li>
                         
                         
-                        <li class="nav-item">
+                        <li class="nav-item myitem">
 	    					<c:if test="${sessionScope.id == null}">
 								<a href="${context}/work/user/createUser.do" class="nav-link">회원가입</a>
 							</c:if>

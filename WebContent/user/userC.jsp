@@ -8,7 +8,7 @@
 		<meta name="description" content="userC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
-	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
+   	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/social-buttons.css" rel="stylesheet">
@@ -25,6 +25,7 @@
 	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
+	<script src="${context}/js/bootstrap.bundle.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript">
@@ -142,26 +143,26 @@
 	</div>
 	<div class="container">
 	<form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form">
-		<div class="form-horizontal">
-			<hr/>
-			<div class="form-group" style="margin-top: 5%;">
-				<label for="id" class="control-label col-md-2"><b>아이디</b></label>
-				<div class="col-md-4">
+		<div class="row justify-content-evenly" style="margin-top: 5%;">
+			<div class="col-md-4">
+				<label for="id" class="control-label"><b>아이디</b></label>
+				<div>
 					<input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
 				</div>
 				<p id="message"></p>
 			</div>
 
-			<div class="form-group">
-				<label for="pw" class="control-label col-md-2"><b>비밀번호</b></label>
-				<div class="col-md-4">
+			<div class="col-md-4">
+				<label for="pw" class="control-label"><b>비밀번호</b></label>
+				<div>
 					<input class="form-control" type="password" name="pw" id="pw" required="required"/>
 				</div>
 			</div>
-
-			<div class="form-group">
+		</div>
+		<div class="row">
+			<div class="col-md-5 offset-md-3">
 				<label for="email" class="control-label col-md-2"><b>이메일</b></label>
-				<div class="col-md-4">
+				<div>
 					<input class="form-control" type="email" name="email" id="email" required="required"/>
 				</div>
 			</div>
@@ -236,7 +237,7 @@
 			<input type="hidden" id="flag" name="flag" value="false">
 		</div>
 	</form>
-	<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form">
+	<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form" class="offset-md-4">
 		<div class="form-group">
 		<label class="control-label col-md-2"></label>
 			<div class="col-md-6">

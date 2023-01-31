@@ -8,7 +8,7 @@
 		<meta name="description" content="userU.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
-	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/social-buttons.css" rel="stylesheet">
@@ -25,6 +25,7 @@
 
 	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="${context}/js/bootstrap.bundle.js"></script>
 
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
    	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -156,8 +157,7 @@
 	</div>
 	<div class="container">
 	<form id="joinFrm" method="post" action="${context}/work/user/updateUser.do" role="form">
-		<div class="form-horizontal">
-			<hr/>
+		<div class="form">
 			<div class="form-group" style="margin-top: 5%;">
 				<label for="id" class="control-label col-md-2"><b>아이디</b></label>
 				<div class="col-md-4">
