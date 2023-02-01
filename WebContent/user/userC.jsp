@@ -227,13 +227,13 @@
 		     		</div>
 	     		</div>
 	     		<div class="col-md-3">
-					<label class="control-label col-md-2"></label>
+					<label for="postnum3" class="control-label col-md-2"></label>
 					<div style="margin-bottom: 15px;">
 						<input class="form-control" type="text" id="postNum3" placeholder="지번주소" disabled="disabled"/>
 					</div>
 				</div>
 				<div class="form-group col-md-3">
-					<label for="postnum3" class="control-label col-md-3"><b>상세주소</b></label>
+					<label for="address1" class="control-label col-md-3"><b>상세주소</b></label>
 					<div>
 						<input class="form-control" type="text" id="address1" placeholder="상세주소"/>
 					</div>
