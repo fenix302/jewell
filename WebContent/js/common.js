@@ -1,7 +1,7 @@
 /**
  * common files
  */
-var context = "/Stationery";
+var context = "/";
 
 function fn_back(){
 	history.back();

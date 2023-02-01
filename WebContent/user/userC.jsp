@@ -264,7 +264,7 @@
 				<div class="form-group col-md-8">
 					<label class="control-label col-md-2"></label>
 					<div class="col-md-6">
-						<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload()"/>
+						<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload();"/>
 						<input type="hidden" id="imageFolder" name="imageFolder" value="userImg">
 					</div>
 				</div>
