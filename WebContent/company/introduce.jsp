@@ -29,6 +29,5 @@
 			$('#body').tubular({videoId: 'V8K6g5cHXLs'});
 		});
 	</script>
-<jsp:include page="/common/foot.jsp"></jsp:include>
 </body>
 </html>
