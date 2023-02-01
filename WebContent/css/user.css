@@ -11,17 +11,17 @@
 
 
 .user-post-btn{
-    background-color: silver;
+    background-color: skyblue !important;
     border: 1px solid black;
     font-weight: bold !important;
 }
 
 .user-back-btn{
-	background-color: silver;
+	background-color: silver !important;
 }
 
 .user-submit-btn{
-	background-color: skyblue;
+	background-color: skyblue !important;
 }
 
 .user-kakao-btn{

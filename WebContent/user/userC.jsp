@@ -142,119 +142,141 @@
 		</div>
 	</div>
 	<div class="container">
-	<form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form">
-		<div class="row justify-content-evenly" style="margin-top: 5%;">
-			<div class="col-md-4">
-				<label for="id" class="control-label"><b>아이디</b></label>
-				<div>
-					<input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
+		<form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form" class="offset-md-2">
+			<div class="form-group row mb-2" style="margin-top: 5%;">
+				<div class="form-group col-md-4">
+					<label for="id" class="control-label"><b>아이디</b></label>
+					<div>
+						<input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
+					</div>
+					<p id="message"></p>
 				</div>
-				<p id="message"></p>
-			</div>
-
-			<div class="col-md-4">
-				<label for="pw" class="control-label"><b>비밀번호</b></label>
-				<div>
-					<input class="form-control" type="password" name="pw" id="pw" required="required"/>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-5 offset-md-3">
-				<label for="email" class="control-label col-md-2"><b>이메일</b></label>
-				<div>
-					<input class="form-control" type="email" name="email" id="email" required="required"/>
+	
+				<div class="form-group col-md-4">
+					<label for="email" class="control-label"><b>이메일</b></label>
+					<div>
+						<input class="form-control" type="email" name="email" id="email" required="required"/>
+					</div>
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="name" class="control-label col-md-2"><b>성명</b></label>
-				<div class="col-md-6">
-					<input class="form-control" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
+			<div class="form-group row mb-2">
+				<div class="form-group col-md-4 mb-2">
+					<label for="pw" class="control-label"><b>비밀번호</b></label>
+					<div>
+						<input class="form-control" type="password" name="pw" id="pw" required="required"/>
+					</div>
+				</div>
+				<div class="form-group col-md-4">
+					<label for="pw1" class="control-label"><b>비밀번호 확인</b></label>
+					<div>
+						<input class="form-control" type="password" name="pw1" id="pw1" required="required"/>
+					</div>
 				</div>
 			</div>
-
-			<div class="form-group">
-				<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
-				<div class="col-md-6">
-					<input class="form-control" type="text" id="birth" name="birth" required="required" maxlength="10"/>
+			<div class="form-group row mb-2">
+				<div class="form-group col-md-4 mb-2">
+					<label for="name" class="control-label"><b>성명</b></label>
+					<div>
+						<input class="form-control" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
+					</div>
+				</div>
+				<div class="form-group col-md-4">
+					<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
+					<div>
+						<input class="form-control" type="text" id="birth" name="birth" required="required" maxlength="10"/>
+					</div>
 				</div>
 			</div>
-
-			<div class="form-group">
-				<label for="phoneCd" class="control-label col-md-2"><b>연락처</b></label>
-				<div class="col-md-2" style="margin-bottom: 15px;">
-		        	<select class="form-control" id="phoneCd" name="phoneCd" required="required">
-						<c:forEach items="${dsCode1}" var="code1">
-							<option value="${code1.commCd}">${code1.commCdNm}</option>
-						</c:forEach>
-		     		</select>
+			<div class="form-group row mb-2">
+				<div class="form-group col-md-2">
+					<label for="phoneCd" class="control-label"><b>연락처</b></label>
+					<div>
+			        	<select class="form-control" id="phoneCd" name="phoneCd" required="required">
+							<c:forEach items="${dsCode1}" var="code1">
+								<option value="${code1.commCd}">${code1.commCdNm}</option>
+							</c:forEach>
+			     		</select>
+		     		</div>
 	     		</div>
-				<div class="col-md-2" style="margin-bottom: 15px;">
+				<div class="col-md-3">
+					<label class="control-label"></label>
 					<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
-				<div class="col-md-2" style="margin-bottom: 15px;">
+				<div class="col-md-3">
+					<label class="control-label"></label>
 					<input class="form-control" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<input type="hidden" id="phoneNum" name="phoneNum">
 			</div>
-
-			<div class="form-group">
-				<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
-				<div class="col-md-3" style="margin-bottom: 15px;">
-					<input class="form-control" type="text" id="postNum1" placeholder="우편번호" disabled="disabled">
+			
+			
+	     	<div class="form-group row">	
+				<div class="form-group col-md-2">
+					<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
+					<div style="margin-bottom: 15px;">
+						<input class="form-control" type="text" id="postNum1" placeholder="우편번호" disabled="disabled">
+					</div>
 				</div>
-				<span class="col-md-1">
-					<input type="button" class="btn user-post-btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
-				</span>
-				<input type="hidden" id="postNum" name="postNum">
+				<div class="col-md-2">
+					<label class="control-label"><b></b></label>
+					<div>
+						<input type="button" class="btn user-post-btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+					</div>
+						<input type="hidden" id="postNum" name="postNum">
+				</div>
 			</div>
-
-			<div class="form-group">
-				<label for="postnum2" class="control-label col-md-2"></label>
-				<div class="col-md-3" style="margin-bottom: 15px;">
-					<input class="form-control" type="text" id="postNum2" placeholder="도로명주소" disabled="disabled"/>
+			<div class="form-group row">
+				<div class="form-group col-md-3">
+					<label for="postnum2" class="control-label col-md-2"></label>
+					<div style="margin-bottom: 15px;">
+						<input class="form-control" type="text" id="postNum2" placeholder="도로명주소" disabled="disabled"/>
+		     		</div>
 	     		</div>
-				<div class="col-md-3" style="margin-bottom: 15px;">
-					<input class="form-control" type="text" id="postNum3" placeholder="지번주소" disabled="disabled"/>
+	     		<div class="col-md-3">
+					<label class="control-label col-md-2"></label>
+					<div style="margin-bottom: 15px;">
+						<input class="form-control" type="text" id="postNum3" placeholder="지번주소" disabled="disabled"/>
+					</div>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="postnum3" class="control-label col-md-3"><b>상세주소</b></label>
+					<div>
+						<input class="form-control" type="text" id="address1" placeholder="상세주소"/>
+					</div>
+					<input type="hidden" id="address" name="address">
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="postnum3" class="control-label col-md-2"><b>상세주소</b></label>
-				<div class="col-md-6">
-					<input class="form-control" type="text" id="address1" placeholder="상세주소"/>
+		</form>
+		<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form" class="offset-md-2">
+			<div class="form-group row">
+				<div class="form-group col-md-3">
+					<label class="control-label col-md-2"><b>사진</b></label>
+					<div>
+						<img id="pic" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
+					</div>
+					<div class="col-md-6">
+						<input type="hidden" id="userImage" name="userImage">
+					</div>
 				</div>
-				<input type="hidden" id="address" name="address">
+				<input type="hidden" id="flag" name="flag" value="false">
 			</div>
-
-			<div class="form-group">
-				<label class="control-label col-md-2"><b>사진</b></label>
-				<img id="pic" style="margin-left: 15px;" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
-				<div class="col-md-6">
-					<input type="hidden" id="userImage" name="userImage">
+			<div class="form-group row" style="margin-bottom: 10%;">
+				<div class="form-group col-md-8">
+					<label class="control-label col-md-2"></label>
+					<div class="col-md-6">
+						<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload()"/>
+						<input type="hidden" id="imageFolder" name="imageFolder" value="userImg">
+					</div>
+				</div>
+				<div class="form-group col-md-4">
+					<label class="col-md-2"></label>
+					<div>
+						<button type="button" class="btn user-back-btn" onclick="fn_back()">뒤로가기</button>
+						<button class="btn user-submit-btn" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
+					</div>
 				</div>
 			</div>
-
-			<input type="hidden" id="flag" name="flag" value="false">
-		</div>
-	</form>
-	<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form" class="offset-md-4">
-		<div class="form-group">
-		<label class="control-label col-md-2"></label>
-			<div class="col-md-6">
-				<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload()"/>
-				<input type="hidden" id="imageFolder" name="imageFolder" value="userImg">
-			</div>
-		</div>
-		<br><br><br>
-		<div class="form-group">
-			<div class="col-md-offset-6 col-md-1">
-				<button type="button" class="btn user-back-btn" onclick="fn_back()">뒤로가기</button>
-			</div>
-			<div class="col-md-1">
-				<button class="btn user-submit-btn" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
-			</div>
-		</div>
-	</form>
+		</form>
 	</div>
 
 	<jsp:include page="../common/foot.jsp"></jsp:include>

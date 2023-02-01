@@ -20,7 +20,7 @@
     
 
     <!-- jQuery -->
-    <script src="${context}/js/jquery.js"></script>
+    <script src="${context}/js/jquery-1.9.1.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${context}/js/bootstrap.bundle.js"></script>
@@ -89,27 +89,29 @@
                         <h3 class="panel-title">로그인</h3>
                     </div>
                     <form action="${context}/work/user/login.do" method="post" role="form" id="loginFrm">
-                        <div class="form-group mb-4">
-                            <input class="form-control" placeholder="아이디" id="id" name="id" type="text" autofocus>
-                        </div>
-                        <div class="form-group mb-4">
-                            <input class="form-control" placeholder="비밀번호" id="pw" name="pw" type="password">
-                        </div>
-                        <div class="form-group user-find">
-                            <span><a href="${context}/user/idFind.jsp">아이디 찾기</a>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="pwFind.jsp">비밀번호 찾기</a></span> 
-                            <span>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="${context}/work/user/createUser.do">회원가입</a></span><br>
-                        </div>
-                        <!-- Change this to a button or input when using this as a form -->
-                        <div class="d-grid gap-2 mt-4">
-                            <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();">Login</button>
-                            <ul class="btn btn-lg btn-block user-kakao-btn">
-					           <li onclick="kakaoLogin();">
-					               <a href="javascript:void(0)">
-							           <img alt="카카오로그인" src="/userImg/kakao_login.png" style="width: 100%;">
-							       </a>
-							    </li>
-					        </ul>
-						</div>
+                		<fieldset>
+	                        <div class="form-group mb-4">
+	                            <input class="form-control" placeholder="아이디" id="id" name="id" type="text" autofocus>
+	                        </div>
+	                        <div class="form-group mb-4">
+	                            <input class="form-control" placeholder="비밀번호" id="pw" name="pw" type="password">
+	                        </div>
+	                        <!-- Change this to a button or input when using this as a form -->
+	                        <div class="d-grid gap-2 mt-4">
+	                            <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();">Login</button>
+	                            <ul class="btn btn-lg btn-block user-kakao-btn">
+						           <li onclick="kakaoLogin();">
+						               <a href="javascript:void(0)">
+								           <img alt="카카오로그인" src="/userImg/kakao_login.png" style="width: 100%;">
+								       </a>
+								    </li>
+						        </ul>
+							</div>
+	                        <div class="form-group user-find">
+	                            <span><a href="${context}/user/idFind.jsp">아이디 찾기</a>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="pwFind.jsp">비밀번호 찾기</a></span> 
+	                            <span>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="${context}/work/user/createUser.do">회원가입</a></span><br>
+	                        </div>
+                    	</fieldset>
                     </form>
                 </div>
             </div>
