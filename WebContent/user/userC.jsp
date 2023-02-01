@@ -19,15 +19,15 @@
     <link href="${context}/css/user.css" rel="stylesheet">
 
 	<script src="${context}/js/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 	<script src="${context}/js/jquery.form.js"></script>
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
 	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
-	<script src="${context}/js/bootstrap.bundle.js"></script>
-    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="${context}/js/bootstrap.bundle.js"></script>
 	<script type="text/javascript">
 
 	var imageFolder;
@@ -193,11 +193,11 @@
 		     		</div>
 	     		</div>
 				<div class="col-md-3">
-					<label class="control-label"></label>
+					<label></label>
 					<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<div class="col-md-3">
-					<label class="control-label"></label>
+					<label></label>
 					<input class="form-control" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<input type="hidden" id="phoneNum" name="phoneNum">
@@ -240,8 +240,6 @@
 					<input type="hidden" id="address" name="address">
 				</div>
 			</div>
-		</form>
-		<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form" class="offset-md-2">
 			<div class="form-group row">
 				<div class="form-group col-md-3">
 					<label class="control-label col-md-2"><b>사진</b></label>
@@ -254,6 +252,8 @@
 				</div>
 				<input type="hidden" id="flag" name="flag" value="false">
 			</div>
+		</form>
+		<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form" class="offset-md-2">
 			<div class="form-group row" style="margin-bottom: 10%;">
 				<div class="form-group col-md-8">
 					<label class="control-label col-md-2"></label>

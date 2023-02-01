@@ -11,12 +11,16 @@
     <title> JEWELL </title>
     <link href="${context}/css/bootstrap.css" rel="stylesheet">
     <link href="${context}/css/top.css" rel="stylesheet">
-    <script src="${context}/js/jquery-1.9.1.js"></script>
-    <script src="${context}/js/common.js"></script>
     <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
     rel="stylesheet"
  />
+
+	<script src="../js/jquery-1.9.1.js"></script>
+    <script src="${context}/js/common.js"></script>
+ 	<script src="${context}/js/bootstrap.bundle.js"></script>
+ 	
+ 	
 <style type="text/css">
 li{
 	cursor: pointer;
@@ -144,8 +148,8 @@ a{
     </div>
    
 
-   
-    <script src="${context}/js/bootstrap.bundle.js"></script>
+
+    
 
   
 </body>
