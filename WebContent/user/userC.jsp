@@ -152,24 +152,18 @@
 					<p id="message"></p>
 				</div>
 	
-				<div class="form-group col-md-4">
-					<label for="email" class="control-label"><b>이메일</b></label>
-					<div>
-						<input class="form-control" type="email" name="email" id="email" required="required"/>
-					</div>
-				</div>
-			</div>
-			<div class="form-group row mb-2">
 				<div class="form-group col-md-4 mb-2">
 					<label for="pw" class="control-label"><b>비밀번호</b></label>
 					<div>
 						<input class="form-control" type="password" name="pw" id="pw" required="required"/>
 					</div>
 				</div>
+			</div>
+			<div class="form-group row mb-2">
 				<div class="form-group col-md-4">
-					<label for="pw1" class="control-label"><b>비밀번호 확인</b></label>
+					<label for="email" class="control-label"><b>이메일</b></label>
 					<div>
-						<input class="form-control" type="password" name="pw1" id="pw1" required="required"/>
+						<input class="form-control" type="email" name="email" id="email" required="required"/>
 					</div>
 				</div>
 			</div>
@@ -188,7 +182,7 @@
 				</div>
 			</div>
 			<div class="form-group row mb-2">
-				<div class="form-group col-md-2">
+				<div class="col-md-2">
 					<label for="phoneCd" class="control-label"><b>연락처</b></label>
 					<div>
 			        	<select class="form-control" id="phoneCd" name="phoneCd" required="required">

@@ -84,9 +84,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4">
-                <div class="login-panel panel panel-default"  style="margin-bottom: 57%;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">로그인</h3>
+                <div class="login-panel"  style="margin-bottom: 57%;">
+                    <div>
+                        <h3>로그인</h3>
                     </div>
                     <form action="${context}/work/user/login.do" method="post" role="form" id="loginFrm">
                 		<fieldset>
@@ -97,7 +97,7 @@
 	                            <input class="form-control" placeholder="비밀번호" id="pw" name="pw" type="password">
 	                        </div>
 	                        <!-- Change this to a button or input when using this as a form -->
-	                        <div class="d-grid gap-2 mt-4">
+	                        <div class="form-group d-grid gap-2 mt-4">
 	                            <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();">Login</button>
 	                            <ul class="btn btn-lg btn-block user-kakao-btn">
 						           <li onclick="kakaoLogin();">
