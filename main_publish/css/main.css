@@ -46,6 +46,8 @@ label{
     left: 30%;
     top: 20%;
     background-color: #ffffff;
+    border-radius: 5px;
+    border: 2px solid #000;
 }
 
 .uptitle{
@@ -57,7 +59,7 @@ label{
 }
 
 .upbody{
-    padding: 30px;
+    padding: 15px 30px 30px 30px;
     text-align: center;
     font-size: 16px;
     line-height: 30px;
@@ -79,15 +81,32 @@ label{
     font-size: 16px;
     font-weight: bold;
     border-radius: 3px;
-    background: #960909;
+    background: #000000;
     position: absolute;
     right: 30px;
-    bottom: 55px;
+    bottom: 40px;
     color: #fff;
 }
 
 #expireChk{
     margin-left: 30px;
+    accent-color: black;
+}
+
+/* 팝업 글씨 */
+.pop_title{
+    background-color: #000;
+    color: #fff;
+}
+
+.pop_day_title{
+    background-color: #000;
+    color: #fff;
+    font-weight: 700;
+}
+
+.pop_announce{
+    color: #666666;
 }
 
 
