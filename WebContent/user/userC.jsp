@@ -185,7 +185,7 @@
 				<div class="col-md-2">
 					<label for="phoneCd" class="control-label"><b>연락처</b></label>
 					<div>
-			        	<select class="form-control" id="phoneCd" name="phoneCd" required="required">
+			        	<select class="form-control" id="phoneCd" name="phoneCd">
 							<c:forEach items="${dsCode1}" var="code1">
 								<option value="${code1.commCd}">${code1.commCdNm}</option>
 							</c:forEach>

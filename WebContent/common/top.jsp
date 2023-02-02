@@ -16,7 +16,6 @@
     rel="stylesheet"
  />
 
-	<script src="../js/jquery-1.9.1.js"></script>
     <script src="${context}/js/common.js"></script>
  	<script src="${context}/js/bootstrap.bundle.js"></script>
  	

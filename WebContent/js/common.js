@@ -31,7 +31,7 @@ function fn_validation(){
 
 			selectedObj = obj.eq(i);
 			$(selectedObj).animate({
-				backgroundColor : "red",
+				backgroundColor : "blue",
 			}, 200, function(){
 				$(selectedObj).animate({
 					backgroundColor : "white",
