@@ -5,14 +5,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta name="description" content="userC.jsp">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="description" content="userC.jsp">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Insert title here</title>
    	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/social-buttons.css" rel="stylesheet">
-	<link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
@@ -27,7 +27,7 @@
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script src="${context}/js/bootstrap.bundle.js"></script>
+<%-- 	<script src="${context}/js/bootstrap.bundle.js"></script> --%>
 	<script type="text/javascript">
 
 	var imageFolder;

@@ -9,7 +9,7 @@
 <meta name="description" content="idFind.jsp">
 
 <title>Insert title here</title>
-<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.css" rel="stylesheet">
 <link href="../css/bootstrap-theme.css" rel="stylesheet">
 <link href="../css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 <link href="../css/plugins/social-buttons.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 
 
 <script src="../js/jquery-1.9.1.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<!-- <script src="../js/bootstrap.bundle.js"></script> -->
 <script src="../js/plugins/metisMenu/metisMenu.min.js"></script>
 
 <script src="../js/sb-admin-2.js"></script>
@@ -61,15 +61,14 @@
 	</div>
 	<div class="container">
 		<div class="form-horizontal" style="margin-bottom: 30%;">
-			<hr/>
 
 			<div class="form-group" style="margin-top: 5%;">
-				<label for="email" class="control-label col-md-2">이메일</label>
-				<div class="col-md-4">
+				<label for="email" class="control-label col-md-2" style="font-weight: bold; margin-bottom: 5px;">이메일</label>
+				<div class="col-md-4" style="margin-bottom: 15px;">
 					<input class="form-control" type="email" name="email" id="email" autofocus="autofocus"/>
 				</div>
-				<div class="col-md-2">
-					<input class="btn btn-default" type="button" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserId()"/>
+				<div class="col-md-3">
+					<input class="btn user-post-btn" type="button" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserId()"/>
 				</div>
 			</div>
 			<div class="form-group" id="message">

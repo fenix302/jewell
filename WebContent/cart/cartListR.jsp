@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>장바구니</title>
 
-	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
@@ -19,12 +19,12 @@
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<%--     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> --%>
     
     <link href="${context}/css/buy.css" rel="stylesheet">
     
 	<script src="${context}/js/jquery-1.9.1.js"></script>
-	<script src="${context}/js/bootstrap.min.js"></script>
+<%-- 	<script src="${context}/js/bootstrap.bundle.js"></script> --%>
 
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
@@ -58,7 +58,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="/common/top.jsp"></jsp:include>
+<jsp:include page="../common/top.jsp"></jsp:include>
 	<div class="container">
 		<div class="buy-main">
 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1>
@@ -131,6 +131,6 @@
 			<!-- /.col-lg-12 -->
 		</div>
 	</div>
-<jsp:include page="/common/foot.jsp"></jsp:include>
+<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>

@@ -23,7 +23,7 @@
     <script src="${context}/js/jquery-1.9.1.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="${context}/js/bootstrap.bundle.js"></script>
+<%--     <script src="${context}/js/bootstrap.bundle.js"></script> --%>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>

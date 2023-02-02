@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta name="description" content="userU.jsp">
+	<meta charset="UTF-8">
+	<meta name="description" content="userU.jsp">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
    	<link href="${context}/css/bootstrap.css" rel="stylesheet">
@@ -27,7 +29,7 @@
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script src="${context}/js/bootstrap.bundle.js"></script>
+<%-- 	<script src="${context}/js/bootstrap.bundle.js"></script> --%>
 	<script type="text/javascript">
 
 	$(document).ready(function(){
