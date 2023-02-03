@@ -141,16 +141,15 @@
 
                 <div class="inner_group">
                     <div class="item1">
-<<<<<<< HEAD
+<!-- 	최진호 수정 예정 -->
        	                 	 <c:forEach items="${dsEarList}" var="dsEarList">
 			                     <div class="col-md-2">
 			                        <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')"><img src="${context}/earImg/${dsEarList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
 			                     </div>
 			                  </c:forEach>
 <%--                         <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div> --%>
-=======
-                        <div class="img"><a href="#"><img src="/css/images/01.jpg" alt="#"></a></div>
->>>>>>> branch 'master' of https://github.com/fenix302/jewell.git
+
+
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -166,7 +165,7 @@
                     </div>
 
                     <div class="item3">
-                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="/css/images/01.jpg" alt="#"></a></div>
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
