@@ -13,11 +13,11 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
     rel="stylesheet"
  />
-    <link href="${context}/css/main.css" rel="stylesheet" >
+    <link rel="stylesheet" href="${context}/css/main.css">
     <script src="${context}/js/jquery-1.9.1.js"></script>
 
     <!-- owl.carousel -->
-    <link href="${context}/css/owl.carousel.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="${context}/css/owl.carousel.min.css">
     <script src="${context}/js/owl.carousel.min.js"></script>
 
     <!-- popup -->
@@ -110,10 +110,10 @@
     <div class="con">
         <div class="banner">
             <div class="owl-carousel">
-                <div class="banner_img"> <img src="${context}/css/images/banner_01.png" alt="#"> </div>
-                <div class="banner_img"> <img src="${context}/css/images/banner_02.png" alt="#"> </div>
-                <div class="banner_img"> <img src="${context}/css/images/banner_03.png" alt="#"> </div>
-                <div class="banner_img"> <img src="${context}/css/images/banner_04.png" alt="#"> </div>
+                <div class="banner_img"> <img src="/css/images/banner_01.png" alt="#"> </div>
+                <div class="banner_img"> <img src="/css/images/banner_02.png" alt="#"> </div>
+                <div class="banner_img"> <img src="/css/images/banner_03.png" alt="#"> </div>
+                <div class="banner_img"> <img src="/css/images/banner_04.png" alt="#"> </div>
                 <!-- 이미지 배너 사이즈 맞게 수정 예정 -->
             </div>
 
@@ -141,12 +141,16 @@
 
                 <div class="inner_group">
                     <div class="item1">
+<<<<<<< HEAD
        	                 	 <c:forEach items="${dsEarList}" var="dsEarList">
 			                     <div class="col-md-2">
 			                        <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')"><img src="${context}/earImg/${dsEarList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
 			                     </div>
 			                  </c:forEach>
 <%--                         <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div> --%>
+=======
+                        <div class="img"><a href="#"><img src="/css/images/01.jpg" alt="#"></a></div>
+>>>>>>> branch 'master' of https://github.com/fenix302/jewell.git
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -154,7 +158,7 @@
                     </div>
 
                     <div class="item2">
-                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="/css/images/01.jpg" alt="#"></a></div>
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -162,7 +166,7 @@
                     </div>
 
                     <div class="item3">
-                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -170,7 +174,7 @@
                     </div>
 
                     <div class="item4">
-                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="/css/images/01.jpg" alt="#"></a></div>
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -189,7 +193,7 @@
 
                 <div class="inner_group">
                     <div class="item1">
-                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="/css/images/01.jpg" alt="#"></a></div>
                         <div class="item_name">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -197,7 +201,7 @@
                     </div>
 
                     <div class="item2">
-                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="/css/images/01.jpg" alt="#"></a></div>
                         <div class="item_name">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -205,7 +209,7 @@
                     </div>
 
                     <div class="item3">
-                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="/css/images/01.jpg" alt="#"></a></div>
                         <div class="item_name">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -213,7 +217,7 @@
                     </div>
 
                     <div class="item4">
-                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="/css/images/01.jpg" alt="#"></a></div>
                         <div class="item_name">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
