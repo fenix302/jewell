@@ -99,11 +99,6 @@ a{
 							<ul class="dropdown-menu">
 								<li>
 									<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
-										<a href="${context}/work/user/updateUser.do" class="nav-link">정보수정</a>
-									</c:if>
-								</li>
-								<li>
-									<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
 		                                <a class="dropdown-item" href="${context}/work/cart/retrieveCartList.do">장바구니</a>
 									</c:if>
 									<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
@@ -119,6 +114,9 @@ a{
 									</c:if>
 								</li>
 								<li>
+									<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
+										<a class="dropdown-item" href="${context}/work/user/updateUser.do">정보수정</a>
+									</c:if>
 									<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
 		                                <a class="dropdown-item" href="${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P">재고현황</a>
 									</c:if>
