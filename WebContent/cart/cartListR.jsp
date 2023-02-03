@@ -43,9 +43,9 @@
 
     });
 
-    function fn_buy(paramCartCode, paramProductCode, paramSellPrice, paramSellCount){
+    function fn_buy(paramProductCode, paramCartPrice, paramCartCount){
     	if(confirm("구매하시겠습니까?")){
-    		location.href = "${context}/work/sell/createSell.do?productCode=" + paramProductCode + "&sellPrice=" + paramSellPrice + "&sellCount=" + paramSellCount + "&cartCode=" + paramCartCode + "&fromCart=true";
+    		location.href = "${context}/work/sell/createSell.do?productCode=" + paramProductCode + "&sellPrice=" + paramCartPrice + "&sellCount=" + paramCartCount;
     	}
     }
 
@@ -114,7 +114,7 @@
 			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.CART_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.CART_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-			                            	<button type="button" class="btn buy-buy-btn" onclick="fn_buy('${dsCartList.CART_CODE}', '${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_PRICE}', '${dsCartList.CART_COUNT}')">구매</button>
+			                            	<button type="button" class="btn buy-buy-btn" onclick="fn_buy('${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_PRICE}', '${dsCartList.CART_COUNT}')">구매</button>
 			                            	<button type="button" class="btn buy-remove-btn" onclick="fn_delete('${dsCartList.CART_CODE}', '${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_COUNT}')">삭제</button>
 			                            </td>
 			                         </tr>

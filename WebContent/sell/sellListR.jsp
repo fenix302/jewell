@@ -11,22 +11,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>주문 정보</title>
 
-	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="${context}/css/bootstrap.css" rel="stylesheet">
+<%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
-	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
 
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<script src="${context}/js/jquery-1.9.1.js"></script>
-	<script src="${context}/js/bootstrap.min.js"></script>
+<%-- 	<script src="${context}/js/bootstrap.min.js"></script> --%>
 
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
-    <script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<%--     <script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script> --%>
+    <script src="${context}/js/plugins/dataTables/datatables.js"></script>
 
     <script src="${context}/js/sb-admin-2.js"></script>
 

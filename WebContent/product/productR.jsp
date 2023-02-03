@@ -9,21 +9,21 @@
 	<meta name="description" content="productR.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>${dsProduct.PRODUCT_NAME}</title>
-	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="${context}/css/bootstrap.css" rel="stylesheet">
+<%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/social-buttons.css" rel="stylesheet">
 	<link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
-		<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
 
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/jquery.form.js"></script>
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
-	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<%-- 	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script> --%>
+    <script src="${context}/js/plugins/dataTables/datatables.js"></script>
 
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 	<script type="text/javascript">
@@ -130,7 +130,7 @@
         	$("#buyBtn").attr("disabled", true);
         	$("#cartBtn").attr("disabled", true);
         };
-
+    });
     window.onload = function(){
     	$(".replyStar").off("mouseover");
     }
