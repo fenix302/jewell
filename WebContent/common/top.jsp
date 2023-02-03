@@ -91,12 +91,17 @@ a{
 								<p style="display: none;"></p>
 							</c:if>
                             <c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
-								<a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cart</a>
+								<a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Page</a>
 							</c:if>
 							<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
 								<a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
 							</c:if>
 							<ul class="dropdown-menu">
+								<li>
+									<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
+										<a href="${context}/work/user/updateUser.do" class="nav-link">정보수정</a>
+									</c:if>
+								</li>
 								<li>
 									<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
 		                                <a class="dropdown-item" href="${context}/work/cart/retrieveCartList.do">장바구니</a>
@@ -125,9 +130,6 @@ a{
                         <li class="nav-item myitem">
 	    					<c:if test="${sessionScope.id == null}">
 								<a href="${context}/work/user/createUser.do" class="nav-link">회원가입</a>
-							</c:if>
-							<c:if test="${sessionScope.id != null && sessionScope.grade != 'A'}">
-								<a href="${context}/work/user/updateUser.do" class="nav-link">정보수정</a>
 							</c:if>
                         </li>
 
