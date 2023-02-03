@@ -12,24 +12,24 @@
 	<title>장바구니</title>
 
 	<link href="${context}/css/bootstrap.css" rel="stylesheet">
-	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
+<%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
-	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
 
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-<%--     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> --%>
+    <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
     <link href="${context}/css/buy.css" rel="stylesheet">
     
 	<script src="${context}/js/jquery-1.9.1.js"></script>
-<%-- 	<script src="${context}/js/bootstrap.bundle.js"></script> --%>
+<!-- 	<script src="../js/bootstrap.bundle.js"></script> -->
 
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
-    <script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<%--     <script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script> --%>
+    <script src="${context}/js/plugins/dataTables/datatables.js"></script>
 
     <script src="${context}/js/sb-admin-2.js"></script>
 
@@ -65,7 +65,7 @@
 			<p>${sessionScope.id}님의 장바구니입니다.</p>
 		</div>
 
-		<div class="row">
+		<div class="row" style="margin-bottom: 10%;">
 			<div class="col-md-12">
 			    <div class="panel panel-default">
 			        <!-- /.panel-heading -->

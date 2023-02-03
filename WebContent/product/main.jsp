@@ -12,6 +12,15 @@
 <link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 <script src="${context}/js/jquery-1.9.1.js"></script>
 <script src="${context}/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+img{
+	cursor: pointer;
+}
+a{
+	text-decoration:none !important;
+}
+</style>
 </head>
 
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>

@@ -10,11 +10,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>구매내역</title>
-
-	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
+	
+	<link href="${context}/css/bootstrap.css" rel="stylesheet">
+<%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
-	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
 
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
 
@@ -24,12 +24,12 @@
     <link href="${context}/css/buy.css" rel="stylesheet">
     
 	<script src="${context}/js/jquery-1.9.1.js"></script>
-	<script src="${context}/js/bootstrap.min.js"></script>
+<%-- 	<script src="${context}/js/bootstrap.min.js"></script> --%>
 
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
-    <script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<%--     <script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script> --%>
+    <script src="${context}/js/plugins/dataTables/datatables.js"></script>
 
     <script src="${context}/js/sb-admin-2.js"></script>
 
@@ -57,7 +57,7 @@
 			<p>${sessionScope.id}님의 구매내역입니다.</p>
 		</div>
 
-		<div class="row">
+		<div class="row" style="margin-bottom: 10%;">
 			<div class="col-md-12">
 			    <div class="panel panel-default">
 			        <!-- /.panel-heading -->
@@ -119,7 +119,7 @@
 			</div>
 			<!-- /.col-lg-12 -->
 			<div class="col-md-1 col-md-offset-11">
-				<button type="button" class="btn btn-success btn-lg"  style="float:right;" onclick="fn_back()">뒤로가기</button>
+				<button type="button" class="btn buy-back-btn"  style="float:right;" onclick="fn_back()">뒤로가기</button>
 			</div>
 		</div>
 	</div>
