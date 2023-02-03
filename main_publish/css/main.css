@@ -95,14 +95,14 @@ label{
 
 /* 팝업 글씨 */
 .pop_title{
-    background-color: #000;
-    color: #fff;
+    background-color: #000 !important;
+    color: #fff !important;
 }
 
 .pop_day_title{
     background-color: #000;
     color: #fff;
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 
 .pop_announce{
@@ -180,23 +180,24 @@ label{
 
 /* 폰트 */
 
-.h3{
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 42px;
-    text-align: center;
+.con_name{
+    font-size: 24px !important;
+    font-weight: 900 !important;
+    margin-bottom: 42px !important;
+    text-align: center !important;
 }
 
-.h4{
-    font-weight: 900;
-    font-size: 18px;
-    color: black;
+.item_name{
+    font-weight: 900 !important;
+    font-size: 18px !important;
+    color: black !important;
 }
 
-.h5{
-    font-size: 14px;
-    color: #666666;
-    line-height: 22px;
+.item_ann{
+    font-size: 14px !important;
+    color: #666666 !important; 
+    line-height: 22px !important;
+    font-weight: 300 !important;
 }
 
 @media (max-width: 1440px) {
