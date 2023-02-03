@@ -41,9 +41,35 @@
 
     <title>JEWELL</title>
 </head>
+
+
+
+
+
+
+
+<c:set var="loginUrl">${context}/user/login.jsp</c:set>
+
+<c:set var="neckUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[0].PRODUCT_CATEGORY_CD}</c:set>
+<c:set var="ringUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[1].PRODUCT_CATEGORY_CD}</c:set>
+<c:set var="braceletUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[2].PRODUCT_CATEGORY_CD}</c:set>
+<c:set var="storageUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[3].PRODUCT_CATEGORY_CD}</c:set>
+
+<c:set var="productManageUrl">${context}/work/product/retrieveProductListForManage.do</c:set>
+<c:set var="statisticsForProductUrl">${context}/work/sell/retrieveStatisticsForProduct.do</c:set>
+<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=R</c:set>
+
+
+
+
+
+
+
+
 <body>
 <jsp:include page="../common/top.jsp"></jsp:include>
 
+  <c:if test="${sessionScope.grade != 'A'}">
     <!-- 팝업 -->
     <div id="modal">
         <div class="modal_up">
@@ -115,7 +141,12 @@
 
                 <div class="inner_group">
                     <div class="item1">
-                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
+       	                 	 <c:forEach items="${dsEarList}" var="dsEarList">
+			                     <div class="col-md-2">
+			                        <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')"><img src="${context}/earImg/${dsEarList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
+			                     </div>
+			                  </c:forEach>
+<%--                         <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div> --%>
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -193,6 +224,31 @@
             </div>
         </div>
     </div>
+  </c:if>
+
+
+<!--     관리자 페이지 입니다 -->
+  <c:if test="${sessionScope.grade == 'A'}">
+         <div class="container" style="margin-top: 10%; margin-bottom: 10%">
+            <div class="row">
+               <div class="col-md-4">
+                   <a href="${productManageUrl}" class="btn btn-primary" style="width: 100%; height: 250px;" role="button">
+                     <h1><span class="glyphicon glyphicon-list-alt" style="font-size: 80px; margin-top: 5%;"></span> <br/>재고관리</h1>
+                  </a>
+               </div>
+               <div class="col-md-4">
+                   <a href="${statisticsForProductUrl}" class="btn btn-danger" style="width: 100%; height: 250px;" role="button">
+                     <h1><span class="glyphicon glyphicon-signal" style="font-size: 80px; margin-top: 5%;"></span> <br/>매출통계</h1>
+                   </a>
+               </div>
+               <div class="col-md-4">
+                   <a href="${statisticsForStockUrl}" class="btn btn-info" style="width: 100%; height: 250px;" role="button">
+                     <h1><span class="glyphicon glyphicon-eye-open" style="font-size: 80px; margin-top: 5%;"></span> <br/>재고현황</h1>
+                    </a>
+               </div>
+            </div>
+         </div>
+  </c:if>
     <jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>
