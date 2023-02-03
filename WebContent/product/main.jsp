@@ -3,157 +3,196 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var ="context"><%=request.getContextPath()%></c:set>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="main.jsp">
-<title>JEWELL</title>
-<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
-<script src="${context}/js/jquery-1.9.1.js"></script>
-<script src="${context}/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="main.jsp">
 
-<style type="text/css">
-img{
-	cursor: pointer;
-}
-a{
-	text-decoration:none !important;
-}
-</style>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
+    rel="stylesheet"
+ />
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery-1.9.1.js"></script>
+
+    <!-- owl.carousel -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <script src="../js/owl.carousel.min.js"></script>
+
+    <!-- popup -->
+    <script src="../js/jquery.cookie.js"></script>
+    <script>
+        $(function () {
+           //쿠키("popup")의 값이 'none'이면 id 값이 인 요소를 숨김니다.
+           if ($.cookie('popup') == 'none') {
+              $('#modal').hide();
+           }
+           var $expireChk = $('#expireChk');
+           $('.closeBtn').on('click', closePop);
+           function closePop() {
+              if ($expireChk.is(':checked')) {
+                 $.cookie('popup', 'none', {expires: 3, path: '/'});
+              }
+              $('#modal').fadeOut('fast');
+           }
+        });
+    </script>
+
+    <title>JEWELL</title>
 </head>
-
-<c:set var="loginUrl">${context}/user/login.jsp</c:set>
-
-<c:set var="neckUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[0].PRODUCT_CATEGORY_CD}</c:set>
-<c:set var="ringUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[1].PRODUCT_CATEGORY_CD}</c:set>
-<c:set var="braceletUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[2].PRODUCT_CATEGORY_CD}</c:set>
-<c:set var="storageUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[3].PRODUCT_CATEGORY_CD}</c:set>
-
-<c:set var="productManageUrl">${context}/work/product/retrieveProductListForManage.do</c:set>
-<c:set var="statisticsForProductUrl">${context}/work/sell/retrieveStatisticsForProduct.do</c:set>
-<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=R</c:set>
-
-<script type="text/javascript"></script>
 <body>
 <jsp:include page="../common/top.jsp"></jsp:include>
-			<c:if test="${sessionScope.grade != 'A'}">
-				<div class="row">
-					<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-				    <!-- Indicators -->
-					<ol class="carousel-indicators">
-				    	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				        <li data-target="#myCarousel" data-slide-to="1"></li>
-				        <li data-target="#myCarousel" data-slide-to="2"></li>
-				        <li data-target="#myCarousel" data-slide-to="3"></li>
-				    </ol>
 
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl}')"><img src="${context}/neckImg/${dsProductList[0].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
-					    </div>
-						<div class="item">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl}')"><img src="${context}/ringImg/${dsProductList[1].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
-					    </div>
-					    <div class="item">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')"><img src="${context}/braceletImg/${dsProductList[2].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
-					    </div>
-					    <div class="item">
-					    	<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')"><img src="${context}/earImg/${dsProductList[3].PRODUCT_IMAGE}" style="width: 54.6%; max-height: 700px !important; margin: auto;"></a>
-					    </div>
-					        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-					            <span class="glyphicon glyphicon-chevron-left"></span>
-					        </a>
-					        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-					            <span class="glyphicon glyphicon-chevron-right"></span>
-					        </a>
-						</div>
-					</div>
-					<hr>
-				</div>
-			<div class="container">
-				<div class="page-header">
-					<h1>팔찌</h1>
-				</div>
-				<div class="jumbotron">
-					<div class="row">
-						<c:forEach items="${dsBraceletList}" var="dsBraceletList">
-							<div class="col-md-4">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')"><img src="${context}/braceletImg/${dsBraceletList.PRODUCT_IMAGE}" class="img-thumbnail"></a>
-							</div>
-						</c:forEach>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="page-header">
-					<h1>목걸이</h1>
-				</div>
-				<div class="jumbotron">
-					<div class="row">
-						<c:forEach items="${dsNeckList}" var="dsNeckList" varStatus="neckIdx">
-							<div class="col-md-4">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl}')"><img src="${context}/neckImg/${dsNeckList.PRODUCT_IMAGE}" class="img-thumbnail" width="100%" height="100%"></a>
-								<c:if test="${neckIdx.index == 2}">
-									&nbsp;
-								</c:if>
-							</div>
-						</c:forEach>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="page-header">
-					<h1>반지</h1>
-				</div>
-					<div class="row">
-						<c:forEach items="${dsRingList}" var="dsRingList" varStatus="ringIdx">
-							<div class="col-md-3">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl}')"><img src="${context}/ringImg/${dsRingList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
-								<c:if test="${ringIdx.index == 3}">
-									&nbsp;
-								</c:if>
-							</div>
-						</c:forEach>
-					</div>
-			</div>
-			<div class="container">
-				<div class="page-header">
-					<h1>귀걸이</h1>
-				</div>
-				<div class="jumbotron">
-					<div class="row">
-						<c:forEach items="${dsEarList}" var="dsEarList">
-							<div class="col-md-2">
-								<a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')"><img src="${context}/earImg/${dsEarList.PRODUCT_IMAGE}" class="img-rounded" width="100%" height="100%"></a>
-							</div>
-						</c:forEach>
-					</div>
-				</div>
-			</div>
-			</c:if>
-			<c:if test="${sessionScope.grade == 'A'}">
-			<div class="container" style="margin-top: 10%; margin-bottom: 10%">
-				<div class="row">
-					<div class="col-md-4">
-					    <a href="${productManageUrl}" class="btn btn-primary" style="width: 100%; height: 250px;" role="button">
-							<h1><span class="glyphicon glyphicon-list-alt" style="font-size: 80px; margin-top: 5%;"></span> <br/>재고관리</h1>
-						</a>
-					</div>
-					<div class="col-md-4">
-					    <a href="${statisticsForProductUrl}" class="btn btn-danger" style="width: 100%; height: 250px;" role="button">
-							<h1><span class="glyphicon glyphicon-signal" style="font-size: 80px; margin-top: 5%;"></span> <br/>매출통계</h1>
-					    </a>
-					</div>
-					<div class="col-md-4">
-					    <a href="${statisticsForStockUrl}" class="btn btn-info" style="width: 100%; height: 250px;" role="button">
-							<h1><span class="glyphicon glyphicon-eye-open" style="font-size: 80px; margin-top: 5%;"></span> <br/>재고현황</h1>
-		    		    </a>
-					</div>
-				</div>
-			</div>
-			</c:if>
+    <!-- 팝업 -->
+    <div id="modal">
+        <div class="modal_up">
+            <div class="uptitle">
+               <span class="pop_title">
+                   JEWELL 설날 연휴영업 안내
+               </span>
+            </div>
+            <div class="upbody">
+               <span class="pop_announce">
+                    2023년 설 연휴 기간 영업 일정을 안내해드립니다. <br><br><br>
+               </span> 
 
-	<jsp:include page="../common/foot.jsp"></jsp:include>
+               <span class="pop_day_title">                
+                    - 연휴 기간 영업 일정 - <br>
+               </span>
+               1월 20일 (금) - 정상 운영<br>
+               1월 23일,24일 (월,화) - 휴무<br>
+               1월 25일(수) - 정상 운영<br><br>
+               
+
+               <span class="pop_announce">               
+                    매장 방문 및 이용에 참고 부탁드리며,<br>
+                    행복하고 즐거운 설 연휴 되시길 바랍니다.<br>
+                    감사합니다.
+               </span>
+            </div>
+            <p class="closewrap">
+                <input type="checkbox" name="expireChk" id="expireChk" />
+                <label for="expireChk">3일동안 이 창 열지 않기</label>
+                <button class="closeBtn">닫기</button>
+            </p>
+        </div>
+    </div>
+
+
+    <!-- 배너 -->
+    <div class="con">
+        <div class="banner">
+            <div class="owl-carousel">
+                <div class="banner_img"> <img src="../css/images/banner_01.png" alt="#"> </div>
+                <div class="banner_img"> <img src="../css/images/banner_02.png" alt="#"> </div>
+                <div class="banner_img"> <img src="../css/images/banner_03.png" alt="#"> </div>
+                <div class="banner_img"> <img src="../css/images/banner_04.png" alt="#"> </div>
+                <!-- 이미지 배너 사이즈 맞게 수정 예정 -->
+            </div>
+
+
+            <script>
+                var owl = $('.owl-carousel');
+                owl.owlCarousel({
+                    items:1,
+                    loop:true,
+                    margin:0,
+                    autoplay:true,
+                    autoplayTimeout:3000,
+                    autoplayHoverPause:true
+                });
+            </script>
+        </div>
+
+
+        <!-- 콘텐츠-BEST -->
+        <div class="content">
+            <div class="best_group">
+                <div class="group_name">
+                    <p class="con_name">BEST</p>
+                </div>
+
+                <div class="inner_group">
+                    <div class="item1">
+                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="item">
+                            <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
+                            <p class="item_ann">설명을 작성하세요</p>
+                        </div>
+                    </div>
+
+                    <div class="item2">
+                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="item">
+                            <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
+                            <p class="item_ann">설명을 작성하세요</p>
+                        </div>
+                    </div>
+
+                    <div class="item3">
+                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="item">
+                            <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
+                            <p class="item_ann">설명을 작성하세요</p>
+                        </div>
+                    </div>
+
+                    <div class="item4">
+                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="item">
+                            <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
+                            <p class="item_ann">설명을 작성하세요</p>
+                        </div>
+                    </div>
+                </div>                
+                
+            </div>
+            
+
+            <!-- 콘텐츠-관심있는 제품 -->
+            <div class="best_group">
+                <div class="group_name">
+                    <p class="con_name">관심있는 상품</p>
+                </div>
+
+                <div class="inner_group">
+                    <div class="item1">
+                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="item_name">
+                            <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
+                            <p class="item_ann">설명을 작성하세요</p>
+                        </div>
+                    </div>
+
+                    <div class="item2">
+                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="item_name">
+                            <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
+                            <p class="item_ann">설명을 작성하세요</p>
+                        </div>
+                    </div>
+
+                    <div class="item3">
+                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="item_name">
+                            <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
+                            <p class="item_ann">설명을 작성하세요</p>
+                        </div>
+                    </div>
+
+                    <div class="item4">
+                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="item_name">
+                            <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
+                            <p class="item_ann">설명을 작성하세요</p>
+                        </div>
+                    </div>
+                </div>               
+                
+            </div>
+        </div>
+    </div>
+    <jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>
