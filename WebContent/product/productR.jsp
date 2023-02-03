@@ -8,7 +8,7 @@
 <head>
 	<meta name="description" content="productR.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
+	<title>${dsProduct.PRODUCT_NAME}</title>
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -129,8 +129,7 @@
         if('${dsProduct.PRODUCT_COUNT}' == 0){
         	$("#buyBtn").attr("disabled", true);
         	$("#cartBtn").attr("disabled", true);
-        }
-    });
+        };
 
     window.onload = function(){
     	$(".replyStar").off("mouseover");

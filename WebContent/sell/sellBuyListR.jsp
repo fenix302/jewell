@@ -58,7 +58,7 @@
 		</div>
 
 		<div class="row" style="margin-bottom: 10%;">
-			<div class="col-md-12">
+			<div class="col-md-12" style="margin-bottom: 10px;">
 			    <div class="panel panel-default">
 			        <!-- /.panel-heading -->
 			        <div class="panel-body">
@@ -118,7 +118,7 @@
 			    <!-- /.panel -->
 			</div>
 			<!-- /.col-lg-12 -->
-			<div class="col-md-1 col-md-offset-11">
+			<div class="col-md-1 offset-md-11">
 				<button type="button" class="btn buy-back-btn"  style="float:right;" onclick="fn_back()">뒤로가기</button>
 			</div>
 		</div>
