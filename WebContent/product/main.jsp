@@ -13,15 +13,15 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
     rel="stylesheet"
  />
-    <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/jquery-1.9.1.js"></script>
+    <link href="${context}/css/main.css" rel="stylesheet" >
+    <script src="${context}/js/jquery-1.9.1.js"></script>
 
     <!-- owl.carousel -->
-    <link rel="stylesheet" href="../css/owl.carousel.min.css">
-    <script src="../js/owl.carousel.min.js"></script>
+    <link href="${context}/css/owl.carousel.min.css" rel="stylesheet" >
+    <script src="${context}/js/owl.carousel.min.js"></script>
 
     <!-- popup -->
-    <script src="../js/jquery.cookie.js"></script>
+    <script src="${context}/js/jquery.cookie.js"></script>
     <script>
         $(function () {
            //쿠키("popup")의 값이 'none'이면 id 값이 인 요소를 숨김니다.
@@ -84,10 +84,10 @@
     <div class="con">
         <div class="banner">
             <div class="owl-carousel">
-                <div class="banner_img"> <img src="../css/images/banner_01.png" alt="#"> </div>
-                <div class="banner_img"> <img src="../css/images/banner_02.png" alt="#"> </div>
-                <div class="banner_img"> <img src="../css/images/banner_03.png" alt="#"> </div>
-                <div class="banner_img"> <img src="../css/images/banner_04.png" alt="#"> </div>
+                <div class="banner_img"> <img src="${context}/css/images/banner_01.png" alt="#"> </div>
+                <div class="banner_img"> <img src="${context}/css/images/banner_02.png" alt="#"> </div>
+                <div class="banner_img"> <img src="${context}/css/images/banner_03.png" alt="#"> </div>
+                <div class="banner_img"> <img src="${context}/css/images/banner_04.png" alt="#"> </div>
                 <!-- 이미지 배너 사이즈 맞게 수정 예정 -->
             </div>
 
@@ -115,7 +115,7 @@
 
                 <div class="inner_group">
                     <div class="item1">
-                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -123,7 +123,7 @@
                     </div>
 
                     <div class="item2">
-                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -131,7 +131,7 @@
                     </div>
 
                     <div class="item3">
-                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -139,7 +139,7 @@
                     </div>
 
                     <div class="item4">
-                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
                         <div class="item">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -158,7 +158,7 @@
 
                 <div class="inner_group">
                     <div class="item1">
-                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
                         <div class="item_name">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -166,7 +166,7 @@
                     </div>
 
                     <div class="item2">
-                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
                         <div class="item_name">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -174,7 +174,7 @@
                     </div>
 
                     <div class="item3">
-                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
                         <div class="item_name">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
@@ -182,7 +182,7 @@
                     </div>
 
                     <div class="item4">
-                        <div class="img"><a href="#"><img src="../css/images/01.jpg" alt="#"></a></div>
+                        <div class="img"><a href="#"><img src="${context}/css/images/01.jpg" alt="#"></a></div>
                         <div class="item_name">
                             <a href="#"><p class="item_name">제품명을 작성하세요</p></a>
                             <p class="item_ann">설명을 작성하세요</p>
