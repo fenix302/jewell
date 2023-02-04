@@ -169,7 +169,7 @@
       <div class="row">
           <div class="panel panel-default">
            <div class="panel-heading">
-              <h3 class="panel-title"><b>[&nbsp;${dsProduct.PRODUCT_CATEGORY_CD_NM}&nbsp;]${dsProduct.PRODUCT_NAME}</b></h3>
+              <h3 class="panel-title"><b>[&nbsp;${dsProduct.PRODUCT_CATEGORY_CD_NM}&nbsp;]&nbsp;${dsProduct.PRODUCT_NAME}</b></h3>
             </div>
             <div class="panel-body">
               <div class="row">
