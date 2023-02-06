@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<title>JEWELL SHOP</title>
+<title>JEWELL SHOP ${dsProductList[0].PRODUCT_CATEGORY_CD_NM}</title>
 <link href="${context}/css/subpage.css" rel="stylesheet">
 
 <link href="${context}/css/bootstrap.css" rel="stylesheet">
@@ -44,7 +44,7 @@
 
 <main class="container">
 	<div>
-    	<h3 style="font-size: 26px; font-weight: 900; text-align: center;">EARING</h3>
+    	<h3 style="font-size: 26px; font-weight: 900; text-align: center;">${dsProductList[0].PRODUCT_CATEGORY_CD_NM}</h3>
  	</div>
 	<h3 style="font-size: 23px; font-weight: 900;">HOT</h3>
     <div class="group">
@@ -80,7 +80,7 @@
     
       <div class="group">
 	    <div class="li_1">
-			<div class="box-wrap row  justify-content-start">
+			<div class="box-wrap row  justify-content-start align-items-end">
 		<h3 style="font-size: 23px; font-weight: 900;">상품</h3>
 <!--        <h4 style="font-size: 14px; font-weight: 100; text-align: right;">see more</h4> -->
 			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx">
