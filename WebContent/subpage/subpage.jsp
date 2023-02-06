@@ -6,11 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="description" content="ear.jsp">
+<meta name="description" content="subpage.jsp">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>${dsProductList.PRODUCT_CATEGORY_CD}</title>
 <link href="${context}/css/subpage.css" rel="stylesheet">
 
 <link href="${context}/css/bootstrap.css" rel="stylesheet">
