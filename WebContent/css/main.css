@@ -10,6 +10,9 @@
    font-family: 'Noto Sans KR', sans-serif;
 }
 
+a{
+	cursor: pointer;
+}
 
 .con{
     max-width: 100%;
@@ -154,7 +157,7 @@ label{
 
 /* �젣�뭹 */
 .item1, .item2, .item3, .item4 {
-    min-width: 345px;
+    max-width: 345px;
     height: 100%;
     margin: 0 auto;
     margin-bottom: 60px;
@@ -192,6 +195,7 @@ label{
 }
 
 .item_ann{
+	
     font-size: 14px !important;
     color: #666666 !important; 
     line-height: 22px !important;
