@@ -68,10 +68,10 @@ a{
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="${earUrl}">귀걸이</a></li>
-                                <li><a class="dropdown-item" href="${neckUrl}">목걸이</a></li>
-                                <li><a class="dropdown-item" href="${ringUrl}">반지</a></li>
-                                <li><a class="dropdown-item" href="${braceletUrl}">팔찌</a></li>
+                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')">귀걸이</a></li>
+                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl}')">목걸이</a></li>
+                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl}')">반지</a></li>
+                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')">팔찌</a></li>
                             </ul>
                         </li>
     

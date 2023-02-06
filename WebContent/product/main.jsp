@@ -145,7 +145,6 @@
 
                 <div class="inner_group">
                     <div class="item1">
-<!-- 	최진호 수정 예정 -->
 	                    <div class="img">
 	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl1}')" ><img src="${context}/earImg/ear06.jpg" ></a>
 	                    </div>

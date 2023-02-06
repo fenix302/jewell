@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<title>${dsProductList.PRODUCT_CATEGORY_CD}</title>
+<title>JEWELL SHOP</title>
 <link href="${context}/css/subpage.css" rel="stylesheet">
 
 <link href="${context}/css/bootstrap.css" rel="stylesheet">
@@ -42,129 +42,86 @@
 <body>
 <jsp:include page="../common/top.jsp"></jsp:include>
 
-<main>
-    <h3 style="font-size: 26px; font-weight: 900; text-align: center;">EARING</h3>
- 
+<main class="container">
+	<div>
+    	<h3 style="font-size: 26px; font-weight: 900; text-align: center;">EARING</h3>
+ 	</div>
+	<h3 style="font-size: 23px; font-weight: 900;">HOT</h3>
     <div class="group">
 	    <div class="li_1">
-		<h3 style="font-size: 23px; font-weight: 900;">HOT</h3>
-<!--         <h4 style="font-size: 14px; font-weight: 100; text-align: right;">see more</h4> -->
-		<div class="box-wrap">
-			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx">
-			<div class="col-md-6">
-					<a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image" src="${context}/binderImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail"></a>
-					<script type="text/javascript">
-					 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
-	
-						if(productCategoryCd == 'N'){
-							imageFolder = "neckImg";
-						}else if(productCategoryCd == 'R'){
-							imageFolder = "ringImg";
-						}else if(productCategoryCd == 'E'){
-							imageFolder = "earImg";
-						}else if(productCategoryCd == 'B'){
-							imageFolder = "braceletImg";
-						}
-						path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
-	
-						existFolder = path.split("/")[1];
-						$("img[name='image']").eq('${dsProductIdx.index}').attr("src", path.replace(existFolder, imageFolder));
-					</script>
+			<div class="box-wrap row">
+				<div class="col-md-3">
+					<img src="${content}/css/images/345.jpg" alt="샘플이미지">
+					<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
+					<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
+					<button type="submit" style="width: 100%;">"Add to Cart ------ 14,000원"</button>
 				</div>
-			</c:forEach>
-<!-- 			<div class="box"> -->
-<%-- 				<img src="${content}/css/images/345.jpg" alt="샘플이미지"> --%>
-<!-- 				<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1> -->
-<!-- 				<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2> -->
-<!-- 				<button type="submit">"Add to Cart ------ 14,000원"</button> -->
-<!-- 			</div> -->
-<!-- 			<div class="box"> -->
-<%-- 				<img src="${content}/css/images/345.jpg" alt="샘플이미지"> --%>
-<!-- 				<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1> -->
-<!-- 				<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2> -->
-<!-- 				<button type="submit">"Add to Cart ------ 14,000원"</button> -->
-<!-- 			</div> -->
-<!-- 			<div class="box"> -->
-<%-- 				<img src="${content}/css/images/345.jpg" alt="샘플이미지"> --%>
-<!-- 				<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1> -->
-<!-- 				<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2> -->
-<!-- 				<button type="submit">"Add to Cart ------ 14,000원"</button> -->
-<!-- 			</div> -->
-<!-- 			<div class="box"> -->
-<%-- 				<img src="${content}/css/images/345.jpg" alt="샘플이미지"> --%>
-<!-- 				<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1> -->
-<!-- 				<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2> -->
-<!-- 				<button type="submit">"Add to Cart ------ 14,000원"</button> -->
-<!-- 			</div> -->
+				<div class="col-md-3">
+					<img src="${content}/css/images/345.jpg" alt="샘플이미지">
+					<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
+					<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
+					<button type="submit" style="width: 100%;">"Add to Cart ------ 14,000원"</button>
+				</div>
+				<div class="col-md-3">
+					<img src="${content}/css/images/345.jpg" alt="샘플이미지">
+					<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
+					<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
+					<button type="submit" style="width: 100%;">"Add to Cart ------ 14,000원"</button>
+				</div>
+				<div class="col-md-3">
+					<img src="${content}/css/images/345.jpg" alt="샘플이미지">
+					<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
+					<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
+					<button type="submit" style="width: 100%;">"Add to Cart ------ 14,000원"</button>
+				</div>
+			</div>
 		</div>
 	</div>
     
-    </div>
       <div class="group">
 	    <div class="li_1">
-		<h3 style="font-size: 23px; font-weight: 900;">HOT</h3>
-        <h4 style="font-size: 14px; font-weight: 100; text-align: right;">see more</h4>
-		<div class="box-wrap">
-			<div class="box">
-				<img src="${content}/css/images/345.jpg" alt="샘플이미지">
-				<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
-				<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
-				<button type="submit">"Add to Cart ------ 14,000원"</button>
-			</div>
-			<div class="box">
-				<img src="${content}/css/images/345.jpg" alt="샘플이미지">
-				<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
-				<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
-				<button type="submit">"Add to Cart ------ 14,000원"</button>
-			</div>
-			<div class="box">
-			<img src="${content}/css/images/345.jpg" alt="샘플이미지">
-				<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
-				<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
-				<button type="submit">"Add to Cart ------ 14,000원"</button>
-			</div>
-			<div class="box">
-				<img src="${content}/css/images/345.jpg" alt="샘플이미지">
-				<h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
-				<h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
-				<button type="submit">"Add to Cart ------ 14,000원"</button>
-			</div>
-		</div>
-	</div> 
-</div>
-<div class="group">
-    <div class="li_1">
-    <div class="box-wrap">
-        <div class="box">
-          <img src="${content}/css/images/345.jpg" alt="샘플이미지">
-            <h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
-            <h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
-            <button type="submit">"Add to Cart ------ 14,000원"</button>
-        </div>
-        <div class="box">
-            <img src="${content}/css/images/345.jpg" alt="샘플이미지">
-            <h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
-            <h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
-            <button type="submit">"Add to Cart ------ 14,000원"</button>
-        </div>
-        <div class="box">
-            <img src="${content}/css/images/345.jpg" alt="샘플이미지">
-            <h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
-            <h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
-            <button type="submit">"Add to Cart ------ 14,000원"</button>
-        </div>
-        <div class="box">
-          <img src="${content}/css/images/345.jpg" alt="샘플이미지">
-            <h1 style="font-size: 18px; font-weight: 900;">제품명을 입력해주세요</h1>
-            <h2 style="font-size: 14px; font-weight: 400;">제품 설명</h2>
-            <button type="submit">"Add to Cart ------ 14,000원"</button>
-        </div>
-    </div>
-</div>
-</div>
-    
+			<div class="box-wrap row  justify-content-start">
+		<h3 style="font-size: 23px; font-weight: 900;">상품</h3>
+<!--        <h4 style="font-size: 14px; font-weight: 100; text-align: right;">see more</h4> -->
+			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx">
+			<div class="col-md-3 mb-5">
+<!-- 			클래스 img-thumbnail로 사진 스타일 변경 가능 -->
+				<img name="image" src="${context}/binderImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3">
+				<script type="text/javascript">
+				 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
 
-    </main>
+					if(productCategoryCd == 'N'){
+						imageFolder = "neckImg";
+					}else if(productCategoryCd == 'R'){
+						imageFolder = "ringImg";
+					}else if(productCategoryCd == 'E'){
+						imageFolder = "earImg";
+					}else if(productCategoryCd == 'B'){
+						imageFolder = "braceletImg";
+					}
+					path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
+
+					existFolder = path.split("/")[1];
+					$("img[name='image']").eq('${dsProductIdx.index}').attr("src", path.replace(existFolder, imageFolder));
+				</script>
+				<div class="row align-items-end">
+					<div class="col-md-12">
+						<h4><b>${dsProductList.PRODUCT_NAME}</b></font></h4>
+			        </div>
+			        <div class="col-md-12 pull-bottom">
+			        <button type="btn" style="width: 100%;"><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">"Add to Cart ------ ${dsProductList.PRODUCT_UNIT_PRICE}원"</a></button>
+<%-- 			        	<h4 style="font-family: inherit;"><b>${dsProductList.PRODUCT_UNIT_PRICE}원</b></h4> --%>
+			        </div>
+<!-- 			        <div class="col-md-12"> -->
+<%-- 				        <h4 style="font-family: inherit;"><font color="lightblack"><b>남은 수량 : ${dsProductList.PRODUCT_COUNT}</b></font></h4> --%>
+<!-- 			        </div> -->
+		        </div>
+			</div>
+			</c:forEach>
+		</div>
+		</div> 
+	</div>
+</main>
 
 <jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
