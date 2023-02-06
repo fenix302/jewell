@@ -14,6 +14,14 @@ CREATE SEQUENCE SELL_SEQ;
 DROP SEQUENCE CART_SEQ;
 CREATE SEQUENCE CART_SEQ;
 
+-- 카드결제 시퀀스
+drop sequence card_seq
+create sequence card_seq
+     minvalue 1
+     maxvalue 999999
+     start with 1
+     increment by 1
+     cache 20;
 
 DROP TABLE TB_COM_CODE CASCADE CONSTRAINT;
 CREATE TABLE TB_COM_CODE(
@@ -171,6 +179,16 @@ CREATE TABLE TB_MARK(
   CONSTRAINT TB_MARK_PK PRIMARY KEY(PRODUCT_CODE, USER_CODE),
   CONSTRAINT TB_MARK_FK_PRODUCT FOREIGN KEY(PRODUCT_CODE) REFERENCES TB_PRODUCT(PRODUCT_CODE),
   CONSTRAINT TB_MARK_FK_USER FOREIGN KEY(USER_CODE) REFERENCES TB_COM_USER(USER_CODE)
+);
+
+-- 카드결제 정보
+drop table pay_import cascade constraint;
+create table pay_import(
+	pay_id varchar2(50) not null primary key,
+	import_id varchar2(50),
+	pay_amount int,
+	per_num varchar2(50),
+	per_time date
 );
 
 DROP TABLE TB_POST CASCADE CONSTRAINT;

@@ -28,7 +28,9 @@
 <%--     <script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script> --%>
     <script src="${context}/js/plugins/dataTables/datatables.js"></script>
 
-    <script src="${context}/js/sb-admin-2.js"></script>
+<%--     <script src="${context}/js/sb-admin-2.js"></script> --%>
+    
+   	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 
     <script>
 	var existFolder = '';
@@ -88,6 +90,56 @@
 			location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
 		}
     }
+    
+    function fn_cd_buy(paramSellCode, paramSellCount, paramProductCode) {
+        if(confirm("결제하시겠습니까?")){
+    		var IMP = window.IMP;
+    		IMP.init('imp28503804'); //iamport 대신 자신의 "가맹점 식별코드"를 사용하시면 됩니다
+    		// IMP.request_pay(param, callback) 결제창 호출
+    	      IMP.request_pay({ // param
+    	          pg: "html5_inicis",
+    	          pay_method: "card",
+    	          merchant_uid: 'merchant_' + new Date().getTime(),
+    	          name: "goods",
+    	          amount: 10,
+    	          buyer_email: "star@nate.com",
+    	          buyer_name: "장나라",
+    	          buyer_tel: "010-1234-5678",
+    	          buyer_addr: "서울특별시 강남구 신사동",
+    	          buyer_postcode: "01111",
+    	          m_redirect_url : "/paymentDone.do"
+    	      }, function (rsp) { // callback
+    	          if (rsp.success) {
+    	             var paymentInfo = {
+    	            		 imp_uid : rsp.imp_uid,
+    	            		 merchant_uid : rsp.merchant_uid,
+    	            		 paid_amount : rsp.paid_amound,
+    	            		 apply_num : rsp.apply_num,
+    	            		 paid_at : new Date()
+    	             };
+    	           
+    	          $.ajax({
+    	        	 url : "/paymentProcess.do",
+    	        	 method : "POST",
+    	        	 contentType : "application/json",
+    	        	 data : JSON.stringify(paymentInfo),
+    	        	 success:function(data, textStatus){
+    	        		 console.log(paymentInfo);
+    	        		 location.href = "/paymentDone.do";
+    	        	 },
+    	        	 error : function(e) {
+    					console.log(e);
+    				}        	  
+    	          });
+    	          location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
+    	          } else {
+    	              alert("결제 실패 : " + rsp.error_msg);	        	  
+    	          }
+    	      });
+    	    }
+        }
+    
+    
     </script>
 </head>
 <body>
@@ -145,7 +197,8 @@
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-			                            	<button type="button" class="btn btn-primary" onclick="fn_finalBuy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button>
+<%-- 			                            	<button type="button" class="btn btn-primary" onclick="fn_finalBuy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button> --%>
+			                            	<button type="button" class="btn btn-primary" onclick="fn_cd_buy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button>
 			                            </td>
 			                         </tr>
 			                        </c:forEach>
