@@ -38,9 +38,29 @@
 }
 
 .user-login-btn{
-	background-color: skyblue !important;	
+	background-color: black !important;	
+	height: 58px !important;
+	color : #fff !important;
 }
 
 .user-kakao-btn{
 	display: block !important;
+}
+
+
+/* 추가 */
+
+/* 아이디 비빌먼호 창 높이*/
+.form-control{
+	height: 58px;
+}
+
+
+/* 아이디,비밀번호 찾기/회원가입 글자 색상+호버링*/
+.form-group>span>a{
+	color: #999 !important;
+}
+
+.form-group>span>a:hover {
+	color: #000 !important;
 }
