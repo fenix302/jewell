@@ -141,7 +141,7 @@ public class ProductController {
 		List<Map<String, String>> dsProductList = productService.retrieveProductList(productParam);
 
 		mv.addObject("dsProductList", dsProductList);
-		mv.setViewName("/product/productListR");
+		mv.setViewName("/subpage/subpage");
 		return mv;
 	}
 
