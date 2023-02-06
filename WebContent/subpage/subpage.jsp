@@ -104,11 +104,11 @@
 					existFolder = path.split("/")[1];
 					$("img[name='image']").eq('${dsProductIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 				</script>
-				<div class="row align-items-end">
+				<div class="row">
 					<div class="col-md-12">
 						<h4><b>${dsProductList.PRODUCT_NAME}</b></font></h4>
 			        </div>
-			        <div class="col-md-12 pull-bottom">
+			        <div class="col-md-12">
 			        <button type="btn" style="width: 100%;"><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">"Add to Cart ------ ${dsProductList.PRODUCT_UNIT_PRICE}원"</a></button>
 <%-- 			        	<h4 style="font-family: inherit;"><b>${dsProductList.PRODUCT_UNIT_PRICE}원</b></h4> --%>
 			        </div>
