@@ -85,9 +85,7 @@
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <div class="login-panel"  style="margin-bottom: 57%;">
-                    <div>
-                        <h3>로그인</h3>
-                    </div>
+
                     <form action="${context}/work/user/login.do" method="post" role="form" id="loginFrm">
                 		<fieldset>
 	                        <div class="form-group mb-4">
