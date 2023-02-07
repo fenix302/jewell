@@ -97,14 +97,18 @@
 	                        <!-- Change this to a button or input when using this as a form -->
 	                        <div class="form-group d-grid gap-2 mt-4">
 	                            <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();"><strong>Login</strong></button>
+	                            
+	                            
 	                            <ul class="btn btn-lg btn-block user-kakao-btn">
 						           <li onclick="kakaoLogin();">
 						               <a href="javascript:void(0)">
-								           <img alt="카카오로그인" src="/userImg/kakao_login.png" style="width: 100%;">
+						               		<button type="button" class="btn btn-lg btn-block kakao-btn" ><strong>카카오로그인</strong></button>
+								           <!-- <img alt="카카오로그인" src="/userImg/kakao_login.png" style="width: 100%;"> -->
 								       </a>
 								    </li>
 						        </ul>
 							</div>
+							
 	                        <div class="form-group user-find">
 	                            <span><a href="${context}/user/idFind.jsp">아이디 찾기</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="pwFind.jsp">비밀번호 찾기</a></span> 
 	                            <span>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="${context}/work/user/createUser.do">회원가입</a></span><br>

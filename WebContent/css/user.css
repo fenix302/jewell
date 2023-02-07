@@ -29,15 +29,33 @@
 
 .user-kakao-btn{
 	list-style: none;	
+	margin: 0 !important;
+	padding: 0 !important;
 }
+
+/* 카카오 로그인 버튼(이미지x) */
+.kakao-btn{
+	width: 100% !important;
+	height: 50px !important;
+	font-size : 16px !important;
+	background-color: #fee500;
+	margin-bottom: 20px !important;
+}
+
+.kakao-btn:hover{
+	color : #000 !important;
+}
+
 
 /* 로그인 부분 */
 .user-find{
 	text-align: center;
+	margin-top: 20px;
 }
 
 .user-find a{
 	text-decoration: none !important;
+	font-size : 14px !important;
 }
 
 .user-login-btn{
@@ -49,6 +67,12 @@
 
 .user-kakao-btn{
 	display: block !important;
+}
+
+.kakao-btn{
+	background-color: #fee500 !important;
+	width : 100% !important;
+	height: 50px !important;
 }
 
 
