@@ -39,11 +39,14 @@
 	height: 50px !important;
 	font-size : 16px !important;
 	background-color: #fee500;
-	margin-bottom: 20px !important;
 }
 
 .kakao-btn:hover{
 	color : #000 !important;
+}
+
+.kakao-btn:active{
+	border: none !important;
 }
 
 
