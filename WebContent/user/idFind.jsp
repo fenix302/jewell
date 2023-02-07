@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description" content="idFind.jsp">
 
-<title>Insert title here</title>
+<title>JEWELL</title>
 <link href="../css/bootstrap.css" rel="stylesheet">
 <link href="../css/bootstrap-theme.css" rel="stylesheet">
 <link href="../css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -53,14 +53,29 @@
 </script>
 </head>
 <body>
+<!-- 헤더 -->
 	<jsp:include page="../common/top.jsp"></jsp:include>
-	<div id="jumbotron" class="container">
+	
+	
+<!-- 페이지 헤더 -->
+<div class="page_header">
+	 <div class="idFind_header">
+	       <div class="name">
+	             <p class="comeText">아이디 찾기</p>
+	        </div>
+	  </div>
+</div>
+
+<!-- 	<div id="jumbotron" class="container">
 		<div class="user-main">
 			<h2><font color="black"><strong>아이디 찾기</strong></font></h2>
 		</div>
-	</div>
+	</div> -->
+	
+	
+<!-- 본문 -->
 	<div class="container">
-		<div class="form-horizontal" style="margin-bottom: 20%;">
+		<div class="form-horizontal" style="margin-bottom: 140px;">
 
 			<div class="col-md-4 offset-md-4" style="margin-top: 5%;">
 				<div class="email-group">
@@ -73,6 +88,8 @@
 	                            <button type="button" class="btn btn-lg user-post-btn btn-block" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserId()">아이디 찾기</button>      
 					</div>
 					
+					
+				<!--  이전 버튼 -->					
 <!-- 					<div class="col-md-4">
 						<input class="btn user-post-btn btn-block" type="button" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserId()"/>
 					</div> -->
