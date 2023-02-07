@@ -1,8 +1,0 @@
-
-SQL*Loader: Release 11.2.0.1.0 - Production on 수 1월 18 23:21:44 2023
-
-Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
-
-SQL*Loader-128: 세션을 시작할 수 없습니다.
-ORA-01017: invalid username/password; logon denied
-
