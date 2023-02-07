@@ -11,9 +11,12 @@
 
 
 .user-post-btn{
-    background-color: skyblue !important;
+    background-color: black !important;
+    color : #fff !important;
     border: 1px solid black;
     font-weight: bold !important;
+    font-size : 16px !important;
+    height: 50px !important;
 }
 
 .user-back-btn{
@@ -39,8 +42,9 @@
 
 .user-login-btn{
 	background-color: black !important;	
-	height: 58px !important;
+	height: 50px !important;
 	color : #fff !important;
+	font-size : 16px !important;
 }
 
 .user-kakao-btn{
@@ -48,11 +52,16 @@
 }
 
 
-/* 추가 */
+/* 아이디찾기 */
+.email-group{
+	margin: 0 auto;
+}
+
+
 
 /* 아이디 비빌먼호 창 높이*/
 .form-control{
-	height: 58px;
+	height: 50px;
 }
 
 

@@ -56,19 +56,27 @@
 	<jsp:include page="../common/top.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="user-main">
-			<h1><font color="black"><strong>아이디 찾기</strong></font></h1>
+			<h2><font color="black"><strong>아이디 찾기</strong></font></h2>
 		</div>
 	</div>
 	<div class="container">
 		<div class="form-horizontal" style="margin-bottom: 30%;">
 
-			<div class="form-group" style="margin-top: 5%;">
-				<label for="email" class="control-label col-md-2" style="font-weight: bold; margin-bottom: 5px;">이메일</label>
-				<div class="col-md-4" style="margin-bottom: 15px;">
-					<input class="form-control" type="email" name="email" id="email" autofocus="autofocus"/>
-				</div>
-				<div class="col-md-3">
-					<input class="btn user-post-btn" type="button" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserId()"/>
+			<div class="col-md-4 offset-md-4" style="margin-top: 5%;">
+				<div class="email-group">
+					<label for="email" class="control-label col-md-2" style="font-weight: bold; margin-bottom: 5px;">이메일</label>
+					<div class="form-group mb-4" style="margin-bottom: 15px;">
+						<input class="form-control" type="email" name="email" id="email" autofocus="autofocus"/>
+					</div>
+					
+					 <div class="form-group d-grid gap-2 mt-4">
+	                            <button type="button" class="btn btn-lg user-post-btn btn-block" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserId()">아이디 찾기</button>      
+					</div>
+					
+<!-- 					<div class="col-md-4">
+						<input class="btn user-post-btn btn-block" type="button" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserId()"/>
+					</div> -->
+					
 				</div>
 			</div>
 			<div class="form-group" id="message">

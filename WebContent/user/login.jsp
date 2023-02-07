@@ -96,7 +96,7 @@
 	                        </div>
 	                        <!-- Change this to a button or input when using this as a form -->
 	                        <div class="form-group d-grid gap-2 mt-4">
-	                            <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();">Login</button>
+	                            <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();"><strong>Login</strong></button>
 	                            <ul class="btn btn-lg btn-block user-kakao-btn">
 						           <li onclick="kakaoLogin();">
 						               <a href="javascript:void(0)">

@@ -58,7 +58,7 @@
 	<jsp:include page="../common/top.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="user-main">
-			<h1><font color="black"><strong>비밀번호 찾기</strong></font></h1>
+			<h2><font color="black"><strong>비밀번호 찾기</strong></font></h2>
 		</div>
 	</div>
 	<div class="container">
