@@ -106,8 +106,8 @@
 						        </ul>
 							</div>
 	                        <div class="form-group user-find">
-	                            <span><a href="${context}/user/idFind.jsp">아이디 찾기</a>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="pwFind.jsp">비밀번호 찾기</a></span> 
-	                            <span>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="${context}/work/user/createUser.do">회원가입</a></span><br>
+	                            <span><a href="${context}/user/idFind.jsp">아이디 찾기</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="pwFind.jsp">비밀번호 찾기</a></span> 
+	                            <span>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="${context}/work/user/createUser.do">회원가입</a></span><br>
 	                        </div>
                     	</fieldset>
                     </form>

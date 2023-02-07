@@ -60,7 +60,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="form-horizontal" style="margin-bottom: 30%;">
+		<div class="form-horizontal" style="margin-bottom: 20%;">
 
 			<div class="col-md-4 offset-md-4" style="margin-top: 5%;">
 				<div class="email-group">

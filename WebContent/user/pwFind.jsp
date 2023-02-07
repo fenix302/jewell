@@ -61,30 +61,36 @@
 			<h2><font color="black"><strong>비밀번호 찾기</strong></font></h2>
 		</div>
 	</div>
+	
 	<div class="container">
 		<div class="form-horizontal" style="margin-bottom: 20%;">
-
-			<div class="form-group" style="margin-top: 5%;">
-				<label for="email" class="control-label col-md-2" style="font-weight: bold; margin-bottom: 5px;" >아이디</label>
-				<div class="col-md-4">
-					<input class="form-control" type="text" name="id" id="id" autofocus="autofocus" style="margin-bottom: 10px;"/>
+			<div class="col-md-4 offset-md-4" style="margin-top: 5%;">
+			
+				<div class="id-group">
+					<label for="email" class="control-label col-md-2" style="font-weight: bold; margin-bottom: 5px;" >아이디</label>
+					<div class="form-group mb-4">
+						<input class="form-control" type="text" name="id" id="id" autofocus="autofocus" style="margin-bottom: 10px;"/>
+					</div>
 				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="email" class="control-label col-md-2" style="font-weight: bold; margin-bottom: 5px;">이메일</label>
-				<div class="col-md-4">
-					<input class="form-control" type="email" name="email" id="email" style="margin-bottom: 15px;"/>
+				
+				<div class="email-group2">
+					<label for="email" class="control-label col-md-2" style="font-weight: bold; margin-bottom: 5px;">이메일</label>
+					<div class="form-group mb-4" style="margin-bottom: 15px;">
+						<input class="form-control" type="email" name="email" id="email" autofocus="autofocus"/>
+					</div>
+					
+					 <div class="form-group d-grid gap-2 mt-4">
+	                            <button type="button" class="btn btn-lg user-post-btn btn-block" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserPw()">비밀번호 찾기</button>      
+					</div>
+									
 				</div>
-				<div class="col-md-2">
-					<input class="btn user-post-btn" type="button" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserPw()"/>
-				</div>
-			</div>
-			<div class="form-group" id="message">
 
-			</div>
+			</div>			
+			
+			<div class="form-group" id="message"></div>
 		</div>
 	</div>
+	
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>

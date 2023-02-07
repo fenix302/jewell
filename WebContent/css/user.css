@@ -52,11 +52,14 @@
 }
 
 
-/* 아이디찾기 */
+/* 아이디찾기/비밀번호찾기 */
 .email-group{
-	margin: 0 auto;
+	margin-top: 20%;
 }
 
+.id-group{
+	margin-top: 20%;
+}
 
 
 /* 아이디 비빌먼호 창 높이*/
