@@ -9,7 +9,7 @@
 	<meta name="description" content="sellBuyListR.jsp">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>찾아오는 길</title>
+	<title>JEWELL-오시는 길</title>
 
 	<link href="${context}/css/location.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
@@ -21,10 +21,24 @@
 	<script src="${context}/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!-- 헤더 -->
 <jsp:include page="/common/top.jsp"></jsp:include>
-	<div class="text-center mg-t100 mg-b100">
+
+<!-- 페이지 헤더 -->
+<div class="page_header">
+	 <div class="location_header">
+	       <div class="name">
+	             <p class="comeText">오시는 길</p>
+	        </div>
+	  </div>
+</div>
+
+<!-- 	<div class="text-center mg-t100 mg-b100">
 		<h1><strong>찾아오시는 길</strong></h1>
-	</div>
+	</div> -->
+	
+	
+<!-- 본문 -->
 	<h3><strong>서울 구로구 경인로 557 신한은행 4층</strong></h3>
 	
 	<div class="container">

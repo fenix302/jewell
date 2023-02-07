@@ -14,6 +14,10 @@
 <link href="../css/plugins/social-buttons.css" rel="stylesheet">
 <link href="../font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="${context}/css/user.css" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
+    rel="stylesheet"
+ />
 
 
 <script src="../js/jquery-1.9.1.js"></script>
@@ -55,15 +59,31 @@
 </script>
 </head>
 <body>
+<!-- 헤더 -->
 	<jsp:include page="../common/top.jsp"></jsp:include>
-	<div id="jumbotron" class="container">
+	
+	
+<!-- 페이지 헤더 -->
+<div class="page_header">
+	 <div class="pwFind_header">
+	       <div class="name">
+	             <p class="comeText">비밀번호 찾기</p>
+	        </div>
+	  </div>
+</div>
+
+
+<!-- 	<div id="jumbotron" class="container">
 		<div class="user-main">
 			<h2><font color="black"><strong>비밀번호 찾기</strong></font></h2>
 		</div>
-	</div>
+	</div> -->	
 	
+	
+	
+<!-- 본문 -->	
 	<div class="container">
-		<div class="form-horizontal" style="margin-bottom: 20%;">
+		<div class="form-horizontal" style="margin-bottom: 140px;">
 			<div class="col-md-4 offset-md-4" style="margin-top: 5%;">
 			
 				<div class="id-group">
@@ -91,6 +111,8 @@
 		</div>
 	</div>
 	
+
+<!-- 푸터  -->
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>

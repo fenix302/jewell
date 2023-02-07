@@ -101,6 +101,8 @@
 			</div>
 		</div>
 	</div>
+	
+<!-- 푸터  -->
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>

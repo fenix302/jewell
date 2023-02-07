@@ -17,6 +17,10 @@
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="${context}/css/user.css" rel="stylesheet">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
+    rel="stylesheet"
+ />
     
 
     <!-- jQuery -->
@@ -75,16 +79,31 @@
 </head>
 
 <body>
+<!-- 헤더 -->
 	<jsp:include page="../common/top.jsp"></jsp:include>
-	<div id="jumbotron" class="container">
+	
+	
+<!-- 페이지 헤더 -->
+<div class="page_header">
+	 <div class="login_header">
+	       <div class="name">
+	             <p class="comeText">로그인</p>
+	        </div>
+	  </div>
+</div>
+
+<!-- 	<div id="jumbotron" class="container">
 		<div class="user-main">
 			<h2><font color="black"><strong>로그인</strong></font></h2>
-		</div>
+		</div> -->
+		
+
+<!-- 본문 -->	
 	</div>
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4">
-                <div class="login-panel"  style="margin-bottom: 57%;">
+                <div class="login-panel"  style="margin-bottom: 150px;">
 
                     <form action="${context}/work/user/login.do" method="post" role="form" id="loginFrm">
                 		<fieldset>

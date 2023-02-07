@@ -18,9 +18,24 @@
  />
 </head>
 <body>
+<!-- 헤더 -->
 <jsp:include page="../common/top.jsp"></jsp:include>
-    <div class="container-lg">
-        <h3>FAQ 자주하는 질문</h3>
+
+
+<!-- 페이지 헤더 -->
+<div class="page_header">
+	 <div class="faq_header">
+	       <div class="name">
+	             <p class="comeText">FAQ</p>
+	        </div>
+	  </div>
+</div>
+
+<!--         <h3>FAQ 자주하는 질문</h3> -->
+
+<!-- 본문 -->
+    <!-- 검색  -->
+    <div class="container">
         <div class="faq_search_box">
             <select class="form-select" aria-label="Default select example">
                 <option selected>전체검색</option>
@@ -33,6 +48,7 @@
                 <option value="8">A/S문의</option>
                 <option value="9">기타</option>
               </select>
+              
               <div class="container-fluid">
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="궁금한 내용을 검색해 보세요" aria-label="Search">
@@ -53,6 +69,8 @@
                 <a href="#">기타</a>
               </div>
             </div>
+            
+       <!-- faq  -->
             <div class="faq-box container-md ">
               <ul>
                 <li>
@@ -132,6 +150,9 @@
             </nav>
         </div>
     </div>
+    
+    
+<!-- 푸터 -->
     <jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>
