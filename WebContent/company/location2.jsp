@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>JEWELL-오시는 길</title>
 
-	<link href="${context}/css/location.css" rel="stylesheet">
+	<link href="${context}/css/location2.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 
