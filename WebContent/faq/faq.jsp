@@ -35,7 +35,7 @@
 
 <!-- 본문 -->
     <!-- 검색  -->
-    <div class="container">
+    <div class="container-md">
         <div class="faq_search_box">
             <select class="form-select" aria-label="Default select example">
                 <option selected>전체검색</option>
@@ -57,97 +57,127 @@
                   </div>
                 </form>
               </div>
+              
               <div class="faq_menu">
-                <a href="#">전체보기</a>
-                <a href="#">상품문의</a>
-                <a href="#">목걸이 체인 문의</a>
-                <a href="#">주문/결제문의</a>
-                <a href="#">배송문의</a>
-                <a href="#">취소/반품/환불/교환</a>
-                <a href="#">쿠폰/적립금문의</a>
-                <a href="#">A/S문의</a>
-                <a href="#">기타</a>
+	                <a href="#">전체보기</a>
+	                <a href="#">상품문의</a>
+	                <a href="#">목걸이 체인 문의</a>
+	                <a href="#">주문/결제문의</a>
+	                <a href="#">배송문의</a>
+	                <a href="#">취소/반품/환불/교환</a>
+	                <a href="#">쿠폰/적립금문의</a>
+	                <a href="#">A/S문의</a>
+	                <a href="#">기타</a>
               </div>
+              
             </div>
+            
             
        <!-- faq  -->
             <div class="faq-box container-md ">
               <ul>
                 <li>
                   <div class="faq-box_question">
-                    Q 질문
+	                    <span class="question">Q</span>
+	                    <span class="question_ann">질문 내용</span>
+                
                   </div>
                   <div class="faq-box_answer">
-                    A 답변
+	                    <span class="answer">A</span>
+	                    <span class="answer_ann">답변 내용</span>
                   </div>
                 </li>
+                
                 <li>
                     <div class="faq-box_question">
-                    Q 질문
+	                    <span class="question">Q</span>
+	                    <span class="question_ann">질문 내용</span>
                     </div>
                     <div class="faq-box_answer">
-                    A 답변
+	                    <span class="answer">A</span>
+	                    <span class="answer_ann">답변 내용</span>
                     </div>
                 </li>
+                
                 <li>
                     <div class="faq-box_question">
-                    Q 질문
+	                    <span class="question">Q</span>
+	                    <span class="question_ann">질문 내용</span>
                     </div>
                     <div class="faq-box_answer">
-                    A 답변
+	                    <span class="answer">A</span>
+	                    <span class="answer_ann">답변 내용</span>
                     </div>
                 </li>
+                
                 <li>
                     <div class="faq-box_question">
-                    Q 질문
+	                    <span class="question">Q</span>
+	                    <span class="question_ann">질문 내용</span>
                     </div>
                     <div class="faq-box_answer">
-                    A 답변
+	                    <span class="answer">A</span>
+	                    <span class="answer_ann">답변 내용</span>
                     </div>
                 </li>
+                
                 <li>
                     <div class="faq-box_question">
-                    Q 질문
+	                    <span class="question">Q</span>
+	                    <span class="question_ann">질문 내용</span>
                     </div>
                     <div class="faq-box_answer">
-                    A 답변
+	                    <span class="answer">A</span>
+	                    <span class="answer_ann">답변 내용</span>
                     </div>
                 </li>
+                
                 <li>
                     <div class="faq-box_question">
-                    Q 질문
+	                    <span class="question">Q</span>
+	                    <span class="question_ann">질문 내용</span>
                     </div>
                     <div class="faq-box_answer">
-                    A 답변
+	                    <span class="answer">A</span>
+	                    <span class="answer_ann">답변 내용</span>
                     </div>
                 </li>
+                
                 <li>
                     <div class="faq-box_question">
-                    Q 질문
+	                    <span class="question">Q</span>
+	                    <span class="question_ann">질문 내용</span>
                     </div>
                     <div class="faq-box_answer">
-                    A 답변
+	                    <span class="answer">A</span>
+	                    <span class="answer_ann">답변 내용</span>
                     </div>
                 </li>
+                
                 <li>
                     <div class="faq-box_question">
-                    Q 질문
+	                    <span class="question">Q</span>
+	                    <span class="question_ann">질문 내용</span>
                     </div>
                     <div class="faq-box_answer">
-                    A 답변
+	                    <span class="answer">A</span>
+	                    <span class="answer_ann">답변 내용</span>
                     </div>
                 </li>
             </ul>
-            <nav aria-label="Pagenavigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item"><a class="page-link" href="#">&lt;</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">4</a></li>
-                  <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
-                </ul>
-            </nav>
+            
+            <div class="page_nav">
+	            <nav aria-label="Pagenavigation example">
+	                <ul class="pagination justify-content-center">
+	                  <li class="page-item"><a class="page-link" href="#">&lt;</a></li>
+	                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+	                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+	                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+	                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+	                  <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
+	                </ul>
+	            </nav>
+            </div>
         </div>
     </div>
     
