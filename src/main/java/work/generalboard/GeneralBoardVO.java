@@ -1,4 +1,4 @@
-package work.generalboard.domain;
+package work.generalboard;
 
 import java.util.Date;
 

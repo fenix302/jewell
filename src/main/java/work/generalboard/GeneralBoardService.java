@@ -1,6 +1,6 @@
-package work.generalboard.service;
+package work.generalboard;
 
-import work.generalboard.domain.GeneralBoardVO;
+import work.generalboard.GeneralBoardVO;
 
 public interface GeneralBoardService {
 	
