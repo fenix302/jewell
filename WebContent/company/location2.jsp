@@ -37,82 +37,9 @@
 		<h1><strong>찾아오시는 길</strong></h1>
 	</div> -->
 	
-
-<div class="container col-md-8">
-
-	<div class="map_box">
-            <div class="text1">
-               <span class="name2">&nbsp;JEWELL&nbsp;</span>
-               <p class="announce">
-               <strong> ▷ 서울 구로구 경인로 557 신한은행 4층</strong><br>
-                  방문 시에는 반드시 마스크를 착용해 주시고, 코로나19 방역수칙을 지켜주시기
-                  바랍니다.
-               </p>
-            </div>
-            
-            <!-- 지도 -->
-            <div id="map"> 
-            </div>
-            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4a3c4fcfa5a54d02d981e8713d261798"></script>
-
-            <script>
-               var container = document.getElementById('map');
-               var options = {
-                  center: new kakao.maps.LatLng(37.567283765403744, 126.97895774407993),			
-                  level: 3
-               };
-
-               var map = new kakao.maps.Map(container, options);
-
-               var markerPosition = new kakao.maps.LatLng(
-                  37.567283765403744,
-                  126.97895774407993,
-               );
-               var marker = new kakao.maps.Marker({
-                  position: markerPosition,
-               });
-
-               marker.setMap(map);
-            </script>
-            <hr />
-            <div class="text2">
-               <span class="name2">&nbsp;서울시청 주차장 안내&nbsp;</span>
-               <p class="announce2">
-                  ▷ 주차공간이 많이 부족하오니 되도록 대중교통을 이용해 주시기 바랍니다.<br />
-                  ▷ 주차정보안내시스템(<a href="http://parking.seoul.go.kr/"
-                     >http://parking.seoul.go.kr/</a
-                  >)에서 시청 주변 공영주차장을 확인하실 수 있습니다. <br />
-                  ▷ 청사 시설물을 보호하기 위해 높이 2.3m 이상 차량은 주차장으로 진입할 수 없습니다.<br /><br />
-               </p>
-
-               <span class="name2">&nbsp;개방시간&nbsp;</span>
-               <p class="announce2">
-                  <strong> 평일</strong> : 08:30~21:00 <br />
-                  <strong> 주말 및 공휴일</strong> : 09:00 ~21:00 (시민청 개방시간과 동일)<br />
-                  <thin>
-                     매월 넷째 주 수요일 '대중교통 이용의 날'은 서울시 및 산하기관, 자치구 부설
-                     주차장이 폐쇄됩니다.(장애인 차량, 긴급차량 등 제외)<br />
-                     서울광장 행사 등으로 인해 주차수요 과포화 및 교통 혼잡이 예상될 경우 주차장
-                     이용이 제한될 수 있습니다.</thin
-                  ><br />
-                  <br />
-               </p>
-
-               <span class="name2">&nbsp;주차요금&nbsp;</span>
-               <p class="announce2">
-               		▷ 경차 : 10분당 1,000원 (평일 09:00~18:00만 부과)<br />
-               		▷ 중형차 : 10분당 1,200원 (평일 09:00~18:00만 부과)
-               </p>
-            </div>
-         </div>
-
-</div>
-	
-
-	
 	
 <!-- 본문 -->
-	<!-- <h3><strong>서울 구로구 경인로 557 신한은행 4층</strong></h3>
+	<h3><strong>서울 구로구 경인로 557 신한은행 4층</strong></h3>
 	
 	<div class="container">
 		<div id="map" style="width:100%;height:350px; margin-bottom: 50px"></div>
@@ -186,7 +113,7 @@
 	  
 	// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 	infowindow.open(map, marker); 
-	</script> -->
+	</script>
 <jsp:include page="/common/foot.jsp"></jsp:include>
 </body>
 </html>

@@ -97,9 +97,9 @@
 			<h2><font color="black"><strong>로그인</strong></font></h2>
 		</div> -->
 		
+<!-- 	</div> -->
 
 <!-- 본문 -->	
-	</div>
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4">
