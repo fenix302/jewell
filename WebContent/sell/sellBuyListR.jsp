@@ -50,13 +50,28 @@
     </script>
 </head>
 <body>
+<!-- 헤더 -->
 <jsp:include page="/common/top.jsp"></jsp:include>
-	<div id="jumbotron" class="container">
-		<div class="buy-main">
+
+
+<!-- 페이지 헤더 -->
+<div class="page_header">
+	 <div class="buyList_header">
+	       <div class="name">
+	             <p class="comeText">구매내역</p>
+	        </div>
+	  </div>
+</div>
+
+
+<%-- 		<div class="buy-main">
 			<h1><font color="black"><strong>구매내역</strong>&nbsp;<i class="fa fa-credit-card fa-1x"></i></font></h1>
 			<p>${sessionScope.id}님의 구매내역입니다.</p>
-		</div>
+		</div> --%>
 
+
+<!-- 본문 -->
+	<div id="jumbotron" class="container">
 		<div class="row" style="margin-bottom: 10%;">
 			<div class="col-md-12" style="margin-bottom: 10px;">
 			    <div class="panel panel-default">

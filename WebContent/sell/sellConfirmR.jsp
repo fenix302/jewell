@@ -103,16 +103,53 @@
     </script>
 </head>
 <body>
+<!-- 헤더 -->
 <jsp:include page="/common/top.jsp"></jsp:include>
+
+
+
+<!-- 페이지 헤더 -->
+<div class="page_header">
+	 <div class="confirmR_header">
+	       <div class="name">
+	             <p class="comeText">결제 완료</p>
+	        </div>
+	  </div>
+</div>
+
+
+<!-- 본문 -->
+ <div class="container">
+        <div class="row" style="margin-bottom: 150px;">
+            <div class="col-md-12">
+                <div class="offer offer-succes" >
+
+					<div class="offer-content">
+						<h2 align="center" style="font-family: Noto Sans KR;">
+							구매내역에서 정보를 확인하실 수 있습니다.
+							<br><br> 감사합니다.
+						</h2>
+					</div>
+					
+					<div id="confirm_btn">
+						<div class="col-md-1 col-md-offset-4">
+							<button type="button" class="btn btn-lg buyList_btn"  style="float:right;" onclick="fn_buyList()"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;구매내역&nbsp;</button>
+						</div>
+						<div class="col-md-5">
+							<button type="button" class="btn btn-lg buyEnd_btn"  style="float:right;" onclick="fn_review('${productCode}')"><span class="glyphicon glyphicon-pencil"></span>&nbsp;결제 완료&nbsp;</button>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- 본문(구버전) -->
 	<div id="jumbotron" class="container">
 		<div class="row" style="margin-bottom: 10%;">
 			<div class="col-md-12">
 				<div class="offer offer-success">
-					<div class="shape">
-						<div class="shape-text">
-							Thanks
-						</div>
-					</div>
 					<div class="offer-content">
 					<br><br><br>
 						<h1 align="center" style="font-family: inherit;">
