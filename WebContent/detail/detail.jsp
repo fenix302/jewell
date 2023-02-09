@@ -74,6 +74,8 @@
                         </div>
                     </div>
 
+
+
                     <div class="item2">
 	                    <div class="img">
 	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl1}')" ><img src="${context}/neckImg/neck06.jpg" ></a>
