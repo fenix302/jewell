@@ -53,6 +53,7 @@
             <!-- 지도 -->
             <div id="map"> 
             </div>
+           
             <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4a3c4fcfa5a54d02d981e8713d261798"></script>
 
             <script>
@@ -66,7 +67,7 @@
 
                var markerPosition = new kakao.maps.LatLng(
                   37.567283765403744,
-                  126.97895774407993,
+                  126.97895774407993
                );
                var marker = new kakao.maps.Marker({
                   position: markerPosition,
@@ -75,6 +76,10 @@
                marker.setMap(map);
             </script>
             <hr />
+            
+          
+          
+        <!-- 서술  -->
             <div class="text2">
                <span class="name2">&nbsp;서울시청 주차장 안내&nbsp;</span>
                <p class="announce2">
