@@ -135,41 +135,27 @@
 </script>
 </head>
 <body>
-
-<!-- 헤더 -->
 <jsp:include page="../common/top.jsp"></jsp:include>
-
-
-<!-- 페이지 헤더 -->
-
-<div class="page_header">
-	 <div class="userC_header">
-	       <div class="name">
-	             <p class="comeText">회원가입</p>
-	        </div>
-	  </div>
-</div>
+	<div id="jumbotron" class="container">
+		<div class="user-main">
+			<h3><font color="black"><strong>회원가입</strong></font></h3>
+		</div>
+	</div>
 	
 	
-	
-<!-- 본문 -->
 	<div class="container">
 		<form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form" class="offset-md-2">
-			
-			<!-- 아이디 -->
-			<div class="form-group" style="margin-top: 20px;">
-				<div class="form-group col-md-6">
+			<div class="form-group row mb-2" style="margin-top: 5%;">
+				<div class="form-group col-md-4">
 					<label for="id" class="control-label"><b>아이디</b></label>
 					<div>
 						<input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
 					</div>
 					<p id="message"></p>
 				</div>
-			</div>
-			
-			<!-- 비밀번호 -->
-			<div class="form-group" style="margin-top: 30px;">	
-				<div class="form-group col-md-6">
+	
+	<!-- 비밀번호 -->
+				<div class="form-group col-md-4 mb-2">
 					<label for="pw" class="control-label"><b>비밀번호</b></label>
 					<div>
 						<input class="form-control" type="password" name="pw" id="pw" required="required"/>
@@ -177,9 +163,8 @@
 				</div>
 			</div>
 			
-			
-			<!-- 이메일 -->
-			<div class="form-group" style="margin-top: 30px;">
+	<!-- 이메일 -->			
+			<div class="form-group row mb-2">
 				<div class="form-group col-md-4">
 					<label for="email" class="control-label"><b>이메일</b></label>
 					<div>
@@ -188,20 +173,14 @@
 				</div>
 			</div>
 			
-			
-			<!-- 이름 -->
-			<div class="form-group" style="margin-top: 30px;">
+	<!-- 성명-->			
+			<div class="form-group row mb-2">
 				<div class="form-group col-md-4 mb-2">
 					<label for="name" class="control-label"><b>성명</b></label>
 					<div>
 						<input class="form-control" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
 					</div>
 				</div>
-			</div>
-			
-			
-			<!-- 생년월일 -->
-			<div class="form-group" style="margin-top: 30px;">
 				<div class="form-group col-md-4">
 					<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
 					<div>
@@ -211,9 +190,9 @@
 			</div>
 			
 			
-			<!-- 연락처 -->			
-			<div class="form-group" style="margin-top: 30px;">
-				<div class="col-md-4"">
+	<!-- 연락처-->				
+			<div class="form-group row mb-2">
+				<div class="col-md-2">
 					<label for="phoneCd" class="control-label"><b>연락처</b></label>
 					<div>
 			        	<select class="form-control" id="phoneCd" name="phoneCd">
@@ -223,12 +202,10 @@
 			     		</select>
 		     		</div>
 	     		</div>
-	     		
 				<div class="col-md-3">
 					<label></label>
 					<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
-				
 				<div class="col-md-3">
 					<label></label>
 					<input class="form-control" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
@@ -237,7 +214,7 @@
 			</div>
 			
 			
-			<!-- 주소 -->
+	<!-- 주소-->				
 	     	<div class="form-group row">	
 				<div class="form-group col-md-2">
 					<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
@@ -246,8 +223,6 @@
 					</div>
 				</div>
 				
-				
-				<!-- 주소 찾기 버튼 -->
 				<div class="col-md-2">
 					<label class="control-label"><b></b></label>
 					<div>
@@ -255,10 +230,9 @@
 					</div>
 						<input type="hidden" id="postNum" name="postNum">
 				</div>
+				
+				
 			</div>
-			
-			
-			<!-- 주소 상세 -->
 			<div class="form-group row">
 				<div class="form-group col-md-3">
 					<label for="postnum2" class="control-label col-md-2"></label>
@@ -266,12 +240,16 @@
 						<input class="form-control" type="text" id="postNum2" placeholder="도로명주소" disabled="disabled"/>
 		     		</div>
 	     		</div>
+	     		
 	     		<div class="col-md-3">
 					<label for="postnum3" class="control-label col-md-2"></label>
 					<div style="margin-bottom: 15px;">
 						<input class="form-control" type="text" id="postNum3" placeholder="지번주소" disabled="disabled"/>
 					</div>
 				</div>
+				
+				
+	        <!-- 상세 주소 -->					
 				<div class="form-group col-md-3">
 					<label for="address1" class="control-label col-md-3"><b>상세주소</b></label>
 					<div>
@@ -280,9 +258,7 @@
 					<input type="hidden" id="address" name="address">
 				</div>
 			</div>
-			
-			<!-- 사진 -->
-<%-- 			<div class="form-group row">
+			<div class="form-group row">
 				<div class="form-group col-md-3">
 					<label class="control-label col-md-2"><b>사진</b></label>
 					<div>
@@ -293,36 +269,28 @@
 					</div>
 				</div>
 				<input type="hidden" id="flag" name="flag" value="false">
-			</div> --%>
+			</div>
 		</form>
-		
-		
 		<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form" class="offset-md-2">
-			<div class="form-group row" style="margin-bottom: 140px;">
-			
-				<!-- 파일첨부 버튼-->
-<!-- 				<div class="form-group col-md-8">
+			<div class="form-group row" style="margin-bottom: 10%;">
+				<div class="form-group col-md-8">
 					<label class="control-label col-md-2"></label>
 					<div class="col-md-6">
 						<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload();"/>
 						<input type="hidden" id="imageFolder" name="imageFolder" value="userImg">
 					</div>
-				</div> -->
-				
-				<!-- 뒤로가기/가입하기 버튼 -->
+				</div>
 				<div class="form-group col-md-4">
 					<label class="col-md-2"></label>
 					<div>
 						<button type="button" class="btn user-back-btn" onclick="fn_back()">뒤로가기</button>
-						<button class="btn user-submit-btn" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">가입하기</button>
+						<button class="btn user-submit-btn" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
 					</div>
 				</div>
 			</div>
 		</form>
 	</div>
 
-
-<!-- 푸터 -->
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>
