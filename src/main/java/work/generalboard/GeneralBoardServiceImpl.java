@@ -5,12 +5,19 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
-@Service("generalBoardService")
+@Service
 @AllArgsConstructor
 public class GeneralBoardServiceImpl implements GeneralBoardService{
+	
+	private GeneralBoardMapper mapper;
+	
+	public GeneralBoardServiceImpl(GeneralBoardMapper mapper) {
+		this.mapper = mapper;
+	}
 
 	@Override
 	public void register(GeneralBoardVO board) {
