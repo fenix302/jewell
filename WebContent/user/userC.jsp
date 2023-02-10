@@ -223,9 +223,9 @@
 	                        <select class="form-control" id="phoneCd" name="phoneCd">
 								<c:forEach items="${dsCode1}" var="code1">
 									<option value="${code1.commCd}">${code1.commCdNm}</option>
-		                            <option selected>010</option>
-		                            <option>011</option>
-		                            <option>016</option>
+<!-- 		                            <option selected>010</option> -->
+<!-- 		                            <option>011</option> -->
+<!-- 		                            <option>016</option> -->
 								</c:forEach	>                        
 	                        </select>	                          
 						</div>
