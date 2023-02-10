@@ -21,6 +21,7 @@
 	</environments>
 
 	<mappers>
+		<mapper resource="mappings/GeneralBoardMapper" />
 		<mapper resource="mappings/sql-payment.xml" />
 	</mappers>
 </configuration>
