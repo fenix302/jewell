@@ -58,11 +58,24 @@
     </script>
 </head>
 <body>
-<jsp:include page="../common/top.jsp"></jsp:include>
+	<!-- 헤더 -->
+	<jsp:include page="/common/top.jsp"></jsp:include>
+	
+	
+	<!-- 페이지 헤더 -->
+	<div class="page_header">
+		 <div class="cartList_header">
+		       <div class="name">
+		             <p class="comeText">장바구니</p>
+		        </div>
+		  </div>
+	</div>
+	
+	
 	<div class="container">
 		<div class="buy-main">
-			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1>
-			<p>${sessionScope.id}님의 장바구니입니다.</p>
+<!-- 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1> -->
+			<h4><font color="black"><strong>${sessionScope.id}님의 장바구니입니다.</strong></font></h4>
 		</div>
 
 		<div class="row" style="margin-bottom: 10%;">
