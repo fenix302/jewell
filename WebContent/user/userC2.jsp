@@ -229,10 +229,10 @@
 						<input type="button" class="btn user-post-btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
 					</div>
 						<input type="hidden" id="postNum" name="postNum">
-				</div>
-				
-				
+				</div>				
 			</div>
+			
+			
 			<div class="form-group row">
 				<div class="form-group col-md-3">
 					<label for="postnum2" class="control-label col-md-2"></label>
