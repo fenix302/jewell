@@ -10,6 +10,7 @@
 	</resultMap>
 
 	<insert id="insertPaymentSuccess">
+		<![CDATA[
 			INSERT INTO PAY_IMPORT(
 				PAY_ID
 				, IMPORT_ID
@@ -23,6 +24,7 @@
 				, #{apply_num}
 				, #{paid_at}
 			)
+		]]>
 <!-- 		insert into pay_import values(#{imp_uid}, #{merchant_uid}, #{paid_amount}, #{apply_num}, #{paid_at}) -->
 	</insert>	
 	
