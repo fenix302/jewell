@@ -1,18 +1,22 @@
 package work.iamport.command;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import work.iamport.PaymentBean;
 import work.iamport.model.PaymentVO;
 import work.iamport.service.PaymentService;
 
 @Controller
 public class PaymentController {
 
-	@Autowired
+	@Resource(name = "paymentService")
 	private PaymentService paymentService;
 	
 	@RequestMapping(value = "/payment.do")
@@ -20,14 +24,14 @@ public class PaymentController {
 		return new ModelAndView("payment");
 	}
 	
-	@RequestMapping(value = "/paymentDone.do")
+	@RequestMapping(value = "/paymentDone.do" )
 	public ModelAndView fwdPaymentSuccessPage() {
 		return new ModelAndView("/sell/sellConfirmR");
 	}
 	
-	@RequestMapping(value = "/paymentProcess.do")
-	public void paymentDone(@RequestBody PaymentVO vo) {
-		paymentService.insertPaymentSuccess(vo);
+	@RequestMapping(value = "/paymentProcess.do", method = {RequestMethod.POST} )
+	public void paymentDone(@RequestBody PaymentBean bean) {
+		paymentService.insertPaymentSuccess(bean);
 	}
 	
 	@RequestMapping(value = {"/goMain.do", "/"})

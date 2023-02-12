@@ -2,9 +2,12 @@ package work.iamport.service;
 
 
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import work.iamport.PaymentBean;
 import work.iamport.dao.PaymentDAO;
 import work.iamport.model.PaymentVO;
 
@@ -12,11 +15,11 @@ import work.iamport.model.PaymentVO;
 public class PaymentServiceImpl implements PaymentService {
 
 	
-	@Autowired
-	private PaymentDAO dao;
+	@Resource(name = "paymentDAO")
+	private PaymentDAO paymentDAO;
 	
-	public void insertPaymentSuccess(PaymentVO vo) {
+	public void insertPaymentSuccess(PaymentBean bean) {
 
-		dao.insertPaymentSuccess(vo);		
+		paymentDAO.insertPaymentSuccess(bean);		
 	}
 }

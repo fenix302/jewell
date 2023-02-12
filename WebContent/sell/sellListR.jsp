@@ -114,7 +114,7 @@
     	             var paymentInfo = {
     	            		 imp_uid : rsp.imp_uid,
     	            		 merchant_uid : rsp.merchant_uid,
-    	            		 paid_amount : rsp.paid_amound,
+    	            		 paid_amount : rsp.paid_amount,
     	            		 apply_num : rsp.apply_num,
     	            		 paid_at : new Date()
     	             };
