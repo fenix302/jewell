@@ -72,6 +72,11 @@
 
 <!-- 본문 -->
 	<div id="jumbotron" class="container">
+	
+		<div class="buy-main">
+<!-- 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1> -->
+			<h4><font color="black"><strong>${sessionScope.id}님의 구매내역입니다.</strong></font></h4>
+		</div>
 		<div class="row" style="margin-bottom: 10%;">
 			<div class="col-md-12" style="margin-bottom: 10px;">
 			    <div class="panel panel-default">
