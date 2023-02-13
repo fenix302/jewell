@@ -235,5 +235,3 @@ regdate date default sysdate
 alter table tb_jw_comm add constraint pk_comm primary key (bno);
 
 COMMIT;
-
-commit;
