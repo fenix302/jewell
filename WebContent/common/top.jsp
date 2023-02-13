@@ -80,7 +80,7 @@ a{
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Community</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">공지사항</a></li>
+                                <li><a class="dropdown-item" href="${context}/work/notice/retrieveBoardList.do">공지사항</a></li>
                                 <li><a class="dropdown-item" href="#">자유게시판</a></li>
                                 <li><a class="dropdown-item" href="#">커뮤니티</a></li>
                                 <li><a class="dropdown-item" href="#">상담신청게시판</a></li>
