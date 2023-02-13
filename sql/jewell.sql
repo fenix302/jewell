@@ -213,6 +213,27 @@ start with 0
 maxvalue 9999999
 minvalue 0;
 
+-- 커뮤니티 게시판 정보
+drop sequence seq_comm;
 
+create sequence seq_comm
+increment by 1
+start with 0
+maxvalue 9999999
+minvalue 0;
+
+drop table tb_jw_comm;
+
+create table tb_jw_comm (
+bno number(10, 0),
+title varchar2(200) not null,
+content varchar2(2000) not null,
+writer varchar2(50) not null,
+regdate date default sysdate
+);
+
+alter table tb_jw_comm add constraint pk_comm primary key (bno);
+
+COMMIT;
 
 commit;
