@@ -48,8 +48,9 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						Board List Page
-						<button id="regBtn" type="button" class="btn btn-xs pull-right">Register
-							New Board</button>
+						<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
+							<button id="regBtn" type="button" class="btn btn-xs btn-danger pull-right">Register New Board</button>
+						</c:if>
 					</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
@@ -95,7 +96,7 @@
 									<input type="text" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>'/>
 									<input type="hidden" name="pageNum" value='<c:out value="${pageMaker.cri.pageNum}"/>'/>
 									<input type="hidden" name="amount" value='<c:out value="${pageMaker.cri.amount}"/>'/>
-									<button class="btn btn-default">Search</button>
+									<button class="btn btn-success">Search</button>
 								</form>					
 							</div>
 						</div>
