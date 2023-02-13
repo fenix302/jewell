@@ -11,12 +11,8 @@
 		<typeAlias type="work.cart.CartBean" alias="cart"/>
 		<typeAlias type="work.reply.ReplyBean" alias="reply"/>
 		<typeAlias type="work.code.CodeBean" alias="code"/>
-<<<<<<< HEAD
-		<typeAlias type="work.notice.NoticeBean" alias="notice"/>
-		
-=======
 		<typeAlias type="work.iamport.PaymentBean" alias="payment"/>
->>>>>>> branch 'master' of https://github.com/fenix302/jewell.git
+		<typeAlias type="work.notice.NoticeBean" alias="notice"/>
 	</typeAliases>
 
 	<mappers>
@@ -27,11 +23,7 @@
 		<mapper resource="conf/sql-cart.xml" />
 		<mapper resource="conf/sql-reply.xml" />
 		<mapper resource="conf/sql-code.xml" />
-<<<<<<< HEAD
-		<mapper resource="conf/sql-notice.xml" />
-		
-=======
 		<mapper resource="conf/sql-payment.xml" />
->>>>>>> branch 'master' of https://github.com/fenix302/jewell.git
+		<mapper resource="conf/sql-notice.xml" />
 	</mappers>
 </configuration>
