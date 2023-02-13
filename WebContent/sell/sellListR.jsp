@@ -17,6 +17,7 @@
 	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
 
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
+        <link href="${context}/css/buy.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -113,7 +114,7 @@
     	             var paymentInfo = {
     	            		 imp_uid : rsp.imp_uid,
     	            		 merchant_uid : rsp.merchant_uid,
-    	            		 paid_amount : rsp.paid_amound,
+    	            		 paid_amount : rsp.paid_amount,
     	            		 apply_num : rsp.apply_num,
     	            		 paid_at : new Date()
     	             };
@@ -143,12 +144,30 @@
     </script>
 </head>
 <body>
-<jsp:include page="/common/top.jsp"></jsp:include>
-	<div id="jumbotron" class="container">
-		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
+	<jsp:include page="/common/top.jsp"></jsp:include>
+
+	<!-- 페이지 헤더 -->
+	<div class="page_header">
+		 <div class="sellList_header">
+		       <div class="name">
+		             <p class="comeText">주문정보</p>
+		        </div>
+		  </div>
+	</div>
+	
+	
+<!-- 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>주문정보</strong>&nbsp;<i class="fa fa-credit-card fa-1x"></i></font></h1>
 			<p>주문 정보를 확인해주세요</p>
-		</div>
+		</div> -->
+		
+		
+	<div id="jumbotron" class="container">
+	
+		<div class="buy-main">
+<!-- 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1> -->
+			<h4><font color="black"><strong>${sessionScope.id}님의 주문정보입니다.</strong></font></h4>
+		</div>	
 
 		<div class="row">
 			<div class="col-md-12">
@@ -212,8 +231,9 @@
 			    <!-- /.panel -->
 			</div>
 			<!-- /.col-lg-12 -->
-			<div class="col-md-1 col-md-offset-11">
-				<button type="button" class="btn btn-success btn-lg"  style="float:right;" onclick="fn_back()">뒤로가기</button>
+			
+			<div class="div_btn col-md-1 col-md-offset-11">
+				<button type="button" class="btn btn-success btn-lg back_btn"  onclick="fn_back()">뒤로가기</button>
 			</div>
 		</div>
 	</div>

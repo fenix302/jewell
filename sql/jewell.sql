@@ -193,5 +193,26 @@ create table pay_import(
 
 DROP TABLE TB_POST CASCADE CONSTRAINT;
 
+-- 공지사항 정보
+drop table tb_jw_notice;
+
+create table tb_jw_notice(
+bno number,
+title varchar2(255) not null,
+content varchar2(2000) not null,
+writer varchar2(50) not null,
+regdate date default sysdate);
+
+alter table tb_jw_notice add constraint pk_notice primary key (bno);
+
+drop sequence seq_notice;
+
+create sequence seq_notice
+increment by 1
+start with 0
+maxvalue 9999999
+minvalue 0;
+
+
 
 commit;

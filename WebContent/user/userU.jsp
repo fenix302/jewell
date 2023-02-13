@@ -9,7 +9,7 @@
 	<meta name="description" content="userU.jsp">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
+	<title>JEWELL-정보수정</title>
    	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
-    <link href="${context}/css/user.css" rel="stylesheet">
+    <link href="${context}/css/userC.css" rel="stylesheet">
 
 	<script src="${context}/js/jquery-1.9.1.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
@@ -149,145 +149,183 @@
 
 </script>
 </head>
+
 <body>
-<jsp:include page="../common/top.jsp"></jsp:include>
-	<div id="jumbotron" class="container">
+	<!-- 헤더 -->
+	<jsp:include page="../common/top.jsp"></jsp:include>
+	
+	
+	<!-- 페이지 헤더 -->
+	
+	<div class="page_header">
+		 <div class="userC_header">
+		       <div class="name">
+		             <p class="comeText">정보수정</p>
+		        </div>
+		  </div>
+	</div>
+		
+<!-- 	<div id="jumbotron" class="container">
 		<div class="user-main">
 			<h1><font color="black"><strong>정보 수정</strong></font></h1>
 		</div>
-	</div>
-	<div class="container">
-	<form id="joinFrm" method="post" action="${context}/work/user/updateUser.do" role="form" class="offset-md-2">
-			<div class="form-group row mb-2" style="margin-top: 5%;">
-				<div class="form-group col-md-4">
-					<label for="id" class="control-label"><b>아이디</b></label>
-					<div>
-						<input class="form-control" type="text" name="id" id="id" required="required" disabled="disabled" autofocus="autofocus" onkeyup="idCheck();"/>
-					</div>
-					<p id="message"></p>
-				</div>
+	</div> -->
 	
-				<div class="form-group col-md-4 mb-2">
-					<label for="pw" class="control-label"><b>비밀번호</b></label>
-					<div>
-						<input class="form-control" type="password" name="pw" id="pw" required="required" disabled="disabled"/>
-					</div>
-				</div>
-			</div>
-			<div class="form-group row mb-2">
-				<div class="form-group col-md-4">
-					<label for="email" class="control-label"><b>이메일</b></label>
-					<div>
-						<input class="form-control" type="email" name="email" id="email" required="required"/>
-					</div>
-				</div>
-			</div>
-			<div class="form-group row mb-2">
-				<div class="form-group col-md-4 mb-2">
-					<label for="name" class="control-label"><b>성명</b></label>
-					<div>
-						<input class="form-control" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
-					</div>
-				</div>
-				<div class="form-group col-md-4">
-					<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
-					<div>
-						<input class="form-control" type="text" id="birth" name="birth" required="required" maxlength="10"/>
-					</div>
-				</div>
-			</div>
-			<div class="form-group row mb-2">
-				<div class="col-md-2">
-					<label for="phoneCd" class="control-label"><b>연락처</b></label>
-					<div>
-			        	<select class="form-control" id="phoneCd" name="phoneCd" >
-							<c:forEach items="${dsCode1}" var="code1">
-								<option value="${code1.commCd}">${code1.commCdNm}</option>
-							</c:forEach>
-			     		</select>
-		     		</div>
-	     		</div>
-				<div class="col-md-3">
-					<label></label>
-					<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
-				</div>
-				<div class="col-md-3">
-					<label></label>
-					<input class="form-control" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
-				</div>
-				<input type="hidden" id="phoneNum" name="phoneNum">
-			</div>
-			
-			
-	     	<div class="form-group row">	
-				<div class="form-group col-md-2">
-					<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
-					<div style="margin-bottom: 15px;">
-						<input class="form-control" type="text" id="postNum1" placeholder="우편번호" disabled="disabled">
-					</div>
-				</div>
-				<div class="col-md-2">
-					<label class="control-label"><b></b></label>
-					<div>
-						<input type="button" class="btn user-post-btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
-					</div>
-						<input type="hidden" id="postNum" name="postNum">
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="form-group col-md-3">
-					<label for="postnum2" class="control-label col-md-2"></label>
-					<div style="margin-bottom: 15px;">
-						<input class="form-control" type="text" id="postNum2" placeholder="도로명주소" disabled="disabled"/>
-		     		</div>
-	     		</div>
-	     		<div class="col-md-3">
-					<label for="postnum3" class="control-label col-md-2"></label>
-					<div style="margin-bottom: 15px;">
-						<input class="form-control" type="text" id="postNum3" placeholder="지번주소" disabled="disabled"/>
-					</div>
-				</div>
-				<div class="form-group col-md-3">
-					<label for="address1" class="control-label col-md-3"><b>상세주소</b></label>
-					<div>
-						<input class="form-control" type="text" id="address1" placeholder="상세주소"/>
-					</div>
-					<input type="hidden" id="address" name="address">
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="form-group col-md-3">
-					<label class="control-label col-md-2"><b>사진</b></label>
-					<div>
-						<img id="pic" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
-					</div>
-					<div class="col-md-6">
-						<input type="hidden" id="userImage" name="userImage">
-					</div>
-				</div>
-				<input type="hidden" id="flag" name="flag" value="false">
-			</div>
-		</form>
-		<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form" class="offset-md-2">
-			<div class="form-group row" style="margin-bottom: 10%;">
-				<div class="form-group col-md-8">
-					<label class="control-label col-md-2"></label>
-					<div class="col-md-6">
-						<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload();"/>
-						<input type="hidden" id="imageFolder" name="imageFolder" value="userImg">
-					</div>
-				</div>
-				<div class="form-group col-md-4">
-					<label class="col-md-2"></label>
-					<div>
-						<button type="button" class="btn user-back-btn" onclick="fn_back()">뒤로가기</button>
-						<button class="btn user-submit-btn" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
-					</div>
-				</div>
-			</div>
-		</form>
-	</div>
+<!-- 수정용 -->
+	<div id="wrap">
+         <div id="container">
+         
+				 <!-- 메인 -->
+	            
+	       <div id="main">
+	            
+				<form id="joinFrm" method="post" action="${context}/work/user/updateUser.do" role="form">
+  				
+  				<!-- 아이디 -->	            
+	                <div class="q1 form-group">
+	                	<label  for="id" class="control-label"><b id="naming">아이디</b></label>
+	                    <div class="box">
+	                        <input class="form-control" type="text" name="id" id="id" required="required" disabled="disabled" autofocus="autofocus" onkeyup="idCheck();"/>	    
+	                    </div>
+	                    <p id="message"></p>
+	                </div>	                    
+	                    
+		        <!-- 비밀번호 -->
+	                <div class="q1 form-group">	
+						<label for="pw" class="control-label"><b id="naming">비밀번호</b></label>	            
+	                    <div class="box">
+	                        <input class="form-control" type="password" name="pw" id="pw" required="required" disabled="disabled"/>
+	                    </div>
+	                </div>
+	                
+	
+	            <!-- 이메일 --> 
+	                <div class="q1 form-group">
+						<label for="email" class="control-label"><b id="naming">이메일</b></label>	                	
+	                    <div class="box">
+	                        <input class="form-control" type="email" name="email" id="email" required="required"/>
+	                    </div>
+	                </div>
+	                	             
+	                    
+	                    	                                  
+	           <!-- 이름 -->  
+	                <div class="q1 form-group">	 
+						<label for="name" class="control-label"><b id="naming">성명</b></label>	                
+	                    <div class="box">
+	                        <input class="form-control" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
+	                    </div>
+	                </div>		    
+	                            
+	                    
+	           <!-- 생년월일 -->
+	                <div class="q1 form-group">
+						<label for="birth" class="control-label"><b id="naming">생년월일</b></label>	                	 
+	                    <div class="box">
+	                        <input class="form-control" type="text" id="birth" name="birth" required="required" maxlength="10"/>
+	                    </div>
+	                </div>	             	                    
+	                 
+	
+	           <!-- 전화번호 -->
+	                <div class="q1 form-group">
+						<label for="phoneCd" class="control-label"><b id="naming">연락처</b></label>	                
+	                	<p id="nameTag"></p>
+	                    <div class="box_tel">
+	                        <select class="form-control" id="phoneCd" name="phoneCd">
+								<c:forEach items="${dsCode1}" var="code1">
+									<option value="${code1.commCd}">${code1.commCdNm}</option>
+								</c:forEach	>                        
+	                        </select>	                          
+						</div>
+	                        -
+	                    <!-- 앞자리 -->
+						<div class="box_tel">
+							<label></label>
+							<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
+						</div>	                        
+	                  
+	                        -
+	                    <!-- 뒷자리 -->	                        
+						<div class="box_tel">
+							<label></label>
+							<input class="form-control" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
+						</div>		                        
+						<input type="hidden" id="phoneNum" name="phoneNum">
+	                </div>	
+	                	             	
+	         
+	                <!-- 주소 -->  	
+	                <div class="q1 form-group">	                
+<!-- 	                	<div id="nameTag"></div> -->
+												
+	                    <!-- 우편번호 -->							                
+	                    <div class="form-group box2">
+							<label for="postnum1" class="control-label"><b id="naming">주소</b></label>              
+		                    <p id="nameTag"></p>
+		                    <div class="find_add">
+		                        <input class="form-control" type="text" id="postNum1" placeholder="우편번호" disabled="disabled">
+		                    </div>
+		                    
+		                    <!-- 우편번호 찾기 -->
+		                    <div class="find_btn2">
+		                    	<label class="control-label"><b></b></label>
+		                    	<div class="find_btn2">
+			                        <input type="button" class="btn user-post-btn find_btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+		                    	</div>	
+			                    <input type="hidden" id="postNum" name="postNum"> 
+		                    </div>
+	                    </div>
+	                    
+	                    
+	                    
+	                    <!-- 도로명주소 -->
+	                    <div class="form-group box2">
+							<label for="postnum2" class="control-label add_label"></label>	                    
+		                    <div>
+		                       <input class="form-control" type="text" id="postNum2" placeholder="도로명주소" disabled="disabled"/>
+		                    </div>
+		                       <!--  <input type="hidden" id="postNum" name="postNum"> -->
+	                    </div>
+	                    
+	                    <!-- 지번주소 -->	                    
+	                    <div class="form-group box2">
+	                   		<label for="postnum3" class="control-label add_label"></label>
+		                    <div>
+		                       <input class="form-control" type="text" id="postNum3" placeholder="지번주소" disabled="disabled"/>
+		                    </div>
+	                    </div>
 
+	                    <!-- 상세 주소 -->	                    
+	                    <div class="form-group box2">
+	                    	<label for="address1" class="control-label col-md-3"></label>
+		                    <div>
+								<input class="form-control" type="text" id="address1" placeholder="상세주소"/>
+		                    </div>
+		                    <input type="hidden" id="address" name="address">
+	                    </div>	                    	                    
+	                    		
+	                </div>
+	                
+	                <!-- 버튼 --> 	
+	                <div class="q1 form-group">
+	                	<label class="col-md-2"></label>           
+	                	<div class="btn_box">
+							<button type="button" class="btn user-back-btn" onclick="fn_back()"> <p class="btn_text"> 뒤로가기 </p> </button>
+			                <button class="btn user-submit-btn " type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()"> <p class="btn_text"> 수정완료 </p> </button>
+	                	</div>       
+	                </div>				
+	        
+
+				</form>
+        	 </div>
+        </div>
+            
+    </div>
+				
+			
+
+<!-- 푸터 -->
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>

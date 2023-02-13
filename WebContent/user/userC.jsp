@@ -16,7 +16,7 @@
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
-    <link href="${context}/css/user.css" rel="stylesheet">
+    <link href="${context}/css/userC.css" rel="stylesheet">
 
 	<script src="${context}/js/jquery-1.9.1.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
@@ -114,23 +114,23 @@
 		});
 	}
 
-	function fn_upload(){
-		$("#ajaxform").ajaxSubmit({
-	        type: "POST",
-	        dataType: 'text',
-	        url: $("#ajaxform").attr("action"),
-	        data: $("#ajaxform").serialize(),
-	        success: function (data) {
-	        	data2 = data.replace(/"/gi, "");
-	        	var imageUrl = "${context}/userImg/" + data2;
-	        	$("#pic").attr("src", imageUrl);
-	        	$("#userImage").val(data2);
-	        },
-	        error: function (xhr, status, error) {
-	            alert(error);
-	        }
-	    });
-	}
+// 	function fn_upload(){
+// 		$("#ajaxform").ajaxSubmit({
+// 	        type: "POST",
+// 	        dataType: 'text',
+// 	        url: $("#ajaxform").attr("action"),
+// 	        data: $("#ajaxform").serialize(),
+// 	        success: function (data) {
+// 	        	data2 = data.replace(/"/gi, "");
+// 	        	var imageUrl = "${context}/userImg/" + data2;
+// 	        	$("#pic").attr("src", imageUrl);
+// 	        	$("#userImage").val(data2);
+// 	        },
+// 	        error: function (xhr, status, error) {
+// 	            alert(error);
+// 	        }
+// 	    });
+// 	}
 
 </script>
 </head>
@@ -155,18 +155,18 @@
 	<div id="wrap">
          <div id="container">
          
-	       <form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form">
 				 <!-- 메인 -->
 	            
-	           <div id="main">
+	       <div id="main">
 	            
+		       <form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form" >
   				<!-- 아이디 -->	            
 	                <div class="q1 form-group">
 	                	<label  for="id" class="control-label"><b id="naming">아이디</b></label>
 	                    <div class="box">
-	                        <input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" autocomplete="off" placeholder="8~16자리로 입력하세요." onkeyup="idCheck();"/>
-	                    	<p id="message"></p>
+	                        <input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" autocomplete="off" placeholder="8~16자리로 입력하세요." onkeyup="idCheck();"/>	    
 	                    </div>
+	                    <p id="message"></p>
 	                </div>	                    
 	                    
 		        <!-- 비밀번호 -->
@@ -183,14 +183,6 @@
 						<label for="email" class="control-label"><b id="naming">이메일</b></label>	                	
 	                    <div class="box">
 	                        <input class="form-control" type="email" name="email" id="email" required="required" autocomplete="on" placeholder="이메일을 입력해주세요."/>
-	 <!--                            @    
-	                        <select name="mail" id="email2">
-	                            <option selected>선택</option>
-	                            <option>naver.com</option>
-	                            <option>daum.com</option>
-	                            <option>google.com</option>
-	                            <option>직접입력</option>
-	                          </select> -->
 	                    </div>
 	                </div>
 	                	             
@@ -216,29 +208,27 @@
 	
 	           <!-- 전화번호 -->
 	                <div class="q1 form-group">
-	                	<div id="nameTag">
-							<label for="phoneCd" class="control-label"><b id="naming">연락처</b></label>	                
-	                	</div>
+						<label for="phoneCd" class="control-label"><b id="naming">연락처</b></label>	                
+	                	<p id="nameTag"></p>
 	                    <div class="box_tel">
 	                        <select class="form-control" id="phoneCd" name="phoneCd">
 								<c:forEach items="${dsCode1}" var="code1">
 									<option value="${code1.commCd}">${code1.commCdNm}</option>
-<!-- 		                            <option selected>010</option> -->
-<!-- 		                            <option>011</option> -->
-<!-- 		                            <option>016</option> -->
 								</c:forEach	>                        
 	                        </select>	                          
 						</div>
 	                        -
 	                    <!-- 앞자리 -->
 						<div class="box_tel">
+							<label></label>
 							<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"  placeholder="3-4자리"/>
 						</div>	                        
 	                  
 	                        -
 	                    <!-- 뒷자리 -->	                        
 						<div class="box_tel">
-							<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"  placeholder="4자리"/>
+							<label></label>
+							<input class="form-control" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"  placeholder="4자리"/>
 						</div>		                        
 						<input type="hidden" id="phoneNum" name="phoneNum">
 	                </div>	
@@ -246,20 +236,28 @@
 	         <label></label> 
 	         
 	                <!-- 주소 -->  	
-	                <div class="q1 form-group">
-	                
-	                	<div id="nameTag">
-							<label for="postnum1" class="control-label"><b id="naming">주소</b></label>              
-	                	</div>
+	                <div class="q1 form-group">	                
+<!-- 	                	<div id="nameTag"></div> -->
 												
 	                    <!-- 우편번호 -->							                
 	                    <div class="form-group box2">
-		                    <div>
+							<label for="postnum1" class="control-label"><b id="naming">주소</b></label>              
+		                    <p id="nameTag"></p>
+		                    <div class="find_add">
 		                        <input class="form-control" type="text" id="postNum1" placeholder="우편번호" disabled="disabled">
-		                        <input type="button" class="btn user-post-btn find_btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
 		                    </div>
-		                     	<input type="hidden" id="postNum" name="postNum"> 
+		                    
+		                    <!-- 우편번호 찾기 -->
+		                    <div class="find_btn2">
+		                    	<label class="control-label"><b></b></label>
+		                    	<div class="find_btn2">
+			                        <input type="button" class="btn user-post-btn find_btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+		                    	</div>	
+			                    <input type="hidden" id="postNum" name="postNum"> 
+		                    </div>
 	                    </div>
+	                    
+	                    
 	                    
 	                    <!-- 도로명주소 -->
 	                    <div class="form-group box2">
@@ -298,8 +296,8 @@
 	                </div>				
 	        
 
+					</form>
         	   </div>
-			</form>
         </div>
             
     </div>

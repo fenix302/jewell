@@ -6,13 +6,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="userC.jsp">
+	<meta name="description" content="userU.jsp">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
    	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/social-buttons.css" rel="stylesheet">
+	<link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
@@ -30,13 +32,8 @@
 <%-- 	<script src="${context}/js/bootstrap.bundle.js"></script> --%>
 	<script type="text/javascript">
 
-	var imageFolder;
-
 	$(document).ready(function(){
-// 		$('#dataTables-example').dataTable();
 		fn_init();
-
-		imageFolder = "userImg";
 
 		$( "#birth" ).datepicker({
 	    	dateFormat: 'yy-mm-dd',
@@ -44,7 +41,11 @@
 	        changeYear: true,
 	        yearRange: "1980:2015"
 	    });
+
+		//U페이지 해당
+		fn_setDetailInfo();
 	});
+
     function sample4_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -82,36 +83,50 @@
                 }
             }
     	}).open();
+
     }	
+	
+	function fn_setDetailInfo(){
+		$("#id").val('${dsUser.id}');
+		$("#pw").val('${dsUser.pw}');
+		$("#email").val('${dsUser.email}');
+
+		$("#name").val('${dsUser.name}');
+		$("#birth").val('${dsUser.birth}');
+
+		var phoneArr = '${dsUser.phoneNum}'.split("-");
+		var postNumArr = '${dsUser.postNum}';
+		var addressArr = '${dsUser.address}'.split("/");
+
+		var userImage = '${dsUser.userImage}';
+		userImage = userImage.replace(/"/gi, "");
+
+		$("#phone1").val(phoneArr[0]);
+		$("#phone2").val(phoneArr[1]);
+
+		$("#phoneCd").val('${dsUser.phoneCd}');
+
+		$("#postNum1").val(postNumArr);
+		
+		$("#postNum2").val(addressArr[0]);
+		$("#postNum3").val(addressArr[1]);
+		$("#address1").val(addressArr[2]);
+		
+		$("#pic").attr("src", '${context}/userImg/' + userImage);
+		$("#userImage").val(userImage);
+
+	}
 
 	function fn_save(){
 		if(!fn_validation()) return;
-		if($("#flag").val() == "false"){
-			alert("이미 사용중인 ID입니다");
-			$("id").focus();
-			return;
+
+		if(confirm("수정하시겠습니까?")){
+			$("#phoneNum").val($("#phone1").val() + "-" + $("#phone2").val());
+	 		$("#postNum").val($("#postNum1").val());
+	 		$("#address").val($("#postNum2").val() + "/" + $("#postNum3").val() + "/" + $("#address1").val());
+
+	 		$("#joinFrm").submit();
 		}
-
-
-		$("#phoneNum").val($("#phone1").val() + "-" + $("#phone2").val());
- 		$("#postNum").val($("#postNum1").val());
- 		$("#address").val($("#postNum2").val() + "/" + $("#postNum3").val() + "/" + $("#address1").val());
-
- 		$("#joinFrm").submit();
-	}
-
-	function idCheck(){
-		var id = $("#id").val();
-		var access = $("#message");
-		$.ajax({
-			url:"${context}/work/user/idCheck.do?id=" + id,
-			success:function(result){
-				result2 = result.replace(/"/gi, "");
-				var splResult = result2.split("@");
-				access.html(splResult[0]);
-				$("#flag").val(splResult[1]);
-			}
-		});
 	}
 
 	function fn_upload(){
@@ -138,32 +153,29 @@
 <jsp:include page="../common/top.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="user-main">
-			<h3><font color="black"><strong>회원가입</strong></font></h3>
+			<h1><font color="black"><strong>정보 수정</strong></font></h1>
 		</div>
 	</div>
 	
-	
 	<div class="container">
-		<form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form" class="offset-md-2">
+	<form id="joinFrm" method="post" action="${context}/work/user/updateUser.do" role="form" class="offset-md-2">
+			
 			<div class="form-group row mb-2" style="margin-top: 5%;">
 				<div class="form-group col-md-4">
 					<label for="id" class="control-label"><b>아이디</b></label>
 					<div>
-						<input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
+						<input class="form-control" type="text" name="id" id="id" required="required" disabled="disabled" autofocus="autofocus" onkeyup="idCheck();"/>
 					</div>
 					<p id="message"></p>
 				</div>
 	
-	<!-- 비밀번호 -->
 				<div class="form-group col-md-4 mb-2">
 					<label for="pw" class="control-label"><b>비밀번호</b></label>
 					<div>
-						<input class="form-control" type="password" name="pw" id="pw" required="required"/>
+						<input class="form-control" type="password" name="pw" id="pw" required="required" disabled="disabled"/>
 					</div>
 				</div>
 			</div>
-			
-	<!-- 이메일 -->			
 			<div class="form-group row mb-2">
 				<div class="form-group col-md-4">
 					<label for="email" class="control-label"><b>이메일</b></label>
@@ -173,7 +185,7 @@
 				</div>
 			</div>
 			
-	<!-- 성명-->			
+			
 			<div class="form-group row mb-2">
 				<div class="form-group col-md-4 mb-2">
 					<label for="name" class="control-label"><b>성명</b></label>
@@ -181,6 +193,8 @@
 						<input class="form-control" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
 					</div>
 				</div>
+				
+				
 				<div class="form-group col-md-4">
 					<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
 					<div>
@@ -190,12 +204,11 @@
 			</div>
 			
 			
-	<!-- 연락처-->				
 			<div class="form-group row mb-2">
 				<div class="col-md-2">
 					<label for="phoneCd" class="control-label"><b>연락처</b></label>
 					<div>
-			        	<select class="form-control" id="phoneCd" name="phoneCd">
+			        	<select class="form-control" id="phoneCd" name="phoneCd" >
 							<c:forEach items="${dsCode1}" var="code1">
 								<option value="${code1.commCd}">${code1.commCdNm}</option>
 							</c:forEach>
@@ -214,7 +227,6 @@
 			</div>
 			
 			
-	<!-- 주소-->				
 	     	<div class="form-group row">	
 				<div class="form-group col-md-2">
 					<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
@@ -228,8 +240,8 @@
 					<div>
 						<input type="button" class="btn user-post-btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
 					</div>
-						<input type="hidden" id="postNum" name="postNum">
-				</div>				
+					<input type="hidden" id="postNum" name="postNum">
+				</div>
 			</div>
 			
 			
@@ -241,6 +253,7 @@
 		     		</div>
 	     		</div>
 	     		
+	     <!-- 지번주소 -->	 	     		
 	     		<div class="col-md-3">
 					<label for="postnum3" class="control-label col-md-2"></label>
 					<div style="margin-bottom: 15px;">
@@ -249,7 +262,6 @@
 				</div>
 				
 				
-	        <!-- 상세 주소 -->					
 				<div class="form-group col-md-3">
 					<label for="address1" class="control-label col-md-3"><b>상세주소</b></label>
 					<div>
@@ -258,8 +270,6 @@
 					<input type="hidden" id="address" name="address">
 				</div>
 			</div>
-			
-			
 			<div class="form-group row">
 				<div class="form-group col-md-3">
 					<label class="control-label col-md-2"><b>사진</b></label>
@@ -273,7 +283,6 @@
 				<input type="hidden" id="flag" name="flag" value="false">
 			</div>
 		</form>
-		
 		<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form" class="offset-md-2">
 			<div class="form-group row" style="margin-bottom: 10%;">
 				<div class="form-group col-md-8">

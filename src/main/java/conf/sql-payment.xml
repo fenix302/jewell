@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="payment">
-	<resultMap id="payResult" type="Payment">
+	<resultMap id="payResult" type="payment">
 		<result property="imp_uid" column="PAY_ID" />
 		<result property="merchant_uid" column="IMPORT_ID" />
 		<result property="paid_amount" column="PAY_AMOUNT" />
@@ -10,7 +10,22 @@
 	</resultMap>
 
 	<insert id="insertPaymentSuccess">
-		insert into pay_import values(#{imp_uid}, #{merchant_uid}, #{paid_amount}, #{apply_num}, #{paid_at})
+		<![CDATA[
+			INSERT INTO PAY_IMPORT(
+				PAY_ID
+				, IMPORT_ID
+				, PAY_AMOUNT
+				, PER_NUM
+				, PER_TIME
+			) VALUES (
+				#{imp_uid}
+				, #{merchant_uid}
+				, #{paid_amount}
+				, #{apply_num}
+				, #{paid_at}
+			)
+		]]>
+<!-- 		insert into pay_import values(#{imp_uid}, #{merchant_uid}, #{paid_amount}, #{apply_num}, #{paid_at}) -->
 	</insert>	
 	
 </mapper>
