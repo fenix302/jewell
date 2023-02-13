@@ -13,6 +13,7 @@
 		<typeAlias type="work.code.CodeBean" alias="code"/>
 		<typeAlias type="work.iamport.PaymentBean" alias="payment"/>
 		<typeAlias type="work.notice.NoticeBean" alias="notice"/>
+		<typeAlias type="work.comm.CommBean" alias="comm"/>
 	</typeAliases>
 
 	<mappers>
@@ -25,5 +26,6 @@
 		<mapper resource="conf/sql-code.xml" />
 		<mapper resource="conf/sql-payment.xml" />
 		<mapper resource="conf/sql-notice.xml" />
+		<mapper resource="conf/sql-comm.xml" />
 	</mappers>
 </configuration>
