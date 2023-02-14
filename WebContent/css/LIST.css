@@ -21,6 +21,7 @@ button:hover{
 .btn.btn-warning.btn-lg{
 	background-color: black !important;
 	color: white !important;
+	
 }
 
 .fa.fa-shopping-cart.fa-2x{
@@ -42,16 +43,27 @@ button:hover{
 	
 }
 
+.row{
+	margin-bottom: 100px !important;
+}
 
 
+.mini{
+	font-size: 13px !important;
+	text-align: center !important;
+	
 
+}
 
-
-
-
-
-
-
+.btn.btn-default.btn-info{
+	background-color: white !important;
+	border: 1px gray !important;
+	height: 24px !important;
+	width: 24px !important;
+	margin-left: 10px !important;
+	margin-right: 10px !important;
+	text-align: center !important;
+}
 
 
 
