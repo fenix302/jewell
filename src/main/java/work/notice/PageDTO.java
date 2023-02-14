@@ -30,9 +30,7 @@ public class PageDTO {
 		this.prev = startPage > 1;
 		this.next = this.endPage < realEnd;
 		
-		
 	}
-	
 	
 	
 	public int getStartPage() {
