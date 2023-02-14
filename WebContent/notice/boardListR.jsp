@@ -48,8 +48,8 @@
 
 
 <!-- 본문 -->
-<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
-<!-- 		<div class="row">
+	<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
+<!-- 	<div class="row">
 			<div class="col-lg-12 page_header">
 				<h1 class="comeText">공&nbsp;&nbsp;지&nbsp;&nbsp;사&nbsp;&nbsp;항</h1>
 			</div>
