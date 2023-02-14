@@ -210,7 +210,7 @@
 						$(".move").on("click", function (e) {
 							e.preventDefault();
 							actionForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+"'>");
-							actionForm.attr("action","/work/notice/retrieveBoard.do");
+							actionForm.attr("action","/work/comm/retrieveBoard.do");
 							actionForm.submit();
 						});
 						
