@@ -12,12 +12,12 @@ public class NoticeServiceImpl implements NoticeService{
 	@Resource(name = "noticeDAO")
 	private NoticeDAO noticeDAO;
 
-	public List<Map<String, String>> retrieveBoardList(Map<String, String> boardParam){
-		return noticeDAO.retrieveBoardList(boardParam);
+	public List<NoticeBean> retrieveBoardList(Criteria cri){
+		return noticeDAO.retrieveBoardList(cri);
 	}
 	
-	public List<Map<String, String>> getListWithPaging(Map<String, String> boardParam) {
-		return noticeDAO.getListWithPaging(boardParam);
+	public List<NoticeBean> getListWithPaging(Criteria cri) {
+		return noticeDAO.getListWithPaging(cri);
 	}
 
 	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
@@ -47,4 +47,10 @@ public class NoticeServiceImpl implements NoticeService{
 	public void deleteBoard2(Map<String, String> boardParam){
 		noticeDAO.deleteBoard2(boardParam);
 	}
+
+	@Override
+	public int getTotalCount() {
+		return noticeDAO.getTotalCount();
+	}
+
 }

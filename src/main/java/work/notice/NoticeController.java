@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import work.user.UserService;
 
@@ -90,14 +92,22 @@ public class NoticeController {
 	}
 
 	@RequestMapping(value="/work/notice/retrieveBoardList.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView retrieveBoardList(HttpServletRequest request){
+	public ModelAndView retrieveBoardList(HttpServletRequest request, Model model, Criteria cri){
 		ModelAndView mv = new ModelAndView();
+		
+		model.addAttribute("dsBoardList", noticeService.getListWithPaging(cri));
+		
+		int total = noticeService.getTotalCount();
+		
+		PageDTO pageMaker = new PageDTO(cri, total);
+		
+		model.addAttribute("pageMaker", pageMaker);
+		
+//		Map<String, String> boardParam = new HashMap<String, String>();
 
-		Map<String, String> boardParam = new HashMap<String, String>();
+//		List<NoticeBean> dsBoardList = noticeService.retrieveBoardList(cri);
 
-		List<Map<String, String>> dsBoardList = noticeService.retrieveBoardList(boardParam);
-
-		mv.addObject("dsBoardList", dsBoardList);
+//		mv.addObject("dsBoardList", dsBoardList);
 		mv.setViewName("/notice/boardListR");
 
 		return mv;
@@ -131,30 +141,8 @@ public class NoticeController {
 		return mv;
 	}
 
-	@RequestMapping(value="/work/notice/updateBoardRating.do", method=RequestMethod.GET)
-	public ModelAndView updateBoardRating(HttpServletRequest request){
-		ModelAndView mv = new ModelAndView();
-
-		HttpSession session = request.getSession();
-
-		Map<String, String> boardParam = new HashMap<String, String>();
-		Map<String, String> markParam = new HashMap<String, String>();
-
-		String userCode = (String)session.getAttribute("userCode");
-		String boardNo = request.getParameter("boardNo");
-
-		boardParam.put("boardNo", boardNo);
-
-		markParam.put("userCode", userCode);
-		markParam.put("boardNo", boardNo);
-
-		mv.setViewName("redirect:/work/notice/retrieveBoard.do?boardNo=" + boardNo + "&fromRating=true");
-
-		return mv;
-	}
-
 	@RequestMapping(value="/work/notice/updateBoard.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView updateBoard1(HttpServletRequest request, @ModelAttribute NoticeBean board){
+	public ModelAndView updateBoard1(HttpServletRequest request, @ModelAttribute NoticeBean board, Criteria cri, Model model){
 		Map<String, String> boardParam = new HashMap<String, String>();
 		ModelAndView mv = new ModelAndView();
         String boardNo = request.getParameter("bno"); //없으면 GET(create안함), 있으면 POST(create)
@@ -166,10 +154,18 @@ public class NoticeController {
 
 		if(flag == null){
 			mv.addObject("dsBoard", dsBoard);
+//			model.addAttribute("pageNum", cri.getPageNum());
+//			model.addAttribute("amount", cri.getAmount());
+//			model.addAttribute("type", cri.getType());
+//			model.addAttribute("keyword", cri.getKeyword());
 			mv.setViewName("/notice/boardRegisterU");
 		}else{
 			noticeService.updateBoard(board);
-			mv.setViewName("/work/notice/retrieveBoard.do?boardNo=" + boardNo);
+//			model.addAttribute("pageNum", cri.getPageNum());
+//			model.addAttribute("amount", cri.getAmount());
+//			model.addAttribute("type", cri.getType());
+//			model.addAttribute("keyword", cri.getKeyword());
+			mv.setViewName("redirect:/work/notice/retrieveBoard.do?bno=" + boardNo);
 		}
 		return mv;
 	}

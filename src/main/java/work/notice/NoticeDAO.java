@@ -13,12 +13,12 @@ public class NoticeDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	public List<Map<String, String>> retrieveBoardList(Map<String, String> boardParam){
-		return sqlSession.selectList("notice.retrieveBoardList", boardParam);
+	public List<NoticeBean> retrieveBoardList(Criteria cri){
+		return sqlSession.selectList("notice.retrieveBoardList", cri);
 	}
 
-	public List<Map<String, String>> getListWithPaging(Map<String, String> boardParam){
-		return sqlSession.selectList("notice.getListWithPaging", boardParam);
+	public List<NoticeBean> getListWithPaging(Criteria cri){
+		return sqlSession.selectList("notice.getListWithPaging", cri);
 	}
 	
 	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
@@ -48,5 +48,8 @@ public class NoticeDAO {
 	public void deleteBoard2(Map<String, String> boardParam){
 		sqlSession.delete("notice.deleteBoard2", boardParam);
 	}
-
+	
+	public int getTotalCount() {
+		return sqlSession.selectOne("notice.getTotalCount");
+	}
 }

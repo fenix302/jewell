@@ -68,10 +68,10 @@
 								<tbody>
 			                    	<c:forEach items="${dsBoardList}" var="dsBoardList" varStatus="courseIdx">
 			                         <tr>
-			  							<td><a href ="${context}/work/notice/retrieveBoard.do?bno=${dsBoardList.BNO}">${dsBoardList.BNO}</a></td>
-										<td><a href="${context}/work/notice/retrieveBoard.do?bno=${dsBoardList.BNO}">${dsBoardList.TITLE}</a></td>
-										<td><c:out value="${dsBoardList.WRITER}" /></td>
-										<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dsBoardList.REGDATE}" /></td>
+			  							<td><a class="move" href="${dsBoardList.bno}">${dsBoardList.bno}</a></td>
+										<td><a class="move" href="${dsBoardList.bno}">${dsBoardList.title}</a></td>
+										<td><c:out value="${dsBoardList.writer}" /></td>
+										<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dsBoardList.regdate}" /></td>
 
 			                         </tr>
 				                    </c:forEach>
@@ -103,16 +103,16 @@
 		
 		
 		<!-- 			tables.html 소스에서 가져오고, 컨트롤 + 쉬프트 + F 로 정렬 처리		 -->
-						<div class="pull-right">
+						<div class="Page pull-right">
 							<ul class="pagination">
 								<c:if test="${pageMaker.prev}">
-									<li class="paginate_button previous"><a href="${pageMaker.startPage-1}">Prev</a></li>
+									<li class="page-item previous"><a href="${pageMaker.startPage-1}">Prev</a></li>
 								</c:if>
 								<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-									<li class="paginate_button ${pageMaker.cri.pageNum == num ? "active":""} "><a href="${num}">${num}</a></li>
+									<li class="page-item ${pageMaker.cri.pageNum == num ? "active":""} "><a href="${num}">${num}</a></li>
 								</c:forEach>
 								<c:if test="${pageMaker.next}">
-									<li class="paginate_button next"><a href="${pageMaker.endPage +1}">Next</a></li>
+									<li class="page-item next"><a href="${pageMaker.endPage +1}">Next</a></li>
 								</c:if>
 							</ul>
 						</div>
@@ -151,7 +151,8 @@
 		</div>
 		<!-- /.row -->
 </div>
-		<form id="actionForm" action="/notice/boardListR" method="get">
+		<form id="actionForm" action="/work/notice/retrieveBoardList.do" method="get">
+<%-- 			<input type="hidden" name="bno" value='<c:out value="${dsBoardList.BNO}"/>'> --%>
 			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 			<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 			<input type="hidden" name="type" value='<c:out value="${pageMaker.cri.type}"/>'>
@@ -184,7 +185,7 @@
 						});
 		
 						var actionForm = $("#actionForm");
-						$(".paginate_button a").on("click", function (e) {
+						$(".page-item a").on("click", function (e) {
 							e.preventDefault();
 							console.log('click');
 							actionForm.find("input[name='pageNum']").val($(this).attr("href"));
@@ -197,7 +198,7 @@
 						$(".move").on("click", function (e) {
 							e.preventDefault();
 							actionForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+"'>");
-							actionForm.attr("action","/board/get");
+							actionForm.attr("action","/work/notice/retrieveBoard.do");
 							actionForm.submit();
 						});
 						
