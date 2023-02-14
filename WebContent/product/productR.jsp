@@ -196,6 +196,7 @@
 						$("#image").attr("src", path.replace(existFolder, imageFolder));
 					</script>
                  </div>
+
                 <div class="col-md-6">
  <!--                <br><br><br> -->
                   <table class="table table-user-information">
@@ -229,11 +230,11 @@
                         <td>
 							<div class="input-group number-spinner" style="width: 200px;">
 								<span class="input-group-btn data-dwn">
-									<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+									<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"><p class="mini">◁</p> </span></button>
 								</span>
 								<input type="text" class="form-control text-center" value="1" min="1" max="100" width="100%" disabled="disabled">
 								<span class="input-group-btn data-up">
-									<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+									<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"><p class="mini">▷</p></span></button>
 								</span>
 								
 								
@@ -244,10 +245,13 @@
                   </table>
                   <br><br>
                   <div>
-                	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;Add to Cart</i></button>
-                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;Buy Now</i></button>
+                	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;Buy Now</i></button>
+                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;Add to Cart</i></button>
+                      
+                    
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -287,49 +291,8 @@
 		</div>
 	</div>
 </c:if>
-<div class="container">
-		<div class="row">
-			<div class="col-md-12 toppad">
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						<h1 class="panel-title">이 상품을 보신 고객님들이 많이 본 다른상품  ${dsReplyList[0].REPLY_COUNT}</h1>
-					</div>
-					<c:forEach items="${dsReplyList}" var="dsReplyList">
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-md-3" align="center">
-								<img alt="User Pic" id="userImage" src="${context}/userImg/${dsReplyList.USER_IMAGE}" height="200px" width="140px" class="img-circle">
-							</div>
-							<div class="col-md-9">
-								<table class="table table-user-information">
-									<tbody>
-										<tr>
-											<td><b>${dsReplyList.USER_ID}</b>&nbsp;&nbsp;<font size="1px;" color="gray">${dsReplyList.REPLY_DATE}</font>&nbsp;&nbsp;&nbsp;
-											<span class="stars starrr replyStar" data-rating="${dsReplyList.MARK_RATING}"></span>
-											</td>
-										</tr>
-										<tr>
-											<td>${dsReplyList.USER_REPLY}</td>
-										</tr>
-                 				   </tbody>
-                  			  </table>
-               			  </div>
-             		 </div>
-           		 </div>
-				<div class="panel-footer">
-					<c:if test="${sessionScope.userCode == dsReplyList.USER_CODE}">
-	                    <span class="pull-right">
-	                        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" onclick="javascript:fn_remove('${dsReplyList.USER_REPLY_NO}')"><i class="glyphicon glyphicon-remove"></i></a>
-                  	  </span>
-                    </c:if>
-                    <br><br>
-                </div>
-			</c:forEach>
-          </div>
-        </div>
-      </div>
-   <!--    <button class="btn btn-success btn-lg" style="float: right;" onclick="fn_back()">뒤로가기</button> -->
-    </div>
+
+
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>
