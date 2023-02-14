@@ -17,10 +17,12 @@
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
 	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
+        <link href="${context}/css/LIST.css" rel="stylesheet">
 
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/jquery.form.js"></script>
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
+    
 
 <%-- 	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script> --%>
     <script src="${context}/js/plugins/dataTables/datatables.js"></script>
@@ -169,12 +171,13 @@
       <div class="row">
           <div class="panel panel-default">
            <div class="panel-heading">
-              <h3 class="panel-title"><b>[&nbsp;${dsProduct.PRODUCT_CATEGORY_CD_NM}&nbsp;]&nbsp;${dsProduct.PRODUCT_NAME}</b></h3>
+             <%--  <h3 class="panel-title"><b>[&nbsp;${dsProduct.PRODUCT_CATEGORY_CD_NM}&nbsp;]&nbsp;${dsProduct.PRODUCT_NAME}</b></h3> --%>
             </div>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-6" align="center">
-                	<img id="image" src="${context}/ringImg/${dsProduct.PRODUCT_IMAGE}" class="img-rounded img-responsive">
+        	<img  src="/ringImg/ring01.jpg" id="image"class="img-rounded-img-responsive"> 
+<!-- 				 	<img src="/ringImg/ring01.jpg" alt="#" class="img-rounded"> -->
                 	<script type="text/javascript">
 					 	var productCategoryCd = '${dsProduct.PRODUCT_CATEGORY_CD}';
 
@@ -194,7 +197,7 @@
 					</script>
                  </div>
                 <div class="col-md-6">
-                <br><br><br>
+ <!--                <br><br><br> -->
                   <table class="table table-user-information">
                     <tbody>
                     <tr>
@@ -219,6 +222,8 @@
                         <td>제품 등록일</td>
                         <td>${dsProduct.PRODUCT_REG_DATE}</td>
                       </tr>
+                        <tr>
+                        
                       <tr>
                         <td style="vertical-align: middle;">수량</td>
                         <td>
@@ -230,6 +235,8 @@
 								<span class="input-group-btn data-up">
 									<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
 								</span>
+								
+								
 							</div>
 						</td>
                       </tr>
@@ -237,8 +244,8 @@
                   </table>
                   <br><br>
                   <div>
-                	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
-                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
+                	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;Add to Cart</i></button>
+                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;Buy Now</i></button>
                   </div>
                 </div>
               </div>
@@ -285,7 +292,7 @@
 			<div class="col-md-12 toppad">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h1 class="panel-title">상품평  ${dsReplyList[0].REPLY_COUNT}</h1>
+						<h1 class="panel-title">이 상품을 보신 고객님들이 많이 본 다른상품  ${dsReplyList[0].REPLY_COUNT}</h1>
 					</div>
 					<c:forEach items="${dsReplyList}" var="dsReplyList">
 					<div class="panel-body">
@@ -321,7 +328,7 @@
           </div>
         </div>
       </div>
-      <button class="btn btn-success btn-lg" style="float: right;" onclick="fn_back()">뒤로가기</button>
+   <!--    <button class="btn btn-success btn-lg" style="float: right;" onclick="fn_back()">뒤로가기</button> -->
     </div>
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>

@@ -1,0 +1,65 @@
+@charset "EUC-KR";
+
+.btn-primary.btn-lg{
+	background-color: white !important;
+	color:black !important;
+	border: 1px co
+	
+}
+button:hover{
+    background-color: black !important;
+    color: #ffffff !important;
+}
+	
+.fa.fa-credit-card.fa-2x{
+	font-size: 14pt !important;
+	width: 223px !important;
+	text-align: left !important;
+
+}
+
+.btn.btn-warning.btn-lg{
+	background-color: black !important;
+	color: white !important;
+}
+
+.fa.fa-shopping-cart.fa-2x{
+	font-size: 14pt !important;
+	width: 223px !important;
+	text-align: left !important;
+	
+}
+
+.panel-title{
+	font-size: 23pt !important;
+	margin-top: 272pt !important;
+	margin-bottom: 140pt !important;
+}
+
+
+.col-md-6{
+	margin-top: 181px !important;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
