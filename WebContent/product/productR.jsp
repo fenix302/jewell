@@ -244,8 +244,10 @@
                   </table>
                   <br><br>
                   <div>
-                	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;Add to Cart</i></button>
-                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;Buy Now</i></button>
+                	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;Buy Now</i></button>
+                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;Add to Cart</i></button>
+                      
+                    
                   </div>
                 </div>
               </div>
