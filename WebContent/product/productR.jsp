@@ -196,6 +196,7 @@
 						$("#image").attr("src", path.replace(existFolder, imageFolder));
 					</script>
                  </div>
+
                 <div class="col-md-6">
  <!--                <br><br><br> -->
                   <table class="table table-user-information">
@@ -250,6 +251,7 @@
                     
                   </div>
                 </div>
+
               </div>
             </div>
           </div>

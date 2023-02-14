@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "utf-8";
 
 .btn-primary.btn-lg{
 	background-color: white !important;
@@ -66,12 +66,22 @@ button:hover{
 }
 
 
+.input-group-btn.data-up{
+	text-align: left !important;
+	margin-left: 0px !important;
+}
 
 
+.col-md-6{
+	width: 600px !important;
+	margin-left: 5px!important;
+	
+/* 	min-width: 200px!important; */
+}
+
+.list_list{
+margin-left: 5px
 
 
-
-
-
-
+}
 
