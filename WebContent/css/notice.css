@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none !important;
+    text-decoration: none  !important;
+   word-break: keep-all;
+   font-family: 'Noto Sans KR', sans-serif;
+}
+
+.page_header{
+	   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('/css/images/login_header.jpg');	
+}
+
+.page_header{
+   max-width: 100%;
+   height: 200px;
+   background-size: cover;
+   background-position: 0%;
+   margin-bottom: 80px;
+}
+
+.btn_box{
+	text-align: center !important;
+}
+
+.comeText {
+   font-size: 30px;
+   color: #fff;
+   font-weight: 900;
+   line-height: 200px;
+   text-align: center;
+}
+
+.page-item{
+	font-size: 17px;
+	padding-left: 5px;
+}
+
+a{
+	color: black !important;
+}
+
+a:hover{
+	color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.form-group{
+	margin-bottom: 8px !important;
+}
+
+.form-group > label{
+	font-weight: bold !important;
+}
+
+.regBtn, .listBtn{
+	margin-top: 10px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	background-color: rgba(0, 0, 0, 0.8) !important;
+    color: white !important;
+}
+
+.searchBtn, .modifyBtn, .resetBtn {
+	margin-top: 5px;
+	margin-left: 5px;
+	background-color: rgba(0, 0, 0, 0.5) !important;
+    color: white !important;
+}
+
+.deleteBtn{
+	margin-top: 5px;
+	margin-left: 5px;
+	background-color: red !important;
+    color: white !important;
+    opacity: 0.7 !important;
+	
+}

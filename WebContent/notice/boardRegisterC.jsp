@@ -19,7 +19,7 @@
     <!-- Custom Fonts -->
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
-    <link href="${context}/css/buy.css" rel="stylesheet">
+    <link href="${context}/css/notice.css" rel="stylesheet">
     
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 <!-- 	<script src="../js/bootstrap.bundle.js"></script> -->
@@ -58,8 +58,8 @@
 <body>
 <jsp:include page="../common/top.jsp"></jsp:include>
 	<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
-	<div class="page-header">
-		<h1>새 글 쓰기</h1>
+	<div class="page_header">
+		<h1 class="comeText">새&nbsp;&nbsp;&nbsp; 글&nbsp;&nbsp;&nbsp; 쓰&nbsp;기</h1>
 	</div>
 	<form id="createBoard" method="post" action="/work/notice/createBoard.do" role="form">
 		<div class="form-horizontal">
@@ -78,17 +78,15 @@
 			</div>
 
 			<div class="form-group">
-				<label for="boardContents" class="control-label col-md-1"><b>본문</b></label>
+				<label for="boardContents" class="control-label col-md-1"><b>내용</b></label>
 				<div class="col-md-11">
-					<textarea class="form-control" name="content" id="content" cols="10" rows="15" required="required" placeholder="본문을 입력해주세요"></textarea>
+					<textarea class="form-control" name="content" id="content" cols="10" rows="15" required="required" placeholder="내용을 입력해주세요"></textarea>
 				</div>
 			</div>
 		<div class="form-group">
-			<div class="col-md-offset-1 col-md-2">
-				<button type="button" class="btn btn-danger" onclick="fn_back()">취소</button>
-			</div>
-			<div class="col-md-offset-7 col-md-1">
-				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
+			<div class="col-md-4">
+				<button type="button" class="btn resetBtn" onclick="fn_back()">취소</button>
+				<button class="btn regBtn" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
 			</div>
 		</div>
 		</div>

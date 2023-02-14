@@ -19,7 +19,7 @@
     <!-- Custom Fonts -->
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
-    <link href="${context}/css/buy.css" rel="stylesheet">
+    <link href="${context}/css/notice.css" rel="stylesheet">
     
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 <!-- 	<script src="../js/bootstrap.bundle.js"></script> -->
@@ -73,7 +73,7 @@
 <div class="container" style="margin-top: 2%; margin-bottom: 10%;">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Board Modify</h1>
+            <h1 class="page_header comeText">공&nbsp;지&nbsp;사&nbsp;항&nbsp;&nbsp;수&nbsp;정</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -81,10 +81,6 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Board Modify Page
-                </div>
-                <!-- /.panel-heading -->
                 <div class="panel-body">
 						
 					<form role="form" action="/work/notice/updateBoard.do" method="post">	
@@ -97,25 +93,25 @@
 						
 						
 						<div class="form-group">
-							<label>Bno</label> <input class="form-control" name="bno" value='<c:out value="${dsBoard.BNO}" />' readonly="readonly">
+							<label>글 번호</label> <input class="form-control" name="bno" value='<c:out value="${dsBoard.BNO}" />' readonly="readonly">
 						</div>
 						<div class="form-group">
-							<label>Title</label> <input class="form-control" name="title" value='<c:out value="${dsBoard.TITLE}" />'>
+							<label>제목</label> <input class="form-control" name="title" value='<c:out value="${dsBoard.TITLE}" />'>
 						</div>
 						<div class="form-group">
-							<label>Text area</label> 
+							<label>내용</label> 
 							<textarea class="form-control" rows="3" name="content"><c:out value="${dsBoard.CONTENT}"/></textarea>
 						</div>
 						<div class="form-group">
-							<label>Writer</label> <input class="form-control" name="writer" value='<c:out value="${dsBoard.WRITER}" />' readonly="readonly">
+							<label>작성자</label> <input class="form-control" name="writer" value='<c:out value="${dsBoard.WRITER}" />' readonly="readonly">
 						</div>
 						<div class="form-group">
-							<label>RegDate</label> <input class="form-control" name="regdate" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${dsBoard.REGDATE}" />' readonly="readonly">
+							<label>작성일</label> <input class="form-control" name="regdate" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${dsBoard.REGDATE}" />' readonly="readonly">
 						</div>
 
-						<button type="submit" data-oper='modify' class="btn btn-success" onclick="location.href=${context}/work/notice/updateBoard.do?bno=${dsBoard.BNO}">Modify</button>	
-						<button type="submit" data-oper='remove' class="btn btn-danger">Remove</button>
-						<button type="submit" data-oper='list' class="btn btn-info" onclick="location.href='/notice/boardListR.jsp'">List</button>
+						<button type="submit" data-oper='modify' class="btn modifyBtn" onclick="location.href=${context}/work/notice/updateBoard.do?bno=${dsBoard.BNO}">수정</button>	
+						<button type="submit" data-oper='remove' class="btn deleteBtn">삭제</button>
+						<button type="submit" data-oper='list' class="btn listBtn" onclick="location.href='/notice/boardListR.jsp'">목록</button>
 						
 					</form>	
                 </div>

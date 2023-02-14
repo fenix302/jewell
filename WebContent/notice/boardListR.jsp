@@ -21,7 +21,7 @@
     <!-- Custom Fonts -->
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
-    <link href="${context}/css/buy.css" rel="stylesheet">
+    <link href="${context}/css/notice.css" rel="stylesheet">
     
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 <!-- 	<script src="../js/bootstrap.bundle.js"></script> -->
@@ -37,8 +37,8 @@
 <jsp:include page="../common/top.jsp"></jsp:include>
 <div class="container" style="margin-top: 2%; margin-bottom: 10%;">
 		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Board Tables</h1>
+			<div class="col-lg-12 page_header">
+				<h1 class="comeText">공&nbsp;&nbsp;지&nbsp;&nbsp;사&nbsp;&nbsp;항</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -47,9 +47,8 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Board List Page
 						<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
-							<button id="regBtn" type="button" class="btn btn-xs btn-danger pull-right">Register New Board</button>
+							<button id="regBtn" type="button" class="btn btn-xs regBtn pull-right">새 글 쓰기</button>
 						</c:if>
 					</div>
 					<!-- /.panel-heading -->
@@ -58,7 +57,7 @@
 							class="table table-striped table-bordered table-hover">
 							<thead>
 								<tr>
-									<th>#번호</th>
+									<th>글 번호</th>
 									<th>제목</th>
 									<th>작성자</th>
 									<th>작성일</th>
@@ -96,7 +95,7 @@
 									<input type="text" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>'/>
 									<input type="hidden" name="pageNum" value='<c:out value="${pageMaker.cri.pageNum}"/>'/>
 									<input type="hidden" name="amount" value='<c:out value="${pageMaker.cri.amount}"/>'/>
-									<button class="btn btn-success">Search</button>
+									<button class="btn searchBtn">검색</button>
 								</form>					
 							</div>
 						</div>
