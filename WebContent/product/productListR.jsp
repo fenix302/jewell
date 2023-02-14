@@ -39,55 +39,8 @@
 
     $(document).ready(function() {
         $('#dataTables-example').dataTable();
-// 		fn_setImage();
     });
 
-// 	function fn_setImage(){
-// 		alert("fn_setImage()");
-//         var productCategoryCd = '${dsProductList[0].PRODUCT_CATEGORY_CD}';
-
-//         alert("productCategoryCd : " + productCategoryCd);
-
-// 		if(productCategoryCd == 'N'){
-// 			imageFolder = "neckImg";
-// 		}else if(productCategoryCd == 'R'){
-// 			imageFolder = "ringImg";
-// 		}else if(productCategoryCd == 'E'){
-// 			imageFolder = "earImg";
-// 		}else if(productCategoryCd == 'B'){
-// 			imageFolder = "braceletImg";
-// 		}
-// 	}
-
-	function fn_showResult(paramVoteCode, paramVoteCount){
-		if(paramVoteCount == 0){
-			alert("참여자가 없습니다.");
-		}else{
-			location.href = "${context}/work/result/retrieveResult.do?voteCode=" + paramVoteCode;
-		}
-	}
-
-	function fn_checkVote(paramVoteCode){
-		var param = {};
-
-		param["voteCode"] = paramVoteCode;
-
-		$.ajax({
-			url:"${context}/work/result/retrieveExampleNo.do",
-			contentType:"application/json",
-			dataType:"json",
-			data:param,
-			success:function(result){
-				if(result["checkMsg"] == "success"){
-					fn_doVote(paramVoteCode);
-					return true;
-				}else if(result["checkMsg"] == "fail"){
-					alert("이미 투표하셨습니다.");
-					return false;
-				}
-			}
-		});
-	}
 
     </script>
 </head>
