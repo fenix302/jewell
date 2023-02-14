@@ -34,14 +34,29 @@
     <script src="${context}/js/sb-admin-2.js"></script>
 </head>
 <body>
+<!-- 헤더 -->
 <jsp:include page="../common/top.jsp"></jsp:include>
+
+<!-- 페이지 헤더 -->
+	<div class="page_header">
+		 <div class="login_header">
+		       <div class="name">
+		             <p class="comeText">공지사항</p>
+		        </div>
+		  </div>
+	</div>
+
+
+<!-- 본문 -->
 <div class="container" style="margin-top: 2%; margin-bottom: 10%;">
-		<div class="row">
+<!-- 		<div class="row">
 			<div class="col-lg-12 page_header">
 				<h1 class="comeText">공&nbsp;&nbsp;지&nbsp;&nbsp;사&nbsp;&nbsp;항</h1>
 			</div>
-			<!-- /.col-lg-12 -->
-		</div>
+			/.col-lg-12
+		</div> -->
+		
+		
 		<!-- /.row -->
 		<div class="row">
 			<div class="col-lg-12">
