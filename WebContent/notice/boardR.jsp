@@ -74,7 +74,7 @@ li{
 <div class="container" style="margin-top: 2%; margin-bottom: 10%;">
     <div class="row">
         <div class="page_header">
-            <h1 class="comeText">공&nbsp;&nbsp;지&nbsp;&nbsp;사&nbsp;&nbsp;항</h1>
+            <h1 class="comeText">공지사항</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>

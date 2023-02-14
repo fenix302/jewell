@@ -62,7 +62,7 @@
 
 	<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
 		<div class="page_header">
-			<h1 class="comeText">새&nbsp;&nbsp;&nbsp; 글&nbsp;&nbsp;&nbsp; 쓰&nbsp;기</h1>
+			<h1 class="comeText">새 글 쓰기</h1>
 	</div>
 	
 	

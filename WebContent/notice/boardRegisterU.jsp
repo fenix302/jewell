@@ -73,7 +73,7 @@
 <div class="container" style="margin-top: 2%; margin-bottom: 10%;">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page_header comeText">공&nbsp;지&nbsp;사&nbsp;항&nbsp;&nbsp;수&nbsp;정</h1>
+            <h1 class="page_header comeText">공지사항 수정</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
