@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import work.user.UserService;
 
@@ -29,13 +31,10 @@ public class CommController {
 	@Resource(name = "userService")
 	private UserService userService;
 
-
 	@RequestMapping(value="/work/comm/createBoard.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView createBoard(@ModelAttribute CommBean board, HttpServletRequest request){
 		
 		HttpSession session = request.getSession();
-		
-//		String writer = (String)session.getAttribute("writer");
 
 		ModelAndView mv = new ModelAndView();
 
@@ -45,7 +44,6 @@ public class CommController {
 			mv.setViewName("/comm/boardRegisterC");
 		}else if(flag != null){
 			//게시글 생성
-//			board.setWriter(writer);
 			commService.createBoard(board);
 
 			String maxBoardNo = commService.retrieveMaxBoardNo();
@@ -57,12 +55,8 @@ public class CommController {
 		
 	}
 	
-	
 	@RequestMapping(value="/work/comm/goMain.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String goMain(){
-//		ModelAndView mv = new ModelAndView();
-//
-//		mv.setViewName("/intro/index");
 
 		return "redirect:/intro/index.jsp";
 	}
@@ -72,8 +66,6 @@ public class CommController {
 		ModelAndView mv = new ModelAndView();
 
 		String boardNo = request.getParameter("bno");
-
-//		if(boardNo == null) boardNo = request.getParameter("boardNo");
 
 		Map<String, String> boardParam = new HashMap<String, String>();
 
@@ -90,14 +82,17 @@ public class CommController {
 	}
 
 	@RequestMapping(value="/work/comm/retrieveBoardList.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView retrieveBoardList(HttpServletRequest request){
+	public ModelAndView retrieveBoardList(HttpServletRequest request, Model model, Criteria cri){
 		ModelAndView mv = new ModelAndView();
-
-		Map<String, String> boardParam = new HashMap<String, String>();
-
-		List<Map<String, String>> dsBoardList = commService.retrieveBoardList(boardParam);
-
-		mv.addObject("dsBoardList", dsBoardList);
+		
+		model.addAttribute("dsBoardList", commService.getListWithPaging(cri));
+		
+		int total = commService.getTotalCount();
+		
+		PageDTO pageMaker = new PageDTO(cri, total);
+		
+		model.addAttribute("pageMaker", pageMaker);
+		
 		mv.setViewName("/comm/boardListR");
 
 		return mv;
@@ -108,22 +103,13 @@ public class CommController {
 		ModelAndView mv = new ModelAndView();
 
 		Map<String, String> boardParam = new HashMap<String, String>();
-//		Map<String, String> replyParam = new HashMap<String, String>();
-//		Map<String, String> markParam = new HashMap<String, String>();
 
 		HttpSession session = request.getSession();
 
-//		String userCode = (String)session.getAttribute("userCode");
 		String boardNo = request.getParameter("bno");
 
-//		boardParam.put("userCode", userCode);
 		boardParam.put("BNO", boardNo);
 
-//		replyParam.put("BNO", boardNo);
-
-//		markParam.put("BNO", boardNo);
-
-		//글 삭제
 		commService.deleteBoard(boardParam);
 
 		mv.setViewName("redirect:/work/comm/retrieveBoardList.do");
@@ -131,30 +117,8 @@ public class CommController {
 		return mv;
 	}
 
-	@RequestMapping(value="/work/comm/updateBoardRating.do", method=RequestMethod.GET)
-	public ModelAndView updateBoardRating(HttpServletRequest request){
-		ModelAndView mv = new ModelAndView();
-
-		HttpSession session = request.getSession();
-
-		Map<String, String> boardParam = new HashMap<String, String>();
-		Map<String, String> markParam = new HashMap<String, String>();
-
-		String userCode = (String)session.getAttribute("userCode");
-		String boardNo = request.getParameter("boardNo");
-
-		boardParam.put("boardNo", boardNo);
-
-		markParam.put("userCode", userCode);
-		markParam.put("boardNo", boardNo);
-
-		mv.setViewName("redirect:/work/comm/retrieveBoard.do?boardNo=" + boardNo + "&fromRating=true");
-
-		return mv;
-	}
-
 	@RequestMapping(value="/work/comm/updateBoard.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView updateBoard1(HttpServletRequest request, @ModelAttribute CommBean board){
+	public ModelAndView updateBoard1(HttpServletRequest request, @ModelAttribute CommBean board, Criteria cri, Model model){
 		Map<String, String> boardParam = new HashMap<String, String>();
 		ModelAndView mv = new ModelAndView();
         String boardNo = request.getParameter("bno"); //없으면 GET(create안함), 있으면 POST(create)
@@ -169,7 +133,7 @@ public class CommController {
 			mv.setViewName("/comm/boardRegisterU");
 		}else{
 			commService.updateBoard(board);
-			mv.setViewName("/work/comm/retrieveBoard.do?boardNo=" + boardNo);
+			mv.setViewName("redirect:/work/comm/retrieveBoard.do?bno=" + boardNo);
 		}
 		return mv;
 	}

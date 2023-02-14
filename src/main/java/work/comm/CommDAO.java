@@ -13,12 +13,12 @@ public class CommDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	public List<Map<String, String>> retrieveBoardList(Map<String, String> boardParam){
-		return sqlSession.selectList("comm.retrieveBoardList", boardParam);
+	public List<CommBean> retrieveBoardList(Criteria cri){
+		return sqlSession.selectList("comm.retrieveBoardList", cri);
 	}
 
-	public List<Map<String, String>> getListWithPaging(Map<String, String> boardParam){
-		return sqlSession.selectList("comm.getListWithPaging", boardParam);
+	public List<CommBean> getListWithPaging(Criteria cri){
+		return sqlSession.selectList("comm.getListWithPaging", cri);
 	}
 	
 	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
@@ -48,5 +48,8 @@ public class CommDAO {
 	public void deleteBoard2(Map<String, String> boardParam){
 		sqlSession.delete("comm.deleteBoard2", boardParam);
 	}
-
+	
+	public int getTotalCount() {
+		return sqlSession.selectOne("comm.getTotalCount");
+	}
 }

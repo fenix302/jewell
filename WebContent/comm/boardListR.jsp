@@ -8,13 +8,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="boardListR.jsp">
-<title>공지사항</title>
+<title>커뮤니티 게시판</title> 
 
 
 	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 <%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
+
+	<link href="${context}/css/comm.css" rel="stylesheet">
 
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
 
@@ -34,11 +36,23 @@
     <script src="${context}/js/sb-admin-2.js"></script>
 </head>
 <body>
+
+<!-- 헤더 -->
 <jsp:include page="../common/top.jsp"></jsp:include>
+
+<!-- 페이지 헤더 -->
+<div class="page_header">
+	 <div class="faq_header">
+	       <div class="name">
+	             <p class="comeText">새 글쓰기</p>
+	        </div>
+	  </div>
+</div>
+
 <div class="container" style="margin-top: 2%; margin-bottom: 10%;">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Board Tables</h1>
+				<h1 class="page-header"></h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -47,9 +61,7 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Board List Page
-						<button id="regBtn" type="button" class="btn btn-xs pull-right">Register
-							New Board</button>
+						<button id="regBtn" type="button" class="btn btn-dark pull-right">새 글쓰기</button>
 					</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
@@ -63,20 +75,21 @@
 									<th>작성일</th>
 								</tr>
 							</thead>
-		
-								<tbody>
-			                    	<c:forEach items="${dsBoardList}" var="dsBoardList" varStatus="courseIdx">
-			                         <tr>
-			  							<td><a href ="${context}/work/comm/retrieveBoard.do?bno=${dsBoardList.BNO}">${dsBoardList.BNO}</a></td>
-										<td><a href="${context}/work/comm/retrieveBoard.do?bno=${dsBoardList.BNO}">${dsBoardList.TITLE}</a></td>
-										<td><c:out value="${dsBoardList.WRITER}" /></td>
-										<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dsBoardList.REGDATE}" /></td>
-
-			                         </tr>
-				                    </c:forEach>
-			                    </tbody>
+							<tbody>
+		                    	<c:forEach items="${dsBoardList}" var="dsBoardList" varStatus="courseIdx">
+		                         <tr>
+		  							<td><a class="nt" href ="${context}/work/comm/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.bno}</a></td>
+									<td><a class="nt" href="${context}/work/comm/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.title}</a></td>
+									<td><c:out value="${dsBoardList.writer}" /></td>
+									<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dsBoardList.regdate}" /></td>
+	
+		                         </tr>
+			                    </c:forEach>
+				            </tbody>
+			
 						</table>
 		<!-- 			table 태그의 끝 	-->
+		
 		
 						<div class="row">
 							<div class="col-lg-12">
@@ -95,23 +108,23 @@
 									<input type="text" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>'/>
 									<input type="hidden" name="pageNum" value='<c:out value="${pageMaker.cri.pageNum}"/>'/>
 									<input type="hidden" name="amount" value='<c:out value="${pageMaker.cri.amount}"/>'/>
-									<button class="btn btn-default">Search</button>
+									<button id="srbtn" class="btn btn-dark">Search</button>
 								</form>					
 							</div>
 						</div>
 		
 		
-		<!-- 			tables.html 소스에서 가져오고, 컨트롤 + 쉬프트 + F 로 정렬 처리		 -->
-						<div class="pull-right">
+	<!-- 			tables.html 소스에서 가져오고, 컨트롤 + 쉬프트 + F 로 정렬 처리		 -->
+						<div class="Page pull-right">
 							<ul class="pagination">
 								<c:if test="${pageMaker.prev}">
-									<li class="paginate_button previous"><a href="${pageMaker.startPage-1}">Prev</a></li>
+									<li class="page-item previous"><a href="${pageMaker.startPage-1}">Prev</a></li>
 								</c:if>
 								<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-									<li class="paginate_button ${pageMaker.cri.pageNum == num ? "active":""} "><a href="${num}">${num}</a></li>
+									<li class="page-item ${pageMaker.cri.pageNum == num ? "active":""} "><a href="${num}">${num}</a></li>
 								</c:forEach>
 								<c:if test="${pageMaker.next}">
-									<li class="paginate_button next"><a href="${pageMaker.endPage +1}">Next</a></li>
+									<li class="page-item next"><a href="${pageMaker.endPage +1}">Next</a></li>
 								</c:if>
 							</ul>
 						</div>
@@ -150,7 +163,8 @@
 		</div>
 		<!-- /.row -->
 </div>
-		<form id="actionForm" action="/comm/boardListR" method="get">
+		<form id="actionForm" action="/work/comm/retrieveBoardList.do" method="get">
+<%-- 			<input type="hidden" name="bno" value='<c:out value="${dsBoardList.BNO}"/>'> --%>
 			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 			<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 			<input type="hidden" name="type" value='<c:out value="${pageMaker.cri.type}"/>'>
@@ -183,7 +197,7 @@
 						});
 		
 						var actionForm = $("#actionForm");
-						$(".paginate_button a").on("click", function (e) {
+						$(".page-item a").on("click", function (e) {
 							e.preventDefault();
 							console.log('click');
 							actionForm.find("input[name='pageNum']").val($(this).attr("href"));
@@ -196,7 +210,7 @@
 						$(".move").on("click", function (e) {
 							e.preventDefault();
 							actionForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+"'>");
-							actionForm.attr("action","/board/get");
+							actionForm.attr("action","/work/notice/retrieveBoard.do");
 							actionForm.submit();
 						});
 						

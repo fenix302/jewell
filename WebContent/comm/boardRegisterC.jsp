@@ -8,11 +8,13 @@
 <head>
 	<meta name="description" content="boardRegisterC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>공지사항 새 글 쓰기</title>
+	<title>커뮤니티 글 쓰기</title>
 	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 <%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
+
+	<link href="${context}/css/comm.css" rel="stylesheet">
 
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
 
@@ -56,10 +58,22 @@
 </style>
 </head>
 <body>
+
+<!-- 헤더 -->
 <jsp:include page="../common/top.jsp"></jsp:include>
+
+<!-- 페이지 헤더 -->
+<div class="page_header">
+	 <div class="faq_header">
+	       <div class="name">
+	             <p class="comeText">커뮤니티</p>
+	        </div>
+	  </div>
+</div>
+
 	<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
 	<div class="page-header">
-		<h1>새 글 쓰기</h1>
+		<h1></h1>
 	</div>
 	<form id="createBoard" method="post" action="/work/comm/createBoard.do" role="form">
 		<div class="form-horizontal">
@@ -84,11 +98,9 @@
 				</div>
 			</div>
 		<div class="form-group">
-			<div class="col-md-offset-1 col-md-2">
-				<button type="button" class="btn btn-default" onclick="fn_back()">취소</button>
-			</div>
-			<div class="col-md-offset-7 col-md-1">
-				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
+			<div class="col-md-4">
+				<button id="buttons" type="button" class="btn btn-dark" onclick="fn_back()">취소</button>
+				<button id="buttons" class="btn btn-secondary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
 			</div>
 		</div>
 		</div>

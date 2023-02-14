@@ -12,12 +12,12 @@ public class CommServiceImpl implements CommService{
 	@Resource(name = "commDAO")
 	private CommDAO commDAO;
 
-	public List<Map<String, String>> retrieveBoardList(Map<String, String> boardParam){
-		return commDAO.retrieveBoardList(boardParam);
+	public List<CommBean> retrieveBoardList(Criteria cri){
+		return commDAO.retrieveBoardList(cri);
 	}
 	
-	public List<Map<String, String>> getListWithPaging(Map<String, String> boardParam) {
-		return commDAO.getListWithPaging(boardParam);
+	public List<CommBean> getListWithPaging(Criteria cri) {
+		return commDAO.getListWithPaging(cri);
 	}
 
 	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
@@ -47,4 +47,10 @@ public class CommServiceImpl implements CommService{
 	public void deleteBoard2(Map<String, String> boardParam){
 		commDAO.deleteBoard2(boardParam);
 	}
+
+	@Override
+	public int getTotalCount() {
+		return commDAO.getTotalCount();
+	}
+
 }

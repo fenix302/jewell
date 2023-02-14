@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none !important;
+    text-decoration: none  !important;
+   word-break: keep-all;
+   font-family: 'Noto Sans KR', sans-serif;
+}
+
+/** boardListR **/
+#regBtn{
+	margin: 5px 0 !important;
+}
+
+.page-item > a {
+	color: #212529 !important;
+}
+
+.page-item > a:hover {
+	color: #212529 !important;
+}
+
+.control-label{
+	line-height: 40px !important;
+}
+
+#srbtn{
+	width: 77px !important;
+	height: 30px !important;
+	margin-bottom: 4px;
+	line-height: 1px;
+}
+
+.nt{
+	color: #212529 !important;
+}
+
+/** boardRegisterU, boardRegisterC css 수정  **/
+
+.form-group > label{
+	line-height: 50px !important;
+}
+
+/** 게시판 공통 사용 **/ 
+#buttons{
+    margin: 10px 5px 0px 1px;
+}
