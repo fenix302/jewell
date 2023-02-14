@@ -292,6 +292,9 @@
 	</div>
 </c:if>
 
+
+
+
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>
