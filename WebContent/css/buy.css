@@ -51,22 +51,22 @@ h5{
 
 .buyList_header{
 	   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/css/images/faq_header.jpg');
+      url('/css/images/faq_header.jpg')!important;
 }
 
 .confirmR_header{
 	   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/css/images/login_header.jpg');
+      url('/css/images/headerimage.jpg')!important;
 }
 
 .cartList_header{
 	   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/css/images/login_header.jpg');	
+      url('/css/images/headerimage2.jpg')!important;	
 }
 
 .page_header{
 	   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/css/images/login_header.jpg');	
+      url('/css/images/headerimage2.jpg')!important;	
 }
 
 /* d이미지 */
