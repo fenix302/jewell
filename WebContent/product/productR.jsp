@@ -176,8 +176,7 @@
             <div class="panel-body">
               <div class="row listImg">
                 <div class="col-md-6" align="center">
-        	<img src="/ringImg/${dsProduct.PRODUCT_IMAGE}" id="image"class="img-rounded-img-responsive"> 
-<!-- 				 	<img src="/ringImg/ring01.jpg" alt="#" class="img-rounded"> -->
+        			<img src="/ringImg/${dsProduct.PRODUCT_IMAGE}" id="image"class="img-rounded-img-responsive"> 
                 	<script type="text/javascript">
 					 	var productCategoryCd = '${dsProduct.PRODUCT_CATEGORY_CD}';
 
