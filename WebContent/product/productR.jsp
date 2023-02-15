@@ -167,14 +167,14 @@
 </head>
 <body>
 <jsp:include page="../common/top.jsp"></jsp:include>
-	<div class="container">
+	<div class="container listContainer">
       <div class="row">
+              <h3 class="panel-title"><b>[&nbsp;${dsProduct.PRODUCT_CATEGORY_CD_NM}&nbsp;]</b></h3>
           <div class="panel panel-default">
            <div class="panel-heading">
-             <%--  <h3 class="panel-title"><b>[&nbsp;${dsProduct.PRODUCT_CATEGORY_CD_NM}&nbsp;]&nbsp;${dsProduct.PRODUCT_NAME}</b></h3> --%>
             </div>
             <div class="panel-body">
-              <div class="row">
+              <div class="row listImg">
                 <div class="col-md-6" align="center">
         	<img src="/ringImg/${dsProduct.PRODUCT_IMAGE}" id="image"class="img-rounded-img-responsive"> 
 <!-- 				 	<img src="/ringImg/ring01.jpg" alt="#" class="img-rounded"> -->
@@ -246,7 +246,7 @@
                   <br><br>
                   <div>
                 	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;Buy Now</i></button>
-                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;Add to Cart</i></button>
+                      <button id ="cartBtn" type="button" class="btn addCartBtn btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;Add to Cart</i></button>
                       
                     
                   </div>

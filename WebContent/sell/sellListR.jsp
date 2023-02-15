@@ -216,8 +216,8 @@
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-<%-- 			                            	<button type="button" class="btn btn-primary" onclick="fn_finalBuy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button> --%>
-			                            	<button type="button" class="btn btn-primary" onclick="fn_cd_buy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button>
+			                            	<button type="button" class="btn btn-primary" onclick="fn_finalBuy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button>
+<%-- 			                            	<button type="button" class="btn btn-primary" onclick="fn_cd_buy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button> --%>
 			                            </td>
 			                         </tr>
 			                        </c:forEach>

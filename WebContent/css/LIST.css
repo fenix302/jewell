@@ -3,7 +3,6 @@
 .btn-primary.btn-lg{
 	background-color: white !important;
 	color:black !important;
-	border: 1px co
 	
 }
 button:hover{
@@ -18,7 +17,14 @@ button:hover{
 
 }
 
-.btn.btn-warning.btn-lg{
+.listContainer{
+	margin-top: 50px !important;
+	margin-bottom: 150px !important; 
+}
+
+
+
+.addCartBtn{
 	background-color: black !important;
 	color: white !important;
 	
@@ -31,21 +37,27 @@ button:hover{
 	
 }
 
-.panel-title{
-	font-size: 23pt !important;
-	margin-top: 272pt !important;
-	margin-bottom: 140pt !important;
+.listTitle{
+	font-size: 30px !important;
+	margin-top: 50px !important;
+	margin-bottom: 20px !important;
+	margin-left: 20px !important;
 }
 
 
-.col-md-6{
-	margin-top: 181px !important;
+.listImg{
+	margin-top: 60px !important;
+	margin-bottom: 20px !important;
 	
 }
 
-.row{
-	margin-bottom: 100px !important;
+.listImg > div > img {
+	margin-bottom: 20px !important;
 }
+
+/* .row{ */
+/* 	margin-bottom: 100px !important; */
+/* } */
 
 
 .mini{
@@ -87,3 +99,17 @@ margin-left: 5px
 
 }
 
+.replyBackBtn{
+	font-weight: bold !important;
+	background-color: #fff !important;
+    border: 1px solid black !important;	
+    margin: 5px !important;
+    padding: 5px 10px !important
+}
+.addReplyBtn{
+	background-color: skyblue !important;
+	color: white !important;
+/*     border: 1px solid black !important;	 */
+    margin: 5px !important;
+    padding: 5px 10px !important
+}
