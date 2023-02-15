@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none !important;
+    text-decoration: none  !important;
+   word-break: keep-all;
+   font-family: 'Noto Sans KR', sans-serif;
+}
+
+/** boardListR **/
+
+.panel-body > table > thead > tr > th{
+	text-align: center !important;
+	border: 1px solid #ddd !important;
+}
+
+.panel-body > table > tbody> tr > td{
+	text-align: center !important;
+	border: 1px solid #ddd !important;
+}
+
+.cnr{
+	width: 180px !important;
+}

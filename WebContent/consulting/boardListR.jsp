@@ -17,6 +17,8 @@
 	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
 
 	<link href="${context}/css/comm.css" rel="stylesheet">
+	
+	<link href="${context}/css/consulting.css" rel="stylesheet">
 
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
 
@@ -72,7 +74,7 @@
 									<th>#번호</th>
 									<th>제목</th>
 									<th>작성자</th>
-									<th>상담사</th>
+									<th class="cnr">상담사</th>
 									<th>작성일</th>
 								</tr>
 							</thead>
@@ -84,15 +86,12 @@
 									<td><c:out value="${dsBoardList.writer}" /></td>
 									<td><c:out value="${dsBoardList.counselor}" /></td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dsBoardList.regdate}" /></td>
-	
 		                         </tr>
 			                    </c:forEach>
 				            </tbody>
-			
 						</table>
+					</div>	
 		<!-- 			table 태그의 끝 	-->
-		
-		
 						<div class="row">
 							<div class="col-lg-12">
 								<form id="searchForm" action="/work/consulting/retrieveBoardList.do" method="get">

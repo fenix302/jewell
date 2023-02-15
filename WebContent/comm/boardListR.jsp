@@ -17,6 +17,8 @@
 	<link href="${context}/css/plugins/datatables.css" rel="stylesheet">
 
 	<link href="${context}/css/comm.css" rel="stylesheet">
+	
+	<link href="${context}/css/consulting.css" rel="stylesheet">
 
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
 
