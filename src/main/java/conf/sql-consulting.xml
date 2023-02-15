@@ -7,6 +7,7 @@
 		<result property="title" column="TITLE" />
 		<result property="content" column="CONTENT" />
 		<result property="writer" column="WRITER" />
+		<result property="counselor" column="COUNSELOR" />
 		<result property="regdate" column="REGDATE" />
 	</resultMap>
 
@@ -39,6 +40,7 @@
 				, BOARD.TITLE
 				, BOARD.CONTENT
 				, BOARD.WRITER
+				, BOARD.COUNSELOR
 				, BOARD.REGDATE 
 			FROM tb_jw_consulting BOARD 
 			WHERE  1=1
@@ -53,6 +55,7 @@
 				 , BOARD.TITLE
 				 , BOARD.CONTENT
 				 , BOARD.WRITER
+				 , BOARD.COUNSELOR
 				 , BOARD.REGDATE
 			FROM   TB_JW_CONSULTING BOARD
 			WHERE  1=1
@@ -73,15 +76,17 @@
 				, TITLE
 				, CONTENT
 				, WRITER
+				, COUNSELOR
 			) VALUES (
 				SEQ_CONSULTING.NEXTVAL
 				, #{title}
 				, #{content}
-				, '관리자'
+				, #{writer}
+				, 'JEWELL MANAGER'
 			)
 		]]>
-<!-- 		insert into tb_jw_consulting (bno, title, content, writer) -->
-<!-- 		values (seq_board.nextval, #{title}, #{content}, #{writer}) -->
+<!-- 		insert into tb_jw_consulting (bno, title, content, writer, counselor) -->
+<!-- 		values (seq_board.nextval, #{title}, #{content}, #{writer}, #{counselor}) -->
 	</insert>
 
 	<update id="updateBoard" parameterType="consulting">
@@ -133,10 +138,10 @@
 		<![CDATA[
 		
 		SELECT
-		    BNO, TITLE, CONTENT, WRITER, REGDATE
+		    BNO, TITLE, CONTENT, WRITER, COUNSELOR, REGDATE
 	    from(
 		    SELECT /*+INDEX_DESC(tb_jw_consulting pk_consulting) */
-		        ROWNUM rn, bno, title, content, writer, regdate
+		        ROWNUM rn, bno, title, content, writer, counselor, regdate
 		    FROM tb_jw_consulting
 		    WHERE 
 		]]>	

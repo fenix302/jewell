@@ -77,7 +77,7 @@
 				SEQ_COMM.NEXTVAL
 				, #{title}
 				, #{content}
-				, '관리자'
+				, #{writer}
 			)
 		]]>
 <!-- 		insert into tb_jw_comm (bno, title, content, writer) -->

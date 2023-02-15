@@ -72,6 +72,7 @@
 									<th>#번호</th>
 									<th>제목</th>
 									<th>작성자</th>
+									<th>상담사</th>
 									<th>작성일</th>
 								</tr>
 							</thead>
@@ -81,6 +82,7 @@
 		  							<td><a class="nt" href ="${context}/work/consulting/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.bno}</a></td>
 									<td><a class="nt" href="${context}/work/consulting/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.title}</a></td>
 									<td><c:out value="${dsBoardList.writer}" /></td>
+									<td><c:out value="${dsBoardList.counselor}" /></td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dsBoardList.regdate}" /></td>
 	
 		                         </tr>

@@ -12,6 +12,7 @@ public class ConsultingBean implements Serializable{
 	private String title;
 	private String content;
 	private String writer;
+	private String counselor;
 	private Date regdate;
 
 
@@ -20,12 +21,13 @@ public class ConsultingBean implements Serializable{
 	}
 
 	public ConsultingBean(Long bno, String title, String content,
-			String writer, Date regdate) {
+			String writer, String counselor, Date regdate) {
 		super();
 		this.bno = bno;
 		this.title = title;
 		this.content = content;
 		this.writer = writer;
+		this.counselor = counselor;
 		this.regdate = regdate;
 	}
 
@@ -49,6 +51,7 @@ public class ConsultingBean implements Serializable{
 		return content;
 	}
 
+
 	public void setContent(String content) {
 		this.content = content;
 	}
@@ -59,6 +62,14 @@ public class ConsultingBean implements Serializable{
 
 	public void setWriter(String writer) {
 		this.writer = writer;
+	}
+	
+	public String getCounselor() {
+		return counselor;
+	}
+	
+	public void setCounselor(String counselor) {
+		this.counselor = counselor;
 	}
 
 	public Date getRegdate() {
@@ -80,6 +91,8 @@ public class ConsultingBean implements Serializable{
 		builder.append(content);
 		builder.append(", writer=");
 		builder.append(writer);
+		builder.append(", counselor=");
+		builder.append(counselor);
 		builder.append(", regdate=");
 		builder.append(regdate);
 		builder.append("]");
