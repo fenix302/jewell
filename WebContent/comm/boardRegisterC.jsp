@@ -66,7 +66,7 @@
 <div class="page_header">
 	 <div class="faq_header">
 	       <div class="name">
-	             <p class="comeText">커뮤니티</p>
+	             <p class="comeText">새 글쓰기</p>
 	        </div>
 	  </div>
 </div>
