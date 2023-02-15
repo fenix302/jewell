@@ -209,4 +209,29 @@ regdate date default sysdate
 
 alter table tb_jw_comm add constraint pk_comm primary key (bno);
 
+-- 상담 신청 게시판
+
+drop sequence seq_consulting;
+
+create sequence seq_consulting
+increment by 1
+start with 0
+maxvalue 9999999
+minvalue 0;
+
+drop table tb_jw_consulting;
+
+create table tb_jw_consulting (
+bno number(10, 0),
+title varchar2(200) not null,
+content varchar2(2000) not null,
+writer varchar2(50) not null,
+regdate date default sysdate
+);
+
+alter table tb_jw_consulting add constraint pk_consulting primary key (bno);
+
+COMMIT;
+
+
 COMMIT;
