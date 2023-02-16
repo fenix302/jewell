@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				  "dtd/mybatis-3-mapper.dtd">
-<mapper namespace="general">
-	<resultMap id="generalResult" type="general">
+<mapper namespace="generalboard">
+	<resultMap id="generalboardResult" type="generalboard">
 		<result property="bno" column="BNO" />
 		<result property="title" column="TITLE" />
 		<result property="content" column="CONTENT" />
@@ -54,7 +54,7 @@
 				 , BOARD.CONTENT
 				 , BOARD.WRITER
 				 , BOARD.REGDATE
-			FROM   tb_jw_general BOARD
+			FROM   TB_JW_GENERAL BOARD
 			WHERE  1=1
 			AND    BNO = #{BNO}
 		]]>
@@ -66,25 +66,25 @@
 			FROM   tb_jw_general BOARD
 		]]>
 	</select>
-	<insert id="createBoard" parameterType="general">
+	<insert id="createBoard" parameterType="generalboard">
 		<![CDATA[
-			INSERT INTO tb_jw_general(
+			INSERT INTO TB_JW_GENERAL(
 				BNO
 				, TITLE
 				, CONTENT
 				, WRITER
 			) VALUES (
-				SEQ_JW_GENERAL.NEXTVAL
+				SEQ_COMM.NEXTVAL
 				, #{title}
 				, #{content}
 				, #{writer}
 			)
 		]]>
-<!-- 		insert into tb_jw_comm (bno, title, content, writer) -->
+<!-- 		insert into tb_jw_general (bno, title, content, writer) -->
 <!-- 		values (seq_board.nextval, #{title}, #{content}, #{writer}) -->
 	</insert>
 
-	<update id="updateBoard" parameterType="general">
+	<update id="updateBoard" parameterType="generalboard">
 		<![CDATA[
 		/*	updateBoard	*/
 			UPDATE tb_jw_general
@@ -93,7 +93,7 @@
 			WHERE BNO = #{bno}
 		]]>
 	</update>
-	<update id="updateBoardHits" parameterType="general">
+	<update id="updateBoardHits" parameterType="generalboard">
 		<![CDATA[
 		/*	updateBoardHits	*/
 			UPDATE tb_jw_general
@@ -129,7 +129,7 @@
 	
 	
 	
-	<select id="getListWithPaging" resultType="general">
+	<select id="getListWithPaging" resultType="generalboard">
 		<![CDATA[
 		
 		SELECT

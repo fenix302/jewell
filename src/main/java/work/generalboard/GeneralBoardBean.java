@@ -49,7 +49,6 @@ public class GeneralBoardBean implements Serializable{
 		return content;
 	}
 
-
 	public void setContent(String content) {
 		this.content = content;
 	}

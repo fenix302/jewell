@@ -9,48 +9,48 @@ import org.springframework.stereotype.Service;
 
 @Service("generalBoardService")
 public class GeneralBoardServiceImpl implements GeneralBoardService{
-	@Resource(name = "generalDAO")
-	private GeneralBoardDAO generalDAO;
+	@Resource(name = "generalBoardDAO")
+	private GeneralBoardDAO generalBoardDAO;
 
 	public List<GeneralBoardBean> retrieveBoardList(Criteria cri){
-		return generalDAO.retrieveBoardList(cri);
+		return generalBoardDAO.retrieveBoardList(cri);
 	}
 	
 	public List<GeneralBoardBean> getListWithPaging(Criteria cri) {
-		return generalDAO.getListWithPaging(cri);
+		return generalBoardDAO.getListWithPaging(cri);
 	}
 
 	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
-		return generalDAO.retrieveBoard(boardParam);
+		return generalBoardDAO.retrieveBoard(boardParam);
 	}
 
 	public String retrieveMaxBoardNo(){
-		return generalDAO.retrieveMaxBoardNo();
+		return generalBoardDAO.retrieveMaxBoardNo();
 	}
 
 	public void createBoard(GeneralBoardBean board){
-		generalDAO.createBoard(board);
+		generalBoardDAO.createBoard(board);
 	}
 
 	public void updateBoard(GeneralBoardBean board){
-		generalDAO.updateBoard(board);
+		generalBoardDAO.updateBoard(board);
 	}
 
 	public void updateBoardHits(Map<String, String> boardParam){
-		generalDAO.updateBoardHits(boardParam);
+		generalBoardDAO.updateBoardHits(boardParam);
 	}
 
 	public void deleteBoard(Map<String, String> boardParam){
-		generalDAO.deleteBoard(boardParam);
+		generalBoardDAO.deleteBoard(boardParam);
 	}
 
 	public void deleteBoard2(Map<String, String> boardParam){
-		generalDAO.deleteBoard2(boardParam);
+		generalBoardDAO.deleteBoard2(boardParam);
 	}
 
 	@Override
 	public int getTotalCount() {
-		return generalDAO.getTotalCount();
+		return generalBoardDAO.getTotalCount();
 	}
 
 }
