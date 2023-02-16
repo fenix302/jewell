@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="userC.jsp">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Insert title here</title>
+	<title>회원가입</title>
    	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
