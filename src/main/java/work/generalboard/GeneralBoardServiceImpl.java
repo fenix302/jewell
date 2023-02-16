@@ -1,52 +1,56 @@
-//package work.generalboard;
-//
-//import java.util.List;
-//
-//import org.springframework.stereotype.Service;
-//
-//import lombok.AllArgsConstructor;
-//import lombok.Setter;
-//import lombok.extern.log4j.Log4j;
-//
-//@Log4j
-//@Service
-//@AllArgsConstructor
-//public class GeneralBoardServiceImpl implements GeneralBoardService{
-//	
-//	private GeneralBoardMapper mapper;
-//	
-//	public GeneralBoardServiceImpl(GeneralBoardMapper mapper) {
-//		this.mapper = mapper;
-//	}
-//
-//	@Override
-//	public void register(GeneralBoardVO board) {
-//		
-//		
-//	}
-//
-//	@Override
-//	public GeneralBoardVO get(Long bno) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public boolean modify(GeneralBoardVO board) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public boolean remove(Long bno) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public List<GeneralBoardVO> getList() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//	
-//}
+package work.generalboard;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+@Service("generalBoardService")
+public class GeneralBoardServiceImpl implements GeneralBoardService{
+	@Resource(name = "generalDAO")
+	private GeneralBoardDAO generalDAO;
+
+	public List<GeneralBoardBean> retrieveBoardList(Criteria cri){
+		return generalDAO.retrieveBoardList(cri);
+	}
+	
+	public List<GeneralBoardBean> getListWithPaging(Criteria cri) {
+		return generalDAO.getListWithPaging(cri);
+	}
+
+	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
+		return generalDAO.retrieveBoard(boardParam);
+	}
+
+	public String retrieveMaxBoardNo(){
+		return generalDAO.retrieveMaxBoardNo();
+	}
+
+	public void createBoard(GeneralBoardBean board){
+		generalDAO.createBoard(board);
+	}
+
+	public void updateBoard(GeneralBoardBean board){
+		generalDAO.updateBoard(board);
+	}
+
+	public void updateBoardHits(Map<String, String> boardParam){
+		generalDAO.updateBoardHits(boardParam);
+	}
+
+	public void deleteBoard(Map<String, String> boardParam){
+		generalDAO.deleteBoard(boardParam);
+	}
+
+	public void deleteBoard2(Map<String, String> boardParam){
+		generalDAO.deleteBoard2(boardParam);
+	}
+
+	@Override
+	public int getTotalCount() {
+		return generalDAO.getTotalCount();
+	}
+
+}

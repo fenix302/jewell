@@ -15,6 +15,7 @@
 		<typeAlias type="work.notice.NoticeBean" alias="notice"/>
 		<typeAlias type="work.comm.CommBean" alias="comm"/>
 		<typeAlias type="work.consulting.ConsultingBean" alias="consulting"/>
+		<typeAlias type="work.generalboard.GeneralBoardBean" alias="general"/>
 	</typeAliases>
 
 	<mappers>
@@ -29,5 +30,6 @@
 		<mapper resource="conf/sql-notice.xml" />
 		<mapper resource="conf/sql-comm.xml" />
 		<mapper resource="conf/sql-consulting.xml" />
+		<mapper resource="conf/sql-general.xml"/>
 	</mappers>
 </configuration>
