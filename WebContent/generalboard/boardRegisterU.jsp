@@ -128,7 +128,7 @@
 
 						<button id="buttons" type="submit" data-oper='modify' class="btn btn-dark" onclick="location.href=${context}/work/generalboard/updateBoard.do?bno=${dsBoard.BNO}">수정</button>	
 						<button id="buttons" type="submit" data-oper='remove' class="btn btn-danger">삭제</button>
-						<button id="buttons" type="submit" data-oper='list' class="btn btn-secondary" onclick="location.href='/comm/boardListR.jsp'">목록</button>
+						<button id="buttons" type="submit" data-oper='list' class="btn btn-secondary" onclick="location.href='/generalboard/boardListR.jsp'">목록</button>
 						
 					</form>	
                 </div>
@@ -149,16 +149,16 @@
 			console.log(operation);
 			
 			if (operation === 'remove') {
-				formObj.attr("action", "/work/comm/deleteBoard.do");
+				formObj.attr("action", "/work/generalboard/deleteBoard.do");
 				
 				// 만약 사용자가 'list' 버튼을 클릭한다면
 			} else if (operation === 'list') {
 // 				move to list : 아래 두 줄 코딩
-				self.location = "${context}/work/comm/retrieveBoardList.do";
+				self.location = "${context}/work/generalboard/retrieveBoardList.do";
 				return;
 				
 				// Page266 11.5.4 수정 페이지에서 링크 처리 소스 코딩 : 아래 두 줄
-// 				formObj.attr("action", "/comm/boardListR").attr("method", "get");
+// 				formObj.attr("action", "/generalboard/boardListR").attr("method", "get");
 				
 				// <form> 태그에서 필요한 부분만 잠시 복사(clone)해서 보관해 두고,
 // 				var pageNumTag = $("input[name='pageNum']").clone();

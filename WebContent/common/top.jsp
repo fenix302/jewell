@@ -81,7 +81,7 @@ a{
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Community</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="${context}/work/notice/retrieveBoardList.do">공지사항</a></li>
-                                <li><a class="dropdown-item" href="#">자유게시판</a></li>
+                                <li><a class="dropdown-item" href="${context}/work/generalboard/retrieveBoardList.do">자유게시판</a></li>
                                 <li><a class="dropdown-item" href="${context}/work/comm/retrieveBoardList.do">커뮤니티</a></li>
                                 <li><a class="dropdown-item" href="${context}/work/consulting/retrieveBoardList.do">상담신청게시판</a></li>
                             </ul>

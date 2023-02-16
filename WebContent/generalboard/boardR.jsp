@@ -116,8 +116,8 @@ li{
 						<label>작성자</label> <input class="form-control" name="writer" value='<c:out value="${dsBoard.WRITER}" />' readonly="readonly">
 					</div>
 					
-					<button id="buttons" data-oper='modify' class="btn btn-dark" onclick="location.href='/comm/boardRegisterU.jsp'">수정</button>	
-					<button id="buttons" data-oper='list' class="btn btn-secondary" onclick="location.href='/comm/boardListR.jsp'">목록</button>
+					<button id="buttons" data-oper='modify' class="btn btn-dark" onclick="location.href='/generalboard/boardRegisterU.jsp'">수정</button>	
+					<button id="buttons" data-oper='list' class="btn btn-secondary" onclick="location.href='/generalboard/boardListR.jsp'">목록</button>
 					
 					<form id="operForm" action="/generalboard/boardRegisterU" method="get">
 						<input type="hidden" name="bno" value='<c:out value="${dsBoard.BNO}"/>'>
