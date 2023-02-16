@@ -8,7 +8,7 @@
 <head>
 		<meta name="description" content="boardR.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>커뮤니티 게시물</title>
+	<title>자유 게시물</title>
 	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 <%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -80,7 +80,7 @@ li{
 <div class="page_header">
 	 <div class="faq_header">
 	       <div class="name">
-	             <p class="comeText">커뮤니티</p>
+	             <p class="comeText">자유</p>
 	        </div>
 	  </div>
 </div>

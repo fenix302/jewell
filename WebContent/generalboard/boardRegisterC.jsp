@@ -8,7 +8,7 @@
 <head>
 	<meta name="description" content="boardRegisterC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>커뮤니티 글 쓰기</title>
+	<title>자유 글 쓰기</title>
 	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 <%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">

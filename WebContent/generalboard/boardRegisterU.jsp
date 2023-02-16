@@ -8,7 +8,7 @@
 <head>
 		<meta name="description" content="boardRegisterU.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>커뮤니티 수정</title>
+	<title>자유 글 수정</title>
 	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 <%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">

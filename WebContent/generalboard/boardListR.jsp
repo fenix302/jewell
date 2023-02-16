@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="boardListR.jsp">
-<title>커뮤니티 게시판</title> 
+<title>자유 게시판</title> 
 
 
 	<link href="${context}/css/bootstrap.css" rel="stylesheet">
