@@ -259,3 +259,26 @@ regdate date default sysdate
 alter table tb_jw_consulting add constraint pk_consulting primary key (bno);
 
 COMMIT;
+
+-- 자유게시판 정보
+-- drop sequence seq_jw_general;
+
+-- create sequence seq_jw_general
+-- increment by 1
+-- start with 0
+-- maxvalue 9999999
+-- minvalue 0;
+
+-- drop table tb_jw_general;
+
+-- create table tb_jw_general (
+-- bno number(10, 0),
+-- title varchar2(200) not null,
+-- content varchar2(2000) not null,
+-- writer varchar2(50) not null,
+-- regdate date default sysdate
+-- );
+
+-- alter table tb_jw_general add constraint pk_general primary key (bno);
+
+-- commit;
