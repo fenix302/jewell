@@ -80,7 +80,7 @@ li{
 <div class="page_header">
 	 <div class="faq_header">
 	       <div class="name">
-	             <p class="comeText">자유</p>
+	             <p class="comeText">자유게시판</p>
 	        </div>
 	  </div>
 </div>
