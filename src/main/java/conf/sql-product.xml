@@ -146,49 +146,57 @@
 	</select>
 
 	<select id="retrieveProduct" parameterType="map" resultType="map">
-		/*	retrieveProduct	*/
-		SELECT PRODUCT.PRODUCT_CODE
-		     , PRODUCT.PRODUCT_IMAGE
-		     , PRODUCT.PRODUCT_NAME
-		     , PRODUCT.PRODUCT_UNIT_PRICE
-		     , PRODUCT.PRODUCT_COUNT
-		     , PRODUCT.PRODUCT_CATEGORY_CD
-		     , (SELECT COMM_CD_NM FROM TB_COM_CODE WHERE 1=1 AND COMM_TY_CD = 'CODE0101' AND COMM_CD = PRODUCT.PRODUCT_CATEGORY_CD) AS PRODUCT_CATEGORY_CD_NM
-		     , PRODUCT.PRODUCT_REG_DATE
-		     , (CASE WHEN (SELECT MARK_RATING FROM TB_MARK WHERE 1=1 AND PRODUCT_CODE = #{productCode} AND USER_CODE = #{userCode}) IS NULL THEN 'N' ELSE 'Y' END) AS MARK_YN
-		     , (SELECT SELL_YN FROM TB_SELL WHERE 1=1 AND PRODUCT_CODE = #{productCode} AND USER_CODE = #{userCode} AND SELL_YN = 'Y' AND ROWNUM = 1) AS SELL_YN
-		     , (SELECT ROUND( (SUM(MARK_RATING) / COUNT(*)), 1) FROM TB_MARK WHERE 1=1 AND PRODUCT_CODE = #{productCode}) AS MARK_RATING
-
-		FROM   TB_PRODUCT PRODUCT
-		WHERE 1=1
-		AND  PRODUCT_CODE = #{productCode}
+		<![CDATA[
+			/*	retrieveProduct	*/
+			SELECT PRODUCT.PRODUCT_CODE
+			     , PRODUCT.PRODUCT_IMAGE
+			     , PRODUCT.PRODUCT_NAME
+			     , PRODUCT.PRODUCT_UNIT_PRICE
+			     , PRODUCT.PRODUCT_COUNT
+			     , PRODUCT.PRODUCT_CATEGORY_CD
+			     , (SELECT COMM_CD_NM FROM TB_COM_CODE WHERE 1=1 AND COMM_TY_CD = 'CODE0101' AND COMM_CD = PRODUCT.PRODUCT_CATEGORY_CD) AS PRODUCT_CATEGORY_CD_NM
+			     , PRODUCT.PRODUCT_REG_DATE
+			     , (CASE WHEN (SELECT MARK_RATING FROM TB_MARK WHERE 1=1 AND PRODUCT_CODE = #{productCode} AND USER_CODE = #{userCode}) IS NULL THEN 'N' ELSE 'Y' END) AS MARK_YN
+			     , (SELECT SELL_YN FROM TB_SELL WHERE 1=1 AND PRODUCT_CODE = #{productCode} AND USER_CODE = #{userCode} AND SELL_YN = 'Y' AND ROWNUM = 1) AS SELL_YN
+			     , (SELECT ROUND( (SUM(MARK_RATING) / COUNT(*)), 1) FROM TB_MARK WHERE 1=1 AND PRODUCT_CODE = #{productCode}) AS MARK_RATING
+	
+			FROM   TB_PRODUCT PRODUCT
+			WHERE 1=1
+			AND  PRODUCT_CODE = #{productCode}
+		]]>
 	</select>
 
 	<update id="updateProduct" parameterType="map">
-		/*	updateProduct	*/
-		UPDATE TB_PRODUCT
-		SET PRODUCT_IMAGE       = #{productImage}
-		  , PRODUCT_NAME        = #{productName}
-		  , PRODUCT_UNIT_PRICE  = #{productUnitPrice}
-		  , PRODUCT_COUNT       = #{productCount}
-		WHERE 1=1
-		AND  PRODUCT_CODE = #{productCode}
+		<![CDATA[
+			/*	updateProduct	*/
+			UPDATE TB_PRODUCT
+			SET PRODUCT_IMAGE       = #{productImage}
+			  , PRODUCT_NAME        = #{productName}
+			  , PRODUCT_UNIT_PRICE  = #{productUnitPrice}
+			  , PRODUCT_COUNT       = #{productCount}
+			WHERE 1=1
+			AND  PRODUCT_CODE = #{productCode}
+		]]>
 	</update>
 
 	<update id="updateProductCountMinus" parameterType="map">
-		/*	updateProductCountMinus	*/
-		UPDATE TB_PRODUCT
-		SET PRODUCT_COUNT       = PRODUCT_COUNT - #{productCount}
-		WHERE 1=1
-		AND  PRODUCT_CODE = #{productCode}
+		<![CDATA[
+			/*	updateProductCountMinus	*/
+			UPDATE TB_PRODUCT
+			SET PRODUCT_COUNT       = PRODUCT_COUNT - #{productCount}
+			WHERE 1=1
+			AND  PRODUCT_CODE = #{productCode}
+		]]>
 	</update>
 
 	<update id="updateProductCountPlus" parameterType="map">
-		/*	updateProductCountPlus	*/
-		UPDATE TB_PRODUCT
-		SET PRODUCT_COUNT       = PRODUCT_COUNT + #{productCount}
-		WHERE 1=1
-		AND  PRODUCT_CODE = #{productCode}
+		<![CDATA[
+			/*	updateProductCountPlus	*/
+			UPDATE TB_PRODUCT
+			SET PRODUCT_COUNT       = PRODUCT_COUNT + #{productCount}
+			WHERE 1=1
+			AND  PRODUCT_CODE = #{productCode}
+		]]>
 	</update>
 
 	<insert id="createProduct" parameterType="product">
